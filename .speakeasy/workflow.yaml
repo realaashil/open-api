@@ -1,23 +1,13 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    openapi-spec:
+    PipesHub API:
         inputs:
-            - location: source_specs/pipeshub-openapi.yaml
-        overlays:
-            - location: .speakeasy/speakeasy-modifications-overlay.yaml
+            - location: ../source_specs/pipeshub-openapi.yaml
+        output: .speakeasy/out.openapi.yaml
         registry:
-            location: registry.speakeasyapi.dev/pipeshub/test/openapi-spec
+            location: registry.speakeasyapi.dev/pipeshub/test/pipes-hub-api
 targets:
-    python-sdk:
-        target: python
-        source: openapi-spec
-        output: .
-        publish:
-            pypi: false
-    typescript-sdk:
-        target: typescript
-        source: openapi-spec
-        output: .
-        publish:
-            npm: false
+    pipes-hub:
+        target: mcp-typescript
+        source: PipesHub API

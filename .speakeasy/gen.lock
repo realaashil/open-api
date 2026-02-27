@@ -1,0 +1,3025 @@
+lockVersion: 2.0.0
+id: 80b7fc93-cc6a-4e45-b6ea-a8ff3454b758
+management: {}
+trackedFiles:
+  .dxtignore:
+    last_write_checksum: sha1:0cbab1b303d9060f6324f6a9cddabe13c2cfa7c9
+  .gitattributes:
+    last_write_checksum: sha1:26d16d8297b104945139da8c25bd38feeaad3e25
+  .npmignore:
+    last_write_checksum: sha1:aa14435f0c166ebc0edbf1ae6f65128e33dc8c97
+  eslint.config.mjs:
+    last_write_checksum: sha1:576025302d3d8650f37276bc9075f6ade3842cc7
+  manifest.json:
+    last_write_checksum: sha1:a12672181b06d2b9b8192712b4d40130c8d88154
+  package.json:
+    last_write_checksum: sha1:25bb0451f568fe5b374b79ed8c830b2fc1fa60a3
+  src/core.ts:
+    last_write_checksum: sha1:ce840032c45608f5f4022b32bcce32cb69c5ed26
+  src/funcs/agentConversationsAddAgentMessage.ts:
+    last_write_checksum: sha1:2fd7e3368ae458f90d7e74e002d028cd2f688383
+  src/funcs/agentConversationsCreateAgentConversation.ts:
+    last_write_checksum: sha1:694f45f8ec88562538ee753d425eacb11ad145f6
+  src/funcs/agentConversationsDeleteAgentConversation.ts:
+    last_write_checksum: sha1:d9cbc895c7ed97d243e6b149cbd6f919f15737a6
+  src/funcs/agentConversationsGetAgentConversation.ts:
+    last_write_checksum: sha1:b8d1b74e4b0ed9499a5150721c0ac24d291555b8
+  src/funcs/agentConversationsListAgentConversations.ts:
+    last_write_checksum: sha1:7cc97783d7f68178b8f320266c2a2932bf449c98
+  src/funcs/agentConversationsRegenerateAgentAnswer.ts:
+    last_write_checksum: sha1:c0c4f8cf5540eff813fd7b07869bdf91205dc0c3
+  src/funcs/agentTemplatesCreateAgentTemplate.ts:
+    last_write_checksum: sha1:8e3d698995e4f1f2ee9f89c1fb40f8360618ea30
+  src/funcs/agentTemplatesDeleteAgentTemplate.ts:
+    last_write_checksum: sha1:6d36b46e29fcb1ac316403268190912ce6c724f8
+  src/funcs/agentTemplatesGetAgentTemplate.ts:
+    last_write_checksum: sha1:19db4c6df55e0b2638aa364d4eb659ad8db8aef7
+  src/funcs/agentTemplatesListAgentTemplates.ts:
+    last_write_checksum: sha1:59559f72ea11b9f2e72e527bb125e94e03024fb5
+  src/funcs/agentTemplatesUpdateAgentTemplate.ts:
+    last_write_checksum: sha1:dc0e1be46de171357bc47f1b21e8232d20fd9549
+  src/funcs/agentsCreateAgent.ts:
+    last_write_checksum: sha1:d47e0ce4a8a5c03455c7781d337f613ded3f350c
+  src/funcs/agentsDeleteAgent.ts:
+    last_write_checksum: sha1:81279b3648a08b05f4676b5092fac72b50f53045
+  src/funcs/agentsGetAgent.ts:
+    last_write_checksum: sha1:a2eff6a5319f725558036e880a48de4d9bab2996
+  src/funcs/agentsGetAgentPermissions.ts:
+    last_write_checksum: sha1:5757af1ea946fce0121ec1ca8100bc4fc3140bf9
+  src/funcs/agentsListAgentTools.ts:
+    last_write_checksum: sha1:0314eca4b56615d0939d24f21863858f13931225
+  src/funcs/agentsListAgents.ts:
+    last_write_checksum: sha1:5abc569c1d00ee5960501e68b33a3b9f8054c76f
+  src/funcs/agentsShareAgent.ts:
+    last_write_checksum: sha1:ab61ed8df37bbf5e1fc7c7d5f860b45c6f154a58
+  src/funcs/agentsUpdateAgent.ts:
+    last_write_checksum: sha1:cbf5e655aabd5057c28d4428e02a7ff74a45418c
+  src/funcs/agentsUpdateAgentPermissions.ts:
+    last_write_checksum: sha1:1d2d06cfe90895f9285bcc722944213515972922
+  src/funcs/aiModelsProvidersAddAIModelProvider.ts:
+    last_write_checksum: sha1:7fb2b05ddf5f1dab610d4c5b72f7ff38f9d976af
+  src/funcs/aiModelsProvidersDeleteAIModelProvider.ts:
+    last_write_checksum: sha1:100b21b00e7df51bd617e44df1f15bc416ce3f2d
+  src/funcs/aiModelsProvidersGetAvailableModelsByType.ts:
+    last_write_checksum: sha1:c2cd0016cb2b22945545da878e1b1f8d4fea582d
+  src/funcs/aiModelsProvidersGetModelsByType.ts:
+    last_write_checksum: sha1:b76aefca47dbf094ba4ac38b299795234167e3a2
+  src/funcs/aiModelsProvidersSetDefaultAIModel.ts:
+    last_write_checksum: sha1:0c037ffec2f2f0d39c6f06302616e023d4a7328b
+  src/funcs/aiModelsProvidersUpdateAIModelProvider.ts:
+    last_write_checksum: sha1:15334ec0551f9704f4b58e0baf8e80e64ffee256
+  src/funcs/authenticationConfigurationGetAzureAdAuthConfig.ts:
+    last_write_checksum: sha1:af1d82dfadf6c96eff9d5da5e67d29856473af0a
+  src/funcs/authenticationConfigurationGetGenericOAuthConfig.ts:
+    last_write_checksum: sha1:3cde419f0d1bdf5a69b7aa6fbf0ca30b4727dfd3
+  src/funcs/authenticationConfigurationGetGoogleAuthConfig.ts:
+    last_write_checksum: sha1:113d7bb84d0e9a46fcd949a2fce459ae1ccd2e6a
+  src/funcs/authenticationConfigurationGetMicrosoftAuthConfig.ts:
+    last_write_checksum: sha1:465a71a14a8aea18082e2e6f5383ba94a141c059
+  src/funcs/authenticationConfigurationGetSsoAuthConfig.ts:
+    last_write_checksum: sha1:5243730ea82667149fe0a4b55c7f7f8d06853124
+  src/funcs/authenticationConfigurationSetAzureAdAuthConfig.ts:
+    last_write_checksum: sha1:c0a0259bee35ac321b10e2556eb40dfd58bc7029
+  src/funcs/authenticationConfigurationSetGoogleAuthConfig.ts:
+    last_write_checksum: sha1:bfbfafc7a0f6274fb78d201e9fcdd3a7171cded8
+  src/funcs/authenticationConfigurationSetMicrosoftAuthConfig.ts:
+    last_write_checksum: sha1:12b8597fc63d27993e260404d3799fc01223d0e0
+  src/funcs/authenticationConfigurationSetOAuthConfig.ts:
+    last_write_checksum: sha1:64514bc7b18411b7a363c0e64129d212db3113eb
+  src/funcs/authenticationConfigurationSetSsoAuthConfig.ts:
+    last_write_checksum: sha1:295b69008cd2fe87abfc700ebef43ef75c908263
+  src/funcs/connectorConfigurationGetConnectorConfig.ts:
+    last_write_checksum: sha1:2decd7750125578a1ccbbc3a57b35e975f2d9f25
+  src/funcs/connectorConfigurationUpdateConnectorAuthConfig.ts:
+    last_write_checksum: sha1:ec6060363b50c1671a5f2c10c74088ef52819f78
+  src/funcs/connectorConfigurationUpdateConnectorConfig.ts:
+    last_write_checksum: sha1:133be980817253c0fa54d00ee7ef418a0ca98787
+  src/funcs/connectorConfigurationUpdateConnectorFiltersSyncConfig.ts:
+    last_write_checksum: sha1:0bf961a8841ea72bff381f3406f35d5d7590c92a
+  src/funcs/connectorControlToggleConnector.ts:
+    last_write_checksum: sha1:471c8f2404764aa56544dccc387a712fc6edd3d0
+  src/funcs/connectorFiltersGetConnectorFilters.ts:
+    last_write_checksum: sha1:d7cb82f6efef4680d04c8e3ae3f638c340bdaf38
+  src/funcs/connectorFiltersGetFilterFieldOptions.ts:
+    last_write_checksum: sha1:e2897fe7f09a58c9538b0aa72c731d8b7ed4686b
+  src/funcs/connectorFiltersSaveConnectorFilters.ts:
+    last_write_checksum: sha1:3dc8312aea14efb66f735d2b6ebb3aef7a1c40aa
+  src/funcs/connectorGetConnectorStats.ts:
+    last_write_checksum: sha1:5c5acaffafc6284deee033f9b0681161a67a830a
+  src/funcs/connectorInstancesCreateConnectorInstance.ts:
+    last_write_checksum: sha1:209bb7f5ca18d3020bdbc1d6c16d0e4ed57f97d0
+  src/funcs/connectorInstancesDeleteConnectorInstance.ts:
+    last_write_checksum: sha1:09cec51433361481edbf6863f7026f0dd28b52d7
+  src/funcs/connectorInstancesGetConnectorInstance.ts:
+    last_write_checksum: sha1:7ba22c7620fdd5dfa9e311e317934c932a31a92f
+  src/funcs/connectorInstancesListActiveAgentConnectors.ts:
+    last_write_checksum: sha1:63fefca5667e0dfaeb3dbcf480aa764fdf385d21
+  src/funcs/connectorInstancesListActiveConnectors.ts:
+    last_write_checksum: sha1:256dce3ea4ad6071424fbf48cee089c8f3b02e75
+  src/funcs/connectorInstancesListConfiguredConnectors.ts:
+    last_write_checksum: sha1:51e19a206993b10d701ba20cede7b5bb44cff575
+  src/funcs/connectorInstancesListConnectorInstances.ts:
+    last_write_checksum: sha1:b9655d30e15c717ffb210394808b1bde287d2f49
+  src/funcs/connectorInstancesListInactiveConnectors.ts:
+    last_write_checksum: sha1:6f103feafeaad5b4cbf5ccc5c8ef9dd904c8d527
+  src/funcs/connectorInstancesUpdateConnectorName.ts:
+    last_write_checksum: sha1:dc10ddfc1ef9cb8d625bf4ae6e83368bf675e26a
+  src/funcs/connectorOAuthGetOAuthAuthorizationUrl.ts:
+    last_write_checksum: sha1:c69b0c758b116dd7eb348415ef5d75d8eaf78c88
+  src/funcs/connectorOAuthHandleOAuthCallback.ts:
+    last_write_checksum: sha1:c37f816b74b974bec56b9c74f86ca0eff0c6130d
+  src/funcs/connectorRegistryGetConnectorRegistry.ts:
+    last_write_checksum: sha1:1661deca9732ea1138a83db16416436d1750f965
+  src/funcs/connectorRegistryGetConnectorSchema.ts:
+    last_write_checksum: sha1:221aad356020354c492929615188d5653cd424f3
+  src/funcs/connectorReindexRecord.ts:
+    last_write_checksum: sha1:f18d015d577e3df0af0835c08d5860dbe8990922
+  src/funcs/connectorReindexRecordGroup.ts:
+    last_write_checksum: sha1:de8b734b84141d41e2f0ba7a32554ef00a32fa83
+  src/funcs/connectorResyncConnector.ts:
+    last_write_checksum: sha1:98d92f683440ca5881fc106ce8dcbfc25778fdb5
+  src/funcs/conversationsAddMessage.ts:
+    last_write_checksum: sha1:50e0d053d841c7f98f2f3a138914d06f9b1c7aba
+  src/funcs/conversationsArchiveConversation.ts:
+    last_write_checksum: sha1:e7ed438556b08ba1b4b5ed7f2b6c0be73587c1a1
+  src/funcs/conversationsCreateConversation.ts:
+    last_write_checksum: sha1:2446c30966dc6e452401ffc389d4020067281137
+  src/funcs/conversationsDeleteConversationById.ts:
+    last_write_checksum: sha1:d3e4bf8b782f871e1c9f2ec27d39760cdba0d9ea
+  src/funcs/conversationsGetAllConversations.ts:
+    last_write_checksum: sha1:a6dacb66529049a878037ac3fa5aa42070c66147
+  src/funcs/conversationsGetArchivedConversations.ts:
+    last_write_checksum: sha1:b654cfd217eb37754711253ca3c3b6cce56c0a17
+  src/funcs/conversationsGetConversationById.ts:
+    last_write_checksum: sha1:768702884426357ed7e98a2056b9932251606e03
+  src/funcs/conversationsRegenerateAnswer.ts:
+    last_write_checksum: sha1:0cdc5ef37b117dc094ee640e24a73f7eae68f2ec
+  src/funcs/conversationsShareConversation.ts:
+    last_write_checksum: sha1:6ebf36c3aabfb8630b572d3214d210dc863e5c0e
+  src/funcs/conversationsUnarchiveConversation.ts:
+    last_write_checksum: sha1:06333c5ac289f2556cf61f9ce6d6f58eb1ca9b7f
+  src/funcs/conversationsUpdateConversationTitle.ts:
+    last_write_checksum: sha1:698f4f9c09d52c0128a97a40e76e0b055f0d8ae9
+  src/funcs/conversationsUpdateMessageFeedback.ts:
+    last_write_checksum: sha1:ac61b2ce532a6a22cbc4bc539d4fbc0541c24403
+  src/funcs/crawlingJobsGetCrawlingJobStatus.ts:
+    last_write_checksum: sha1:34e7d9876045e1276a04ec87edb422b62f6c845b
+  src/funcs/crawlingJobsRemoveCrawlingJob.ts:
+    last_write_checksum: sha1:159b533c9c26853b9e895e5e1e8761fe8c4a438f
+  src/funcs/crawlingJobsScheduleCrawlingJob.ts:
+    last_write_checksum: sha1:f47a4e08c7c9f4e7dd9e183ccde137d1e4a9b689
+  src/funcs/documentManagementDownloadDocument.ts:
+    last_write_checksum: sha1:a47c243f46eb9bf702e339fba654c528375e0146
+  src/funcs/foldersCreateRootFolder.ts:
+    last_write_checksum: sha1:a17acc255b449379a1cdca186e0fd5e5124cd69c
+  src/funcs/foldersCreateSubfolder.ts:
+    last_write_checksum: sha1:8c23f0513f62256cb8ba7f7bbf1422528d563f19
+  src/funcs/foldersDeleteFolder.ts:
+    last_write_checksum: sha1:6b0d0938b94c6a7b88596f78c5b1b7a5e67462f0
+  src/funcs/foldersGetFolderChildren.ts:
+    last_write_checksum: sha1:6fdc54e6cb3a210722c1845604f8716a3cfc5991
+  src/funcs/foldersGetFolderContents.ts:
+    last_write_checksum: sha1:e96b9fd9ca701caf9bc74b7101b737220bf7a066
+  src/funcs/foldersUpdateFolder.ts:
+    last_write_checksum: sha1:65d9401372e61cdc08ffa3d86e14f277c51fef68
+  src/funcs/knowledgeBasesCreateKnowledgeBase.ts:
+    last_write_checksum: sha1:124a07ff87e767e83dd34d5da9f38f8282388b1b
+  src/funcs/knowledgeBasesDeleteKnowledgeBase.ts:
+    last_write_checksum: sha1:caa2c76bd952b2cd43e608098d93bb2bd2c41aa0
+  src/funcs/knowledgeBasesGetKnowledgeBase.ts:
+    last_write_checksum: sha1:db3ff2ea00b4222d1153fad3ada36aeec61926cb
+  src/funcs/knowledgeBasesGetKnowledgeHubChildNodes.ts:
+    last_write_checksum: sha1:1e6eda644d68d17923b4eb5a265dcfbd43efb8f2
+  src/funcs/knowledgeBasesGetKnowledgeHubRootNodes.ts:
+    last_write_checksum: sha1:e174686fdb23f7b944b4a43d83fdf08f04cfccbf
+  src/funcs/knowledgeBasesListKnowledgeBases.ts:
+    last_write_checksum: sha1:dec41c7f54daf2083a59cd0d43a913ff4b84a3f2
+  src/funcs/knowledgeBasesUpdateKnowledgeBase.ts:
+    last_write_checksum: sha1:981eed37abd3e0377122d9d237ccd7f613eb198a
+  src/funcs/metricsCollectionGetMetricsCollection.ts:
+    last_write_checksum: sha1:942212b7f6ae6a4e7dc423ac809ecfcc6a20e39e
+  src/funcs/metricsCollectionToggleMetricsCollection.ts:
+    last_write_checksum: sha1:2e14a95e4e66988e02c4b795dc1a3dd0f17e84d4
+  src/funcs/oAuthAppsActivateOAuthApp.ts:
+    last_write_checksum: sha1:b5ec08cf8ff3b7ea747cb694bab5cdbce2c98123
+  src/funcs/oAuthAppsCreateOAuthApp.ts:
+    last_write_checksum: sha1:eb6cce2a1ffe22759ccfd7d573cf8e1559bee9d2
+  src/funcs/oAuthAppsDeleteOAuthApp.ts:
+    last_write_checksum: sha1:86fa2a4cfce1507c6d6a79b972b312f35ddb5b7a
+  src/funcs/oAuthAppsGetOAuthApp.ts:
+    last_write_checksum: sha1:fa9f8e34d4586a145176049644426da534279297
+  src/funcs/oAuthAppsListOAuthAppTokens.ts:
+    last_write_checksum: sha1:5fc8b51ffc75b673cc8ed565c4e65de55ac5be6c
+  src/funcs/oAuthAppsListOAuthApps.ts:
+    last_write_checksum: sha1:1d55adcc4a80358344f5ef0c66d7b1028d01524a
+  src/funcs/oAuthAppsListOAuthScopes.ts:
+    last_write_checksum: sha1:1a3732545df8f09d0c34521f0499b9ffd5cd122d
+  src/funcs/oAuthAppsRegenerateOAuthAppSecret.ts:
+    last_write_checksum: sha1:d354de6607d47d29c0ea16ca1ca0e5b0cb90968d
+  src/funcs/oAuthAppsRevokeAllOAuthAppTokens.ts:
+    last_write_checksum: sha1:07284b7d4644df58741842c5f1b86fef787f38ae
+  src/funcs/oAuthAppsSuspendOAuthApp.ts:
+    last_write_checksum: sha1:117cd65213e2431e692b6128e0fcc03a097b3677
+  src/funcs/oAuthAppsUpdateOAuthApp.ts:
+    last_write_checksum: sha1:42d74fbd8739cf0ce365dfe051e01ef10d6e6057
+  src/funcs/oAuthConfigurationCreateOAuthConfig.ts:
+    last_write_checksum: sha1:7baaaaca6291c1c661b089c6a14cf54fc3ff2409
+  src/funcs/oAuthConfigurationDeleteOAuthConfig.ts:
+    last_write_checksum: sha1:e41b1f7b41a391995ae31da014d75927471f22b4
+  src/funcs/oAuthConfigurationGetOAuthConfig.ts:
+    last_write_checksum: sha1:6353a020060de66a1634f81f1dfe563cf8128e20
+  src/funcs/oAuthConfigurationGetOAuthConnectorType.ts:
+    last_write_checksum: sha1:8f902c767adde912e905338d662ae8d2414baa62
+  src/funcs/oAuthConfigurationGetOAuthRegistry.ts:
+    last_write_checksum: sha1:b4563f612ffc3fc59c10dc44c9e2723f20b2f3df
+  src/funcs/oAuthConfigurationListOAuthConfigs.ts:
+    last_write_checksum: sha1:00552f265f219af358193a6ef5b0132f13d35f9e
+  src/funcs/oAuthConfigurationListOAuthConfigsByType.ts:
+    last_write_checksum: sha1:b6ac357ba2339b9f151a1e150acb868e002a05fb
+  src/funcs/oAuthConfigurationUpdateOAuthConfig.ts:
+    last_write_checksum: sha1:644259dad6681247c0a8a9b45b0fbbf10ed43685
+  src/funcs/oAuthExchangeOAuthCode.ts:
+    last_write_checksum: sha1:b0bc28c1f5d51d4b4897e43b391cc8a53141ad64
+  src/funcs/oAuthProviderOauthAuthorize.ts:
+    last_write_checksum: sha1:247eb86a0790ecb36b1e1f3c9b8d9b0407c18b41
+  src/funcs/oAuthProviderOauthAuthorizeConsent.ts:
+    last_write_checksum: sha1:23d58c48bc9d0768916003ba54186a3ce4998726
+  src/funcs/oAuthProviderOauthIntrospect.ts:
+    last_write_checksum: sha1:f835846b5965819216bb345bf2a9e9721b40ffc0
+  src/funcs/oAuthProviderOauthRevoke.ts:
+    last_write_checksum: sha1:78b6aba26c571137208b02e773614b9edb1c3e84
+  src/funcs/oAuthProviderOauthToken.ts:
+    last_write_checksum: sha1:c633399361c22659e7b092634309303bc99e355a
+  src/funcs/openIDConnectJwks.ts:
+    last_write_checksum: sha1:da98ff788ad36dc6ee366423960861ccfb5f7847
+  src/funcs/openIDConnectOauthUserInfo.ts:
+    last_write_checksum: sha1:2ef884e8962228283764028be5fac5cd84da187b
+  src/funcs/openIDConnectOpenidConfiguration.ts:
+    last_write_checksum: sha1:942896a25b6cd7eab3241808252bd2fba52ad557
+  src/funcs/organizationAuthConfigGetAuthMethods.ts:
+    last_write_checksum: sha1:db2d358736889dfff00b961ee8be16a3dbff9529
+  src/funcs/organizationAuthConfigUpdateAuthMethod.ts:
+    last_write_checksum: sha1:ee5257a85535a2eea6ed3b902c88a96f9cb96cdf
+  src/funcs/organizationsCheckOrgExists.ts:
+    last_write_checksum: sha1:0d4196a4995f764b557ccde02bcf5b1c9e367a57
+  src/funcs/organizationsCreateOrganization.ts:
+    last_write_checksum: sha1:990c2a1cc3b203e46ea28ef6d1d3f8dfcbd94034
+  src/funcs/organizationsDeleteOrganization.ts:
+    last_write_checksum: sha1:03fb5ead52fd5475215e9f9f9be868cf62f38e27
+  src/funcs/organizationsDeleteOrganizationLogo.ts:
+    last_write_checksum: sha1:5995943d5611134584c71dbd431631528763876e
+  src/funcs/organizationsGetCurrentOrganization.ts:
+    last_write_checksum: sha1:eff7206bc698002f044f76f039bfc39af173528d
+  src/funcs/organizationsGetOnboardingStatus.ts:
+    last_write_checksum: sha1:dc55acd02d813ac336fabfe42aca7aaf7810a8cb
+  src/funcs/organizationsGetOrganizationLogo.ts:
+    last_write_checksum: sha1:d6b424e501aa2d58aaa8ad17a4eae24f4b0053e9
+  src/funcs/organizationsUpdateOnboardingStatus.ts:
+    last_write_checksum: sha1:9e6693fc9926c64c03f603446dfb64467f49f930
+  src/funcs/organizationsUpdateOrganization.ts:
+    last_write_checksum: sha1:75733cd21c558c0494f07ab24ea2438ec20607bb
+  src/funcs/organizationsUploadOrganizationLogo.ts:
+    last_write_checksum: sha1:16835098cd9c64b82fa1e926b0574ee449fdbe7e
+  src/funcs/permissionsCreateKBPermission.ts:
+    last_write_checksum: sha1:324ba6cff229c6c3f8eed42dd1188cac8f7fc206
+  src/funcs/permissionsDeleteKBPermissions.ts:
+    last_write_checksum: sha1:10ee801b2868689e1b5752a3d472f7dfc0d2d7f0
+  src/funcs/permissionsListKBPermissions.ts:
+    last_write_checksum: sha1:bfb2048311729625ca3df43e08c4534688769ad0
+  src/funcs/permissionsUpdateKBPermissions.ts:
+    last_write_checksum: sha1:c4a1f6514f14047eac3ba189bedaf2cf3f4e3796
+  src/funcs/platformSettingsGetAvailableFeatureFlags.ts:
+    last_write_checksum: sha1:c65917dddb2c09634f405cadc1e340a1e6ccbe9b
+  src/funcs/platformSettingsGetCustomSystemPrompt.ts:
+    last_write_checksum: sha1:469077237887aba2f0a0fe01eda001094e00490a
+  src/funcs/platformSettingsGetPlatformSettings.ts:
+    last_write_checksum: sha1:6c6c15c9a33dee028a873a2c753a29db9df7437d
+  src/funcs/platformSettingsSetCustomSystemPrompt.ts:
+    last_write_checksum: sha1:f459bc4204cec5b74bbf6ec4a6ec16f3425e9e69
+  src/funcs/platformSettingsSetPlatformSettings.ts:
+    last_write_checksum: sha1:0190c297c588e4beca80627cd3f2f8075b9925d9
+  src/funcs/publicURLsGetConnectorPublicUrl.ts:
+    last_write_checksum: sha1:f643e004b4f541f399f10269afe63c58fc12f8d1
+  src/funcs/publicURLsGetFrontendPublicUrl.ts:
+    last_write_checksum: sha1:6f496d296f4c0cfad496773d8e46740cf231f176
+  src/funcs/publicURLsSetConnectorPublicUrl.ts:
+    last_write_checksum: sha1:a5375f0a367bf9c2d9be214b1aca8b0e3278177e
+  src/funcs/publicURLsSetFrontendPublicUrl.ts:
+    last_write_checksum: sha1:292297aaf73cdf1ed65192409f582c03b6d82b7a
+  src/funcs/recordsDeleteRecord.ts:
+    last_write_checksum: sha1:ff52c052886e622d9bcf113960ae89489a6f3138
+  src/funcs/recordsGetAllRecords.ts:
+    last_write_checksum: sha1:bf0c36fc5f55d8f704fa7a2d8ff95fefd2c34b05
+  src/funcs/recordsGetKBChildren.ts:
+    last_write_checksum: sha1:ce287ca813f0191c29f9079144e682af6a777133
+  src/funcs/recordsGetKBRecords.ts:
+    last_write_checksum: sha1:ecb330140596edca661044e139a59bc7a7c01631
+  src/funcs/recordsGetRecordById.ts:
+    last_write_checksum: sha1:2e5150fdace0161182de5694d37e75f4bb3fd937
+  src/funcs/recordsStreamRecordBuffer.ts:
+    last_write_checksum: sha1:aafd6a450bd9f6f06c5a7143098d6361ecb2aa5a
+  src/funcs/recordsUpdateRecord.ts:
+    last_write_checksum: sha1:301cdbf953c5cec1dbae2a717eb857d637b2b689
+  src/funcs/samlSignInViaSAML.ts:
+    last_write_checksum: sha1:31645b8b88faadf8f3a60c0449735922d6b28dba
+  src/funcs/semanticSearchDeleteAllSearchHistory.ts:
+    last_write_checksum: sha1:ae4798e1336604189871ff90305752ddfa8287a5
+  src/funcs/semanticSearchSearch.ts:
+    last_write_checksum: sha1:91255168e69a4664808f6724fb74a5d68a3505cd
+  src/funcs/semanticSearchSearchHistory.ts:
+    last_write_checksum: sha1:e8505d5bfb6b1283a63570cbddcaec429683303e
+  src/funcs/smtpConfigurationCreateSMTPConfig.ts:
+    last_write_checksum: sha1:61c33e71ecf22c1119a9292c4450c7394d1cccba
+  src/funcs/smtpConfigurationGetSMTPConfig.ts:
+    last_write_checksum: sha1:238c3f1895f4962cd45d63650f59c8f42c4b77bd
+  src/funcs/storageConfigurationGetStorageConfig.ts:
+    last_write_checksum: sha1:d4d696774cdb3d5b55477419dcf341a5e6a9f3f9
+  src/funcs/teamsCreateTeam.ts:
+    last_write_checksum: sha1:073df57371eeca2c4d34b8e40ae997a48d6bc11a
+  src/funcs/teamsDeleteTeam.ts:
+    last_write_checksum: sha1:fe3d6651d69ff081f5f9f91645c86904876b24e2
+  src/funcs/teamsGetTeamById.ts:
+    last_write_checksum: sha1:5ad63b1d1903cf480d5e8604aebf119e18f8b421
+  src/funcs/teamsGetUserTeams.ts:
+    last_write_checksum: sha1:df94c60f769889b4b0542ffb0601de0379a3a71e
+  src/funcs/teamsListTeams.ts:
+    last_write_checksum: sha1:96566ff7c55c913106f0e3fc44cd7b97c95e968a
+  src/funcs/teamsUpdateTeam.ts:
+    last_write_checksum: sha1:d466fcf8403320de968955e5ca3bc3ef52ce42f2
+  src/funcs/toolsetConfigurationDeleteToolsetConfig.ts:
+    last_write_checksum: sha1:ffd9b96bc46c1fcb2d10a509112ad799a82445c5
+  src/funcs/toolsetConfigurationGetToolsetConfig.ts:
+    last_write_checksum: sha1:26cd682feeba7bec85575627dcced9067d4fef95
+  src/funcs/toolsetConfigurationSaveToolsetConfig.ts:
+    last_write_checksum: sha1:552826d437fd524edbee5314252819604a436f4f
+  src/funcs/toolsetConfigurationUpdateToolsetConfig.ts:
+    last_write_checksum: sha1:c65430d5fd2b9efc70ffa78bcbdac1d16ee46bc7
+  src/funcs/toolsetInstancesCheckToolsetStatus.ts:
+    last_write_checksum: sha1:6ee5e76d92fc0d42fd93eb1d27e62ae01078e958
+  src/funcs/toolsetInstancesCreateToolset.ts:
+    last_write_checksum: sha1:b9a5de2ceb75a4d44249c7a40aab0c428b959f12
+  src/funcs/toolsetInstancesListConfiguredToolsets.ts:
+    last_write_checksum: sha1:e75af30fae2f2df6f26733a40c84129ed30d2f64
+  src/funcs/toolsetOAuthGetToolsetOAuthUrl.ts:
+    last_write_checksum: sha1:b6d72fe94c1b932b2aa34b827fb18f6c9a921107
+  src/funcs/toolsetOAuthHandleToolsetOAuthCallback.ts:
+    last_write_checksum: sha1:9a45b564e353230519ac61bae3f231e558031b5d
+  src/funcs/toolsetRegistryGetToolsetSchema.ts:
+    last_write_checksum: sha1:66648e3e77b5b5a5ded463b7fe164100a6cbbbf9
+  src/funcs/toolsetRegistryListToolsetRegistry.ts:
+    last_write_checksum: sha1:8ebbf25b65cfd545b3472b1af3df44b38d6e6b10
+  src/funcs/uploadGetUploadLimits.ts:
+    last_write_checksum: sha1:aa425509d0172893b48f78344945e7451d6fb271
+  src/funcs/uploadUploadRecordsToFolder.ts:
+    last_write_checksum: sha1:0c00a764c695dc975166a8f6e4a781ef2d0a8301
+  src/funcs/uploadUploadRecordsToKB.ts:
+    last_write_checksum: sha1:bb38f13444f60c827e97fc5fbe9656bd0d8c8a84
+  src/funcs/userAccountAuthenticate.ts:
+    last_write_checksum: sha1:64ec0947e07fe21892e4ab287329245791e112ff
+  src/funcs/userAccountForgotPassword.ts:
+    last_write_checksum: sha1:15c8670269c64d10a027ffec4aaa8555caded4c8
+  src/funcs/userAccountGenerateLoginOtp.ts:
+    last_write_checksum: sha1:e86ea15c6b69b7cc8010d4ca13e283911c7a1294
+  src/funcs/userAccountInitAuth.ts:
+    last_write_checksum: sha1:d8af5fc3a6ab32934cdd0c0b82a4e5fccf0b8c87
+  src/funcs/userAccountLogout.ts:
+    last_write_checksum: sha1:5683809363952d386e59f6aebed27a7c229741cb
+  src/funcs/userAccountRefreshToken.ts:
+    last_write_checksum: sha1:87b68bec30b52c0df6609d8c041039c953a35672
+  src/funcs/userAccountResetPasswordWithToken.ts:
+    last_write_checksum: sha1:ebaf468522f6381b4d8fd2b9201a9e1064434045
+  src/funcs/userGroupsAddUsersToGroup.ts:
+    last_write_checksum: sha1:14935b7519f7db2e6c1131a03014ff58324719f4
+  src/funcs/userGroupsCreateUserGroup.ts:
+    last_write_checksum: sha1:dacb27d2ef31e9f07045549f211a4785612e389d
+  src/funcs/userGroupsDeleteUserGroup.ts:
+    last_write_checksum: sha1:68b8a451126431418f86e02069b5bb7c2b00574d
+  src/funcs/userGroupsGetAllUserGroups.ts:
+    last_write_checksum: sha1:4ff646727e4242635858916d3658e8a2c2a771ae
+  src/funcs/userGroupsGetGroupsForUser.ts:
+    last_write_checksum: sha1:5b11eb245289ac992170e771126534232442f0dd
+  src/funcs/userGroupsGetUserGroupById.ts:
+    last_write_checksum: sha1:9d0f1c02905d1fe11b7faad07ee63a83e33f4965
+  src/funcs/userGroupsRemoveUsersFromGroup.ts:
+    last_write_checksum: sha1:d830aedfd1fb77b1082dcf27b10af01b7aa06413
+  src/funcs/userGroupsUpdateUserGroup.ts:
+    last_write_checksum: sha1:ee7743e1b21eea0d4ca9b0316a83ea464ba24dc0
+  src/funcs/usersBulkInviteUsers.ts:
+    last_write_checksum: sha1:7bf31d7a310ebedcb8118b477fa03da3e6e9fe27
+  src/funcs/usersCreateUser.ts:
+    last_write_checksum: sha1:d039c068513ad38030050819597f3049c619202f
+  src/funcs/usersDeleteUser.ts:
+    last_write_checksum: sha1:93f1c5d2cc9fa32f931810bbedcf61c14d1bfd0a
+  src/funcs/usersGetAllUsers.ts:
+    last_write_checksum: sha1:31d2e159db72f32bf6cd50fe4ec8db461516bdde
+  src/funcs/usersGetUserById.ts:
+    last_write_checksum: sha1:9340014f643cc8325e307bc31446cded69d9ad83
+  src/funcs/usersGetUserDisplayPicture.ts:
+    last_write_checksum: sha1:ae1efb4d01adc67611f33a7473f0fb656620c574
+  src/funcs/usersGetUserEmailById.ts:
+    last_write_checksum: sha1:d5ee7475f789e330bd2c654b73bea4fcc00f0819
+  src/funcs/usersListUsersGraph.ts:
+    last_write_checksum: sha1:8834ee10e74bb65fb0df047c477696d392b3fb18
+  src/funcs/usersRemoveUserDisplayPicture.ts:
+    last_write_checksum: sha1:f35a1b0792becfd02c0f3bd001de859eaa9bc4bc
+  src/funcs/usersResendUserInvite.ts:
+    last_write_checksum: sha1:5543d2dc73612be0adfee89ef83fa309377d6957
+  src/funcs/usersUnblockUser.ts:
+    last_write_checksum: sha1:320c634bd4711279178c12d6c51939084b1435e8
+  src/funcs/usersUpdateUser.ts:
+    last_write_checksum: sha1:4e6681b1461938cfa99e513adb0b1aea0e3d2d2c
+  src/funcs/usersUploadUserDisplayPicture.ts:
+    last_write_checksum: sha1:36afef135872a95226d25ca3c8f68cd229803789
+  src/hooks/clientcredentials.ts:
+    last_write_checksum: sha1:90dbf35a26e57fd37b7d42204cfe8b70c1fa2025
+  src/hooks/hooks.ts:
+    last_write_checksum: sha1:1d5dbdbbe04da8c557afa5ab01fbb2409457921e
+  src/hooks/oauth2scopes.ts:
+    last_write_checksum: sha1:c9c41a892b9e4b1b7112fb0afca71fea91be516c
+  src/hooks/types.ts:
+    last_write_checksum: sha1:27a3444c4839bec58ae89820fd8c2483edafc3f4
+  src/landing-page.ts:
+    last_write_checksum: sha1:a151bef1e88c1047f10030d7f898a14afa8ba627
+  src/lib/base64.ts:
+    last_write_checksum: sha1:e9f04a037018040361043104960982f7c22db52d
+  src/lib/config.ts:
+    last_write_checksum: sha1:3d2b21d41eaea49c1e76b391ca59e6be72933d8b
+  src/lib/dlv.ts:
+    last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
+  src/lib/encodings.ts:
+    last_write_checksum: sha1:c042529292568e18a69a04c1be7e18588ccd3821
+  src/lib/files.ts:
+    last_write_checksum: sha1:d0f325f445b8d22e7d73baf052c585ec2dd24841
+  src/lib/http.ts:
+    last_write_checksum: sha1:797cbf16d3c7c4d62d3ba0eedb08617524938457
+  src/lib/is-plain-object.ts:
+    last_write_checksum: sha1:df687f25a9590b6fd95d39df41a652ae3fd4e517
+  src/lib/logger.ts:
+    last_write_checksum: sha1:0ec9d3a2a34c362746b767e4f9a746c055d57a7b
+  src/lib/oauth2-sessions.ts:
+    last_write_checksum: sha1:5dd800929f75f5006fcbaba031a0c21e5f9d9ee9
+  src/lib/primitives.ts:
+    last_write_checksum: sha1:d5fbb4e2feef5747fc8071046bdd4122c87bd066
+  src/lib/result.ts:
+    last_write_checksum: sha1:d24994d58f37a1ca106847fcc6d2e976c6f1c093
+  src/lib/retries.ts:
+    last_write_checksum: sha1:f3da74dffcbe2756c69393f8600205aa1dc06e68
+  src/lib/schemas.ts:
+    last_write_checksum: sha1:7c7ba40781682f6d44bb585b5016e2527b52660e
+  src/lib/sdks.ts:
+    last_write_checksum: sha1:f53d39ce2ecd033d8b84c8e6cf99731c2106ca07
+  src/lib/security.ts:
+    last_write_checksum: sha1:f78619dbd24c59e88a7396e7355659012b74c215
+  src/lib/url.ts:
+    last_write_checksum: sha1:9550819577dc1e514e61496167aefcc137238aaf
+  src/mcp-server/build.mts:
+    last_write_checksum: sha1:9f98fe2b333bd6211cfffa008a9b6ee95d523596
+  src/mcp-server/cli.ts:
+    last_write_checksum: sha1:7331efddde881832342fa8779d23be7445d4480c
+  src/mcp-server/cli/serve/command.ts:
+    last_write_checksum: sha1:d1c3ba48a53f48bdc0edfe06661816fcc7274e8d
+  src/mcp-server/cli/serve/impl.ts:
+    last_write_checksum: sha1:2c7571fdbd0211a44e8afc231864991ddda368c5
+  src/mcp-server/cli/start/command.ts:
+    last_write_checksum: sha1:50c9ec228926a1aae05ebfb9eb87f8c669e59340
+  src/mcp-server/cli/start/impl.ts:
+    last_write_checksum: sha1:f70261b66ff16872c9bcfb3ea5c0213f011c08af
+  src/mcp-server/console-logger.ts:
+    last_write_checksum: sha1:0c4b9b7c79ad0a81359210cb31b9ee4d887d5de1
+  src/mcp-server/extensions.ts:
+    last_write_checksum: sha1:27de1e2b8aaedc8965d1d4c4d4c500df1f28b483
+  src/mcp-server/flags.ts:
+    last_write_checksum: sha1:db1f1427f1a369f7226718679b4594d06fc712b3
+  src/mcp-server/mcp-server.ts:
+    last_write_checksum: sha1:6d4719e3e2a858d323dd23b113461625af60962a
+  src/mcp-server/prompts.ts:
+    last_write_checksum: sha1:d5928503611775dde2dcc5272e35f8065b35b920
+  src/mcp-server/resources.ts:
+    last_write_checksum: sha1:13dc124e896d588f80a3711f4e32fc170416552e
+  src/mcp-server/scopes.ts:
+    last_write_checksum: sha1:77d0eb95785e84f9fd0b27c4612f8c6470489fe4
+  src/mcp-server/server.ts:
+    last_write_checksum: sha1:08b65cee933538ae7f43b9ef02536a8df1cf2d44
+  src/mcp-server/shared.ts:
+    last_write_checksum: sha1:19c9034032819a14f15c430de4350c8aba99d725
+  src/mcp-server/tools.ts:
+    last_write_checksum: sha1:a38d2997d28f8908f516cb6257c0ba0ff33d17d1
+  src/mcp-server/tools/agentTemplatesCreateAgentTemplate.ts:
+    last_write_checksum: sha1:d28f1dd73f525017872783a92193a3f273175c53
+  src/mcp-server/tools/aiModelsProvidersDeleteAIModelProvider.ts:
+    last_write_checksum: sha1:b3632a7f20fdff185f0e0380a1a81141616c0d30
+  src/mcp-server/tools/connectorFiltersSaveConnectorFilters.ts:
+    last_write_checksum: sha1:ccf38623a2d5b79a7b32d1c69275bd97f90c3473
+  src/mcp-server/tools/connectorOAuthHandleOAuthCallback.ts:
+    last_write_checksum: sha1:c9e25ba87fc935243e8e7595b5e97e7eada045a4
+  src/mcp-server/tools/conversationsAddMessage.ts:
+    last_write_checksum: sha1:4cd456426e50f15ba46616875bf7d93048390b1f
+  src/mcp-server/tools/oAuthAppsActivateOAuthApp.ts:
+    last_write_checksum: sha1:7fe82e0fc39b1c74a9595590e16de06c68bf580d
+  src/mcp-server/tools/oAuthAppsCreateOAuthApp.ts:
+    last_write_checksum: sha1:b904c70d4bd3ab362f5cc204a7abeaaf0aeeb214
+  src/mcp-server/tools/oAuthAppsDeleteOAuthApp.ts:
+    last_write_checksum: sha1:4e25b99a0ca6855cfb70b8106e2aa38dd8177be8
+  src/mcp-server/tools/oAuthAppsGetOAuthApp.ts:
+    last_write_checksum: sha1:e50b8b879ec9847cda439d723865fbc7db0de5ff
+  src/mcp-server/tools/oAuthAppsListOAuthAppTokens.ts:
+    last_write_checksum: sha1:82599f811164837baea2714e3f6c296a27c38704
+  src/mcp-server/tools/oAuthAppsListOAuthApps.ts:
+    last_write_checksum: sha1:de3d1825a02e16526a3be8cb7dddcf7457e63389
+  src/mcp-server/tools/oAuthAppsListOAuthScopes.ts:
+    last_write_checksum: sha1:e0ddadf2bb8c7a72163ae8c1987e849579fa2e61
+  src/mcp-server/tools/oAuthAppsRegenerateOAuthAppSecret.ts:
+    last_write_checksum: sha1:404583d89304e7431641ce7487a16c6c6b57b274
+  src/mcp-server/tools/oAuthAppsRevokeAllOAuthAppTokens.ts:
+    last_write_checksum: sha1:000621cf334f8761e96bdca4db1eabc862a87cb2
+  src/mcp-server/tools/oAuthAppsSuspendOAuthApp.ts:
+    last_write_checksum: sha1:9557fea6b5f73aced2b2cf6181461fc7de9e2393
+  src/mcp-server/tools/oAuthAppsUpdateOAuthApp.ts:
+    last_write_checksum: sha1:c2278a8d0867d42daac0b01b42280e3d871373b6
+  src/mcp-server/tools/oAuthConfigurationCreateOAuthConfig.ts:
+    last_write_checksum: sha1:ed19dece52a7d2f71815357da24176819830cd85
+  src/mcp-server/tools/oAuthConfigurationDeleteOAuthConfig.ts:
+    last_write_checksum: sha1:0a1a6390575c7d053c90a89bcfaf72cd395e29f2
+  src/mcp-server/tools/oAuthConfigurationGetOAuthConfig.ts:
+    last_write_checksum: sha1:284bb97f80ff2f7b48c5eccc6a2dde074740f8e7
+  src/mcp-server/tools/oAuthConfigurationGetOAuthConnectorType.ts:
+    last_write_checksum: sha1:31bb46a8dac3400465601ab447496130ff383684
+  src/mcp-server/tools/oAuthConfigurationGetOAuthRegistry.ts:
+    last_write_checksum: sha1:d06dd75025ca160249f54ed942404fe398777a7f
+  src/mcp-server/tools/oAuthConfigurationListOAuthConfigs.ts:
+    last_write_checksum: sha1:862ea65659f9186aa55cc2fb2d0304d876853ef9
+  src/mcp-server/tools/oAuthConfigurationListOAuthConfigsByType.ts:
+    last_write_checksum: sha1:cd9b37f7b80766b2fe597097c5167e41833a1faa
+  src/mcp-server/tools/oAuthConfigurationUpdateOAuthConfig.ts:
+    last_write_checksum: sha1:c239390259c96f3e31e378b1407c19a58e9fd00b
+  src/mcp-server/tools/oAuthExchangeOAuthCode.ts:
+    last_write_checksum: sha1:4b90bccb88e782b3446216898b6c5b31e1840cbd
+  src/mcp-server/tools/oAuthProviderOauthAuthorize.ts:
+    last_write_checksum: sha1:500b29d13e8f3689eef1dbb7f5ab7cc402cd3821
+  src/mcp-server/tools/oAuthProviderOauthAuthorizeConsent.ts:
+    last_write_checksum: sha1:4e7d73e54a4dfcc3bd346b8e965271248ad5e408
+  src/mcp-server/tools/oAuthProviderOauthIntrospect.ts:
+    last_write_checksum: sha1:f2281b0ecb7865decda2519776483c9717eda666
+  src/mcp-server/tools/oAuthProviderOauthRevoke.ts:
+    last_write_checksum: sha1:f260004dc1a136c3cffb8731fcbb817e2fdae56c
+  src/mcp-server/tools/oAuthProviderOauthToken.ts:
+    last_write_checksum: sha1:0d358514ab4f7458558663b1e361582fa5b4ebde
+  src/mcp-server/tools/openIDConnectJwks.ts:
+    last_write_checksum: sha1:c439cfc5e5681e5e894d11a801c2772b6064ee70
+  src/mcp-server/tools/openIDConnectOauthUserInfo.ts:
+    last_write_checksum: sha1:27109d4be57521dabc460c067047474493426e36
+  src/mcp-server/tools/openIDConnectOpenidConfiguration.ts:
+    last_write_checksum: sha1:4288bfd4260f44fa1855fc6c4b03ede001a3d1ac
+  src/mcp-server/tools/organizationAuthConfigGetAuthMethods.ts:
+    last_write_checksum: sha1:77163fab529def8c0dc2f87c2d57fc443d6509c6
+  src/mcp-server/tools/organizationAuthConfigUpdateAuthMethod.ts:
+    last_write_checksum: sha1:d170bf6dd54aafdc12b1cae8380c8b077ea0bc2a
+  src/mcp-server/tools/organizationsCheckOrgExists.ts:
+    last_write_checksum: sha1:ba3c59f12f9e32720d38ad6b65a3de34f542e656
+  src/mcp-server/tools/organizationsCreateOrganization.ts:
+    last_write_checksum: sha1:5688970f046543cae2e3fbeab0bd143aeab1e065
+  src/mcp-server/tools/organizationsGetOnboardingStatus.ts:
+    last_write_checksum: sha1:48ac0e5700f7898879e2be251ad7cf31c691f20f
+  src/mcp-server/tools/organizationsUpdateOnboardingStatus.ts:
+    last_write_checksum: sha1:c60e4a5d0dee2ada15eaaece1a303c19e487710e
+  src/mcp-server/tools/permissionsCreateKBPermission.ts:
+    last_write_checksum: sha1:1513138b45edf378379daccca22113330581c0fc
+  src/mcp-server/tools/permissionsDeleteKBPermissions.ts:
+    last_write_checksum: sha1:efdfc36db6f0e8142033d9845b93681983f50157
+  src/mcp-server/tools/recordsUpdateRecord.ts:
+    last_write_checksum: sha1:74f40e9c6c517466f929a30290e42ba8412d0995
+  src/mcp-server/tools/samlSignInViaSAML.ts:
+    last_write_checksum: sha1:bc67db60c070a22f5a36b118e275876c8ae6a869
+  src/mcp-server/tools/toolsetConfigurationDeleteToolsetConfig.ts:
+    last_write_checksum: sha1:0f4086d07b56ee8ff5e8fdfc7766eeb413d9de33
+  src/mcp-server/tools/toolsetConfigurationGetToolsetConfig.ts:
+    last_write_checksum: sha1:dbd27b99683bb78ee36361e055c0d8cf2c6524b5
+  src/mcp-server/tools/toolsetConfigurationSaveToolsetConfig.ts:
+    last_write_checksum: sha1:f58c8e0bdbaa7605acefce46bfee796fd05020c3
+  src/mcp-server/tools/toolsetConfigurationUpdateToolsetConfig.ts:
+    last_write_checksum: sha1:d09339258a8681671b762b93a6c999afcafe1be7
+  src/mcp-server/tools/toolsetInstancesCheckToolsetStatus.ts:
+    last_write_checksum: sha1:6d3593aff305afb8b19eab790d0721dbc6aa2208
+  src/mcp-server/tools/toolsetInstancesCreateToolset.ts:
+    last_write_checksum: sha1:12778bd14145b3e28084c5ce4428dd635609dee1
+  src/mcp-server/tools/toolsetInstancesListConfiguredToolsets.ts:
+    last_write_checksum: sha1:e517bd5fd32cf0555f89337fb2470c19090cb3e5
+  src/mcp-server/tools/toolsetOAuthGetToolsetOAuthUrl.ts:
+    last_write_checksum: sha1:a06112e60cf8e97cd4720690f4d504621c78ac3b
+  src/mcp-server/tools/toolsetOAuthHandleToolsetOAuthCallback.ts:
+    last_write_checksum: sha1:7e441e50cd029ec3160583b595d02d57d2e125fb
+  src/mcp-server/tools/toolsetRegistryGetToolsetSchema.ts:
+    last_write_checksum: sha1:3972224e77d834a8f35377ac6093c170cd4b4f1a
+  src/mcp-server/tools/toolsetRegistryListToolsetRegistry.ts:
+    last_write_checksum: sha1:5a21ce122acb8e20aa081d0b63630c5d33a2a7af
+  src/mcp-server/tools/userAccountAuthenticate.ts:
+    last_write_checksum: sha1:6177f6e9ea9f7ba0c19b43b6cb7492ce93dc961b
+  src/mcp-server/tools/userAccountForgotPassword.ts:
+    last_write_checksum: sha1:c45d847b16ada46c49a77ef02665dd1f4322cbc3
+  src/mcp-server/tools/userAccountGenerateLoginOtp.ts:
+    last_write_checksum: sha1:fe4e4f574579bd5ed0814808ec4a59a8c740fef2
+  src/mcp-server/tools/userAccountInitAuth.ts:
+    last_write_checksum: sha1:1135165b25d66b77a95ae374ed140344e03ca1a9
+  src/mcp-server/tools/userAccountLogout.ts:
+    last_write_checksum: sha1:9ae1a0d4991d711b1847ae49c54732bca1f59c1b
+  src/mcp-server/tools/userGroupsAddUsersToGroup.ts:
+    last_write_checksum: sha1:1c3eae8ede0f7f3b15fe84bb11a144eaaa00f353
+  src/mcp-server/tools/userGroupsCreateUserGroup.ts:
+    last_write_checksum: sha1:d4bd1b7399856e040e721cecc645815479887082
+  src/mcp-server/tools/userGroupsDeleteUserGroup.ts:
+    last_write_checksum: sha1:7c988f4a8f836e8e50b5c9574b5add41470bbd88
+  src/mcp-server/tools/userGroupsGetAllUserGroups.ts:
+    last_write_checksum: sha1:52aea960f0ce95f25328e23d4aee09389ba2cf9e
+  src/mcp-server/tools/userGroupsGetGroupsForUser.ts:
+    last_write_checksum: sha1:db8f7c5303ebf74a115f87e823bd567d39baa045
+  src/mcp-server/tools/userGroupsGetUserGroupById.ts:
+    last_write_checksum: sha1:adff8cfabbfe4be5abe6ac4ce478ca9c5b10e056
+  src/mcp-server/tools/userGroupsRemoveUsersFromGroup.ts:
+    last_write_checksum: sha1:0e25e494dd23f630a7f9340cf5e47b0bc6890399
+  src/mcp-server/tools/userGroupsUpdateUserGroup.ts:
+    last_write_checksum: sha1:1aea0cbc50bfb99558443a370229b1d22bacfa82
+  src/mcp-server/tools/usersCreateUser.ts:
+    last_write_checksum: sha1:7751a9620005ce579bce72f210ef4e70b6f83100
+  src/mcp-server/tools/usersGetUserDisplayPicture.ts:
+    last_write_checksum: sha1:8c07a9bf5dbde37b29d3bff686740e9804c4a1eb
+  src/mcp-server/tools/usersGetUserEmailById.ts:
+    last_write_checksum: sha1:0ba391fa596f020bd7e5252de746f489c62d44bd
+  src/mcp-server/tools/usersRemoveUserDisplayPicture.ts:
+    last_write_checksum: sha1:0c2f0384329335819a2d1d5745dc2dcfbd07532c
+  src/mcp-server/tools/usersResendUserInvite.ts:
+    last_write_checksum: sha1:3326644ddc648eb6524f676d9ecc054b761e6301
+  src/mcp-server/tools/usersUnblockUser.ts:
+    last_write_checksum: sha1:d165c544f3901d333e2fcf9e1458450c92552079
+  src/mcp-server/tools/usersUploadUserDisplayPicture.ts:
+    last_write_checksum: sha1:cad9cc2e1a71b500075ea7a789836beaa8b2a462
+  src/models/activateoauthappop.ts:
+    last_write_checksum: sha1:de0bcec3df6e84c949d472a4e07e6ed7e545b391
+  src/models/addagentmessageop.ts:
+    last_write_checksum: sha1:03f8b373efc1c8509ef9d55ba886643e335d50fe
+  src/models/addaimodelproviderop.ts:
+    last_write_checksum: sha1:96f732d8c12fd8cadf53df8cafbd5643e95e8cea
+  src/models/addaimodelproviderrequest.ts:
+    last_write_checksum: sha1:2ba0e2c9f8e2dcbc75486a4af1ac78288b546be0
+  src/models/addmessageop.ts:
+    last_write_checksum: sha1:e1397e729c639d6233a69f31d7d20590cc6b9587
+  src/models/addmessagerequest.ts:
+    last_write_checksum: sha1:3fb1f059f8e40793635dd9f8d3b5aca3fd546cf1
+  src/models/address.ts:
+    last_write_checksum: sha1:a7f5fa1f856284890a84500ac75e8fa447f4bccf
+  src/models/adduserstogroupop.ts:
+    last_write_checksum: sha1:6d9d1476de5b6f8c57f926856db8818dd177eb41
+  src/models/agent.ts:
+    last_write_checksum: sha1:36a2c04beecc3c17b78b5a8e52bb29301c71a34c
+  src/models/agentconversation.ts:
+    last_write_checksum: sha1:8c148f7a4d32cb09a065b2afcfa0427bc5ec666c
+  src/models/agenttemplate.ts:
+    last_write_checksum: sha1:f0fde3e6478379bab9a82a745c0c3080d1aacec7
+  src/models/agenttool.ts:
+    last_write_checksum: sha1:b468044d31f63a473e760c870411aebd5bc41277
+  src/models/aimodelproviderconfig.ts:
+    last_write_checksum: sha1:3b9a2b213a76e92e35f0e8af2151f1f366a94944
+  src/models/aimodelproviderresponse.ts:
+    last_write_checksum: sha1:f452e3e997c7f018cd587cdb40e128831431f384
+  src/models/apptype.ts:
+    last_write_checksum: sha1:cbdfc46fac6e574072027f0d30cad7d1f898172c
+  src/models/archiveconversationop.ts:
+    last_write_checksum: sha1:587e2daa4078ea3b872b53490e86599413f4d4b9
+  src/models/authconfig.ts:
+    last_write_checksum: sha1:d48508792ad41e20a1718e8dc9242a608398278b
+  src/models/authenticateop.ts:
+    last_write_checksum: sha1:04769e4086e3e2be7be73b76bd5c3ec16b1eb9a2
+  src/models/authenticaterequest.ts:
+    last_write_checksum: sha1:1f91e9a56a5a6b370f9809dc7bcf9934580e4c0f
+  src/models/authenticateresponse.ts:
+    last_write_checksum: sha1:8a40b995fa4a711eca3b8d49f79ad99c25798688
+  src/models/autherror.ts:
+    last_write_checksum: sha1:4c65a256ecec96f9b0e125b7a6d2c82e3d49731f
+  src/models/authmethod.ts:
+    last_write_checksum: sha1:9144239f26ce85551897717bf3b1218c190106d5
+  src/models/authproviders.ts:
+    last_write_checksum: sha1:ea40ddfe4763a9f18b5e2874d4d8f089867f2805
+  src/models/authstep.ts:
+    last_write_checksum: sha1:093b2651a9f783207f91a2a6c14b36f788797db7
+  src/models/azureadauthconfig.ts:
+    last_write_checksum: sha1:65b43d747af6088640413e3a1f4b85fcb81eef15
+  src/models/bulkinviteusersop.ts:
+    last_write_checksum: sha1:aee101edc2876335bac15d7441c9caa194496cce
+  src/models/checkorgexistsop.ts:
+    last_write_checksum: sha1:7c633d50b9186702e4be4c5b791b6a5edc1d54d9
+  src/models/checktoolsetstatusop.ts:
+    last_write_checksum: sha1:80d4672223b5adf17c70073bfb9489b29ec83b60
+  src/models/citationreference.ts:
+    last_write_checksum: sha1:b7ef8d56f5ce5dc1af939e33b3d6e47342e0f131
+  src/models/connectorauthconfig.ts:
+    last_write_checksum: sha1:8b4c2d583ae7806932530e5240acfeb217f61590
+  src/models/connectorauthtype.ts:
+    last_write_checksum: sha1:5127ee1e55426014bd0a65ddef5ae2828ebd41cc
+  src/models/connectorconfig.ts:
+    last_write_checksum: sha1:1bbc9de1639e366e7176546d21f60b9f3a55af88
+  src/models/connectorfiltersconfig.ts:
+    last_write_checksum: sha1:a18d4f1dbc120082f0404e7ce285ec1a53d7cacb
+  src/models/connectorinstance.ts:
+    last_write_checksum: sha1:114f5244907b80e777767fbc63eadfd09fbb572d
+  src/models/connectorpagination.ts:
+    last_write_checksum: sha1:76bd76c12426fd92db54d4ef95b5fea493223614
+  src/models/connectorschema.ts:
+    last_write_checksum: sha1:6a4f0630d09081dd6c291bd051b2538d9be01b58
+  src/models/connectorscope.ts:
+    last_write_checksum: sha1:d42aa8e1557419b4d22bea2152594b57fbe43c0d
+  src/models/connectorstats.ts:
+    last_write_checksum: sha1:c484e89bc538990e81c0efe3d1de44dbc666e68a
+  src/models/connectorsyncconfig.ts:
+    last_write_checksum: sha1:53cbc6da142858ee760f3d9f8e739acc42b2c915
+  src/models/connectortogglerequest.ts:
+    last_write_checksum: sha1:76a59dbeb285a4da7e780ea8562ec0f7bcce2c54
+  src/models/connectortype.ts:
+    last_write_checksum: sha1:d3b1e25b234a6cf8b4cbe11f4bea8d6942ba3c8d
+  src/models/conversation.ts:
+    last_write_checksum: sha1:4bb033985c0c911af5ac1af4af424a79a9880785
+  src/models/crawlingjobdata.ts:
+    last_write_checksum: sha1:c2ceac094c254bd0bda8ed6e9046996eb7211333
+  src/models/createagentconversationop.ts:
+    last_write_checksum: sha1:865c9f57c288625e3993298ab0aa7a5a461dc00c
+  src/models/createagentop.ts:
+    last_write_checksum: sha1:fe78e35b828d6c699880b226ad8f51fa05540e3a
+  src/models/createagenttemplateop.ts:
+    last_write_checksum: sha1:9f8c2a2ac626f15acd726fd5e8543cafb195de96
+  src/models/createconnectorinstanceop.ts:
+    last_write_checksum: sha1:310ffee5ccfe455d6039ea156d12dd2515d72aae
+  src/models/createconnectorrequest.ts:
+    last_write_checksum: sha1:d7d28b2a2b65cae217dbe0deae450ece1baadc91
+  src/models/createconversationop.ts:
+    last_write_checksum: sha1:18ba6edd6f471c922c1457b01f0f0c8687e180a9
+  src/models/createconversationrequest.ts:
+    last_write_checksum: sha1:13a71380e7914a372deba3c66764f0c8beb74b04
+  src/models/createkbpermissionop.ts:
+    last_write_checksum: sha1:afb657ef7839113e49b7813addedadbd440d8c5e
+  src/models/createknowledgebaseop.ts:
+    last_write_checksum: sha1:1a2f73d251c54a8e0d1f8a86e81e23c9bb517ab3
+  src/models/createoauthapprequest.ts:
+    last_write_checksum: sha1:d8d39dfe7520808e85704a755c9762f9b3785e3d
+  src/models/createoauthconfigop.ts:
+    last_write_checksum: sha1:45bbfcdaaccc7ff5b9c9a92be94f61eef12c151e
+  src/models/createoauthconfigrequest.ts:
+    last_write_checksum: sha1:1028749b0179dfe56be788571fdd4a71e4a16c01
+  src/models/createorganizationop.ts:
+    last_write_checksum: sha1:26e1651f067997b7c4d263f935eb79656605e188
+  src/models/createrootfolderop.ts:
+    last_write_checksum: sha1:ab943c61b8d4f03391b524181c2d7738ac315797
+  src/models/createsmtpconfigop.ts:
+    last_write_checksum: sha1:8c61916095139efd65d8afbad060f5165538f979
+  src/models/createsubfolderop.ts:
+    last_write_checksum: sha1:a918b335a5039ea08843b03b4af2dfbdca4eb396
+  src/models/createteamop.ts:
+    last_write_checksum: sha1:e403a5be760594c2724695cca621dbd3d01b36c8
+  src/models/createtoolsetop.ts:
+    last_write_checksum: sha1:132a38d476d8583e490a5755641908560c4992d8
+  src/models/createusergroupop.ts:
+    last_write_checksum: sha1:eea52eee8b1eb0182b90bece35d9dd866e7389d3
+  src/models/createuserop.ts:
+    last_write_checksum: sha1:4780b5729739ebb57e5bea47df0ed0d1cf2c54a8
+  src/models/customscheduleconfig.ts:
+    last_write_checksum: sha1:390c32227755fb8137ebb314a8baeaf654bcfae1
+  src/models/customsystemprompt.ts:
+    last_write_checksum: sha1:8da33570c8ec4b293555f961a95acdeb6f78d7b2
+  src/models/dailyscheduleconfig.ts:
+    last_write_checksum: sha1:8b4ff516177b71769c5a7df0fa320dc0ab93190b
+  src/models/deleteagentconversationop.ts:
+    last_write_checksum: sha1:5d66aa4c7f6bfcbd6d9ffae070b2a7d05cf7827c
+  src/models/deleteagentop.ts:
+    last_write_checksum: sha1:2dc68238eaaa032c7cf5edf3375ced7ebb24805e
+  src/models/deleteagenttemplateop.ts:
+    last_write_checksum: sha1:dfb0ec1bb54adac9fb3719a0dc95c3eb21342f09
+  src/models/deleteaimodelproviderop.ts:
+    last_write_checksum: sha1:2b100eff458636a4b051ad08f6e10d3b7acce9fe
+  src/models/deleteallsearchhistoryop.ts:
+    last_write_checksum: sha1:9dbdf8bfeb90df697bfcbc8a25d6b9c7468b8971
+  src/models/deleteconnectorinstanceop.ts:
+    last_write_checksum: sha1:163af22192ff9d2123934897b97861f2e8a763ba
+  src/models/deleteconversationbyidop.ts:
+    last_write_checksum: sha1:0baad52b3411c4491fd5fce6944a720f6fd77909
+  src/models/deletefolderop.ts:
+    last_write_checksum: sha1:5afe44441470f8e8217032f53fcaee0e915edf67
+  src/models/deletekbpermissionsop.ts:
+    last_write_checksum: sha1:56e1e209d6c864093b6ccd15b02329ace3d31c10
+  src/models/deleteknowledgebaseop.ts:
+    last_write_checksum: sha1:72b25ed674f536ed3babb18a3ccc4efafa58e9d4
+  src/models/deleteoauthappop.ts:
+    last_write_checksum: sha1:dabd9085563457c03a687b70fec575bb6ea0f3ec
+  src/models/deleteoauthconfigop.ts:
+    last_write_checksum: sha1:7b08a0dcec7a866bb4eae0bae3118d3dd1537f2d
+  src/models/deleteorganizationlogoop.ts:
+    last_write_checksum: sha1:6e94edfa9fb7a489557415e9a9eea83975211a48
+  src/models/deleteorganizationop.ts:
+    last_write_checksum: sha1:4b222067c00dedaf2d1d1fd3230034cc71483f35
+  src/models/deleterecordop.ts:
+    last_write_checksum: sha1:c63b4e78fd05c3aa1ba72a591ec2605e19c62279
+  src/models/deleteteamop.ts:
+    last_write_checksum: sha1:73cd8517581739e9fb23a8e12f1b7d3260df949f
+  src/models/deletetoolsetconfigop.ts:
+    last_write_checksum: sha1:d88f914f94b52ab2d58ed82dcef231417d648aac
+  src/models/deleteusergroupop.ts:
+    last_write_checksum: sha1:14845b5893565eac8c4ff67486b466c1a2a11509
+  src/models/deleteuserop.ts:
+    last_write_checksum: sha1:4d8c115a10895f1b44be27f765c08ba1edf87462
+  src/models/downloaddocumentop.ts:
+    last_write_checksum: sha1:172bf255ce6ccd45e017923024944f4f6f6825c6
+  src/models/errors/apierror.ts:
+    last_write_checksum: sha1:1a4199dec47757c19b2e88dbd767d7f24ab9522a
+  src/models/errors/httpclienterrors.ts:
+    last_write_checksum: sha1:994ced121c54fecd0af038ccfb7855fbfd3868ec
+  src/models/errors/sdkvalidationerror.ts:
+    last_write_checksum: sha1:ce8bb73a1243f8ea8fa3b71a181e586e29dd02c9
+  src/models/exchangeoauthcodeop.ts:
+    last_write_checksum: sha1:5e93193edd151e5055c2b392c05f8b837b54fbc9
+  src/models/featureflag.ts:
+    last_write_checksum: sha1:c757b72a18de5de23ad48e7dc18f4ceaeee586d8
+  src/models/filteroptions.ts:
+    last_write_checksum: sha1:2bdafc91f35a39f679572eff7f94794ec7790b74
+  src/models/filters.ts:
+    last_write_checksum: sha1:b98a80493b377b1f001943505e17cb342e52a93e
+  src/models/folder.ts:
+    last_write_checksum: sha1:5166a971a7b40e0066000982de98a7663b9cb1ad
+  src/models/followupquestion.ts:
+    last_write_checksum: sha1:1cbbbe3219f0e2cfd7e915a2684bae7bfe13fd47
+  src/models/forgotpasswordop.ts:
+    last_write_checksum: sha1:e4e40cb4231585ef17b7d7a6b6325b34e93f3b48
+  src/models/forgotpasswordrequest.ts:
+    last_write_checksum: sha1:f8421b5e5910f4af678159ad769d017aef571a33
+  src/models/generateloginotpop.ts:
+    last_write_checksum: sha1:113bdac630e6f0e4fceeb633640a8865846159a8
+  src/models/genericoauthconfig.ts:
+    last_write_checksum: sha1:1cd94b7108edfd885b990a50ab0fdf9278ab3e26
+  src/models/getagentconversationop.ts:
+    last_write_checksum: sha1:67913fe319d307bad83cd76cf32bfd0ee38ba201
+  src/models/getagentop.ts:
+    last_write_checksum: sha1:c39c51ee1783f153d4f9feab9fab3a10f1f752bf
+  src/models/getagentpermissionsop.ts:
+    last_write_checksum: sha1:3257465c1e299851b3ee5407a4c7ebdbfba36f03
+  src/models/getagenttemplateop.ts:
+    last_write_checksum: sha1:cc1c2d58ae46c2a5c547fa9c9fad19087ae1dcf9
+  src/models/getallconversationsop.ts:
+    last_write_checksum: sha1:730ff052984c351ad64da22f1158d3351a3c3537
+  src/models/getallrecordsop.ts:
+    last_write_checksum: sha1:bba08bbed0126ea4e75807aa3842406666bdeaf5
+  src/models/getallusergroupsop.ts:
+    last_write_checksum: sha1:be65ea82d17404715847c6cb338822cf4175a9a6
+  src/models/getallusersop.ts:
+    last_write_checksum: sha1:1c57947c06157f862022d47fc0bc303e8bb39e6a
+  src/models/getarchivedconversationsop.ts:
+    last_write_checksum: sha1:83eb2d67db112f323a6795db5e6ae17fc48b89a9
+  src/models/getavailablefeatureflagsop.ts:
+    last_write_checksum: sha1:9f34bacee520c78d4ae06d334b23186771fd2a07
+  src/models/getavailablemodelsbytypeop.ts:
+    last_write_checksum: sha1:427a726fea4f5bb66513893373565b939e6dc16d
+  src/models/getazureadauthconfigop.ts:
+    last_write_checksum: sha1:c05b558d58c98231e28e6a003d5e781bca895279
+  src/models/getconnectorconfigop.ts:
+    last_write_checksum: sha1:ee022c3809b5f41db8faa1f1ae82e84f86b6ae9a
+  src/models/getconnectorfiltersop.ts:
+    last_write_checksum: sha1:91fe77f755a44022ca4d6a927de21a766c171beb
+  src/models/getconnectorinstanceop.ts:
+    last_write_checksum: sha1:919cd6ad4a947077ae438cd930f0a414e2a0382d
+  src/models/getconnectorpublicurlop.ts:
+    last_write_checksum: sha1:b59dc452f7235c4059a8582ac69a37367baef99f
+  src/models/getconnectorregistryop.ts:
+    last_write_checksum: sha1:35197787914113f4156034a6e2f5777ad25cf3e8
+  src/models/getconnectorschemaop.ts:
+    last_write_checksum: sha1:958d4ab8eab381543dacd43e26a06d2318a5912e
+  src/models/getconnectorstatsop.ts:
+    last_write_checksum: sha1:b8f6b3e47ecffcd48048247d90647f03f894a4ea
+  src/models/getconversationbyidop.ts:
+    last_write_checksum: sha1:b60314a7b5f786f69e8d93b84485a82db1c832b0
+  src/models/getcrawlingjobstatusop.ts:
+    last_write_checksum: sha1:e620ab7e421bc41be8105962d9b34642394383df
+  src/models/getcurrentorganizationop.ts:
+    last_write_checksum: sha1:d7b2d56c38481a8dd3ab8f9675e92dc99da563bc
+  src/models/getcustomsystempromptop.ts:
+    last_write_checksum: sha1:e0ff3b00df4d4458ee13b927675ac3176aaae19d
+  src/models/getfilterfieldoptionsop.ts:
+    last_write_checksum: sha1:3db47dc3028235412787d79a3b4875c6fdb49e9b
+  src/models/getfolderchildrenop.ts:
+    last_write_checksum: sha1:9279f9aa4307b04ea0b3d5306186f96fa6343d72
+  src/models/getfoldercontentsop.ts:
+    last_write_checksum: sha1:45a2d87e6cb2b9e6fb642e6f94cf4c1345be9434
+  src/models/getfrontendpublicurlop.ts:
+    last_write_checksum: sha1:2b50e70bce798832de4622137e80236d3eac3424
+  src/models/getgenericoauthconfigop.ts:
+    last_write_checksum: sha1:f3925fcc169f5ae82b2a4a4ebfdb16b2ff78aceb
+  src/models/getgoogleauthconfigop.ts:
+    last_write_checksum: sha1:f573e9b6a52798837fe80f33feb3e71071204734
+  src/models/getgroupsforuserop.ts:
+    last_write_checksum: sha1:eda768869b4ee34998ed9bfe8abf691034a415e3
+  src/models/getkbchildrenop.ts:
+    last_write_checksum: sha1:13bc7d7000226c952aa6013cd73503f6ffe09ecd
+  src/models/getkbrecordsop.ts:
+    last_write_checksum: sha1:75517e0579a303e520050f7f5002206a93719d6d
+  src/models/getknowledgebaseop.ts:
+    last_write_checksum: sha1:3930bb5b67145841e2d39f554cca77193b43deee
+  src/models/getknowledgehubchildnodesop.ts:
+    last_write_checksum: sha1:1880b25c7c02476969600f634b63f4284a005d6a
+  src/models/getknowledgehubrootnodesop.ts:
+    last_write_checksum: sha1:dca0f6f5a0da708fb7c33081009df83965222c46
+  src/models/getmetricscollectionop.ts:
+    last_write_checksum: sha1:ec4e9fe4910c7e0beb28be53d216af7a5b9d8759
+  src/models/getmicrosoftauthconfigop.ts:
+    last_write_checksum: sha1:956e0030270ee8b91bcbfcf172b017be124c33e9
+  src/models/getmodelsbytypeop.ts:
+    last_write_checksum: sha1:f16a9306cbaa34a86a50467f8c6e8ea6ddfe6d7d
+  src/models/getoauthappop.ts:
+    last_write_checksum: sha1:95bce74840a0cc834440f384ffae70e3e404ec27
+  src/models/getoauthauthorizationurlop.ts:
+    last_write_checksum: sha1:cc16ae113ec3d93238ed5c1eee545daaf4bc79d0
+  src/models/getoauthconfigop.ts:
+    last_write_checksum: sha1:8644e73a2263d4a1613df6a8aab45bc2a4a58616
+  src/models/getoauthconnectortypeop.ts:
+    last_write_checksum: sha1:21106981fc39e517a4b683ae5b7d185a2a3eec21
+  src/models/getoauthregistryop.ts:
+    last_write_checksum: sha1:743a2b7c2053e58402b11596472bfe6705eda78a
+  src/models/getonboardingstatusop.ts:
+    last_write_checksum: sha1:d878fed8857a75575368650cb54eef0dc888bf6b
+  src/models/getorganizationlogoop.ts:
+    last_write_checksum: sha1:f8db56b43e8d06098dd562e25d181c438bb5a3a9
+  src/models/getplatformsettingsop.ts:
+    last_write_checksum: sha1:09f0396fc903de78e8f77bf75457d8ad0a9a747e
+  src/models/getrecordbyidop.ts:
+    last_write_checksum: sha1:83a96ed7d5c0081adefda87de04a6f7566d333ae
+  src/models/getsmtpconfigop.ts:
+    last_write_checksum: sha1:d29aaab6257f575d2c3b0e087a428278121bb4b8
+  src/models/getssoauthconfigop.ts:
+    last_write_checksum: sha1:7ec5511f977cab3a2552e0f3f228b794a9965114
+  src/models/getstorageconfigop.ts:
+    last_write_checksum: sha1:409234838f1c9ba50a486b8e3cb05aefcd1a1441
+  src/models/getteambyidop.ts:
+    last_write_checksum: sha1:e7969d0bf874887a5f63552b99c7706050ba7556
+  src/models/gettoolsetconfigop.ts:
+    last_write_checksum: sha1:fc38425f1433dd0ee9263d8e72e127dcc588e333
+  src/models/gettoolsetoauthurlop.ts:
+    last_write_checksum: sha1:d3a86246cd65aff95a9ac0ee56951257ecf9f252
+  src/models/gettoolsetschemaop.ts:
+    last_write_checksum: sha1:c55ed1d6680e5065016041123786899ec65af71d
+  src/models/getuploadlimitsop.ts:
+    last_write_checksum: sha1:58a548df7091837a3725b5b5bc60f0b1960315c5
+  src/models/getuserbyidop.ts:
+    last_write_checksum: sha1:18388580cb133e5e753d7f18c15215fa0086d7f0
+  src/models/getuserdisplaypictureop.ts:
+    last_write_checksum: sha1:3d1ace8092cdfaa31b3f45a6befe637fb61c1f56
+  src/models/getuseremailbyidop.ts:
+    last_write_checksum: sha1:4234f9302cadae5a897c876ba0608ae9f3d628cc
+  src/models/getusergroupbyidop.ts:
+    last_write_checksum: sha1:663efaefbbab10670e2ba442615626bc5e6e73d7
+  src/models/getuserteamsop.ts:
+    last_write_checksum: sha1:5caef8220708eedc425be0e202165e81328d51d0
+  src/models/googleauthconfig.ts:
+    last_write_checksum: sha1:7ec676155b2c39bb5f8fc4227e59f566cd01f2b4
+  src/models/handleoauthcallbackop.ts:
+    last_write_checksum: sha1:82ce895bbd4d6aec779175a48fe334e7b6b1bdad
+  src/models/handletoolsetoauthcallbackop.ts:
+    last_write_checksum: sha1:173ea8ebb63ef9d5891e3402326db6233f04c6ea
+  src/models/hourlyscheduleconfig.ts:
+    last_write_checksum: sha1:ec7a789a5f78cf6ab7e238e59ec069c403b559b1
+  src/models/initauthop.ts:
+    last_write_checksum: sha1:a76a073599a77cc2725f73055ad7dcffdcf6b2c3
+  src/models/initauthrequest.ts:
+    last_write_checksum: sha1:421169fa3830e81ecafcf9fe953934743222157e
+  src/models/initauthresponse.ts:
+    last_write_checksum: sha1:e7de1bc1632e61f077f4ec4e4878fbc54795b019
+  src/models/jobstatus.ts:
+    last_write_checksum: sha1:aaa081952cd53386d5838b759912d0447b06864b
+  src/models/jwk.ts:
+    last_write_checksum: sha1:0c8bae81971cf7e4062873293794f819682258a9
+  src/models/jwks.ts:
+    last_write_checksum: sha1:46d140de90d923d10c5d03583282c7480ec1f694
+  src/models/jwksop.ts:
+    last_write_checksum: sha1:0c2e4942a4610172c6f519822ae4d00403e11451
+  src/models/kbpermission.ts:
+    last_write_checksum: sha1:631259d10851b2f99098aea02bdfe7cd5ff65668
+  src/models/knowledgebase.ts:
+    last_write_checksum: sha1:40bdb36d9c84689143af0303a791e3188132ba9a
+  src/models/knowledgehubnode.ts:
+    last_write_checksum: sha1:1c4e452631ccbc8833861278e9a8790d3513fc73
+  src/models/listactiveagentconnectorsop.ts:
+    last_write_checksum: sha1:580aa47a8ea0c3a3f269edb2142233aab58c465e
+  src/models/listactiveconnectorsop.ts:
+    last_write_checksum: sha1:5eb0c7a54fb70129c0ab55c20c1589e38a0a8cad
+  src/models/listagentconversationsop.ts:
+    last_write_checksum: sha1:8e14edf24a7191a56a7fb51824bf2106aa7bb954
+  src/models/listagentsop.ts:
+    last_write_checksum: sha1:d10daa8df388416bcdb4a5700566639873a1b6e6
+  src/models/listagenttemplatesop.ts:
+    last_write_checksum: sha1:c2b98902df2ec73f1cbe64cfd1910d8d4aced4a3
+  src/models/listagenttoolsop.ts:
+    last_write_checksum: sha1:8b0e4ee1882a566a67693a184e06db16d2d15461
+  src/models/listconfiguredconnectorsop.ts:
+    last_write_checksum: sha1:875cc50ce99b019a0e34cf37598478184fcd370a
+  src/models/listconfiguredtoolsetsop.ts:
+    last_write_checksum: sha1:53f858ebc7af8ab66588120b3f41bf409f95d49e
+  src/models/listconnectorinstancesop.ts:
+    last_write_checksum: sha1:e490daf695dc1c0e54e12fcde15bd136508f247c
+  src/models/listinactiveconnectorsop.ts:
+    last_write_checksum: sha1:b5550b2fc61275c3ed98a7762e29e79ffd9f4e2b
+  src/models/listkbpermissionsop.ts:
+    last_write_checksum: sha1:de5129d36b1021c84eb802422d16735046d19caa
+  src/models/listknowledgebasesop.ts:
+    last_write_checksum: sha1:27e626bb7f4f9fdfd8cf56ab73ee7b6e69911fd4
+  src/models/listoauthappsop.ts:
+    last_write_checksum: sha1:67c7d2f07f092f1ceffdebc13b6e56efc0a4f5e5
+  src/models/listoauthapptokensop.ts:
+    last_write_checksum: sha1:b1534cf2d6c898d63d4d38c4a3f8497babadd5f8
+  src/models/listoauthconfigsbytypeop.ts:
+    last_write_checksum: sha1:2d5b51f76d5a669f8960ad4634dd8dabeed8d008
+  src/models/listoauthconfigsop.ts:
+    last_write_checksum: sha1:2c0543df8a8fe94b40dada961a8b4c3d6537d419
+  src/models/listteamsop.ts:
+    last_write_checksum: sha1:08cd4c963267e384cc3ede2376f79ee8b8257699
+  src/models/listtoolsetregistryop.ts:
+    last_write_checksum: sha1:76bf061be752a9d5602488a84ced106767c7b4db
+  src/models/listusersgraphop.ts:
+    last_write_checksum: sha1:0131ffd68c2bf4989dec60142a76eeffc884e3dc
+  src/models/logoutop.ts:
+    last_write_checksum: sha1:9192b16a49bce12b0035414213b2ec0514db86d2
+  src/models/message.ts:
+    last_write_checksum: sha1:2c05b484991b265a094858cbf19fcc57a48175f5
+  src/models/messagefeedback.ts:
+    last_write_checksum: sha1:33c93ae9cbcc8e60625cbaa567123f7371a7445b
+  src/models/metricscollectionconfig.ts:
+    last_write_checksum: sha1:02e9c33b0e6c53ecca00e418851eb0488f9e43d5
+  src/models/microsoftauthconfig.ts:
+    last_write_checksum: sha1:038c4fa49fbbce215b2e723776aa68a909821d1b
+  src/models/modeltype.ts:
+    last_write_checksum: sha1:cb2ad290bd9eddf5ccb1019b80612181fc25c8ad
+  src/models/monthlyscheduleconfig.ts:
+    last_write_checksum: sha1:f4dc4aa437c43de0bc270385144f7ba4c5a389b0
+  src/models/oauthapplistresponse.ts:
+    last_write_checksum: sha1:be69aa4abbd496babb093503f58a636564ae3ede
+  src/models/oauthappresponse.ts:
+    last_write_checksum: sha1:7fab811c275433797cfb475f99639606348a43b9
+  src/models/oauthappwithsecret.ts:
+    last_write_checksum: sha1:3bbca1c1003e52be4d0d64ddf65d014d4a1614ad
+  src/models/oauthauthorizeconsentop.ts:
+    last_write_checksum: sha1:b6d434b809ec7ec2f157d3705747bfab9ae7d268
+  src/models/oauthauthorizeop.ts:
+    last_write_checksum: sha1:e66df7a475b27c1bdd3adbb62e6695008301b545
+  src/models/oauthconfig.ts:
+    last_write_checksum: sha1:5154753281afa7cd797db80127c04970db23d8ba
+  src/models/oauthconsentrequest.ts:
+    last_write_checksum: sha1:cb3417318b263d5d56594f90d13b7743db114fce
+  src/models/oauthcredentials.ts:
+    last_write_checksum: sha1:5986716f2b62a14518f6ccd45982b98ba0c99d96
+  src/models/oautherrorresponse.ts:
+    last_write_checksum: sha1:ab6fcb2338b78d5ac9ac138ec4618d495339c252
+  src/models/oauthexchangerequest.ts:
+    last_write_checksum: sha1:104361eb937ad632d0c6f7f3b6738b04d26a38c0
+  src/models/oauthexchangeresponse.ts:
+    last_write_checksum: sha1:01f7f332a673b746a3b70b8b8e81f12194fdd9da
+  src/models/oauthintrospectop.ts:
+    last_write_checksum: sha1:4e6b0e4008c4846042a2cf891818f0e4396d2da5
+  src/models/oauthintrospectrequest.ts:
+    last_write_checksum: sha1:955e948c6bee19bf10c458315f1b41d905646190
+  src/models/oauthintrospectresponse.ts:
+    last_write_checksum: sha1:5ff52752a53adc3368acf46ab0436f086b204b76
+  src/models/oauthrevokerequest.ts:
+    last_write_checksum: sha1:bf35691ed44bd8ed99f420cf7b9de6dea577aa0f
+  src/models/oauthscopeinfo.ts:
+    last_write_checksum: sha1:0d7a2ddf73a40534db4bee10358e6ca2331adfa4
+  src/models/oauthtokenlistitem.ts:
+    last_write_checksum: sha1:1bfcb485fc82c2f813364e875baa766f6031de68
+  src/models/oauthtokenop.ts:
+    last_write_checksum: sha1:cbf86c8e7c5f239008a12ad17aa7b1d98965bd21
+  src/models/oauthtokenrequest.ts:
+    last_write_checksum: sha1:ae296a067fec4c0167cfe3b1cd5aab4c99ec366b
+  src/models/oauthtokenresponse.ts:
+    last_write_checksum: sha1:ff208a4ff0fa1706592a8e2f49a2fa9ff3722663
+  src/models/oauthuserinforesponse.ts:
+    last_write_checksum: sha1:8afc6584ddf40b82a7d7f15132038b744769823c
+  src/models/oncescheduleconfig.ts:
+    last_write_checksum: sha1:c918df150934128efb37f8f1d8b5a3ebf7768e9b
+  src/models/openidconfiguration.ts:
+    last_write_checksum: sha1:caa59bc1f17381a00120c6b5917a2eeee7fa553c
+  src/models/openidconfigurationop.ts:
+    last_write_checksum: sha1:fef39ac8fc62a2c4b9542c82eea56c1d493e03c6
+  src/models/organization.ts:
+    last_write_checksum: sha1:e9ea4aa8f03a061eeacdd6481b1b6d23fafce410
+  src/models/otpcredentials.ts:
+    last_write_checksum: sha1:6350c11c0cb4d9ef09f2e382cfa737ebb62013d2
+  src/models/otpgeneraterequest.ts:
+    last_write_checksum: sha1:16b0af6a35bd70ddd357eb78f5b086eb30bd6bb4
+  src/models/paginationinfo.ts:
+    last_write_checksum: sha1:160f2018934e5485a8ab1766b2ce2949ff89b989
+  src/models/passwordcredentials.ts:
+    last_write_checksum: sha1:27af2bd8c425412a2bf303e54a8311047ded1b67
+  src/models/passwordresetresponse.ts:
+    last_write_checksum: sha1:1951bdd4a03be163e0dc0df0cbcf4843aa0f74b3
+  src/models/platformsettings.ts:
+    last_write_checksum: sha1:a41b3846365b28e6015c5622c7ce0c963671f061
+  src/models/record.ts:
+    last_write_checksum: sha1:670d70afb9f1f35e635e6b6bb1ba64517e46b4a9
+  src/models/recordsresponse.ts:
+    last_write_checksum: sha1:20bd14dcad52c64bff201912e1594263bbe6bb8b
+  src/models/refreshtokenop.ts:
+    last_write_checksum: sha1:9874407f177a22255016017cc8a79097a4af052c
+  src/models/refreshtokenresponse.ts:
+    last_write_checksum: sha1:442d83c57c6778df4e80a95d6fce49d89f0694f7
+  src/models/regenerateagentanswerop.ts:
+    last_write_checksum: sha1:eea90deefed493cf41dfcdaa2e051c537518921e
+  src/models/regenerateanswerop.ts:
+    last_write_checksum: sha1:cd2a9f3307c12547b418a7c8f06a3a3c66949551
+  src/models/regenerateoauthappsecretop.ts:
+    last_write_checksum: sha1:58a41d80a57787d2f79e0bef6f2e35bfee77831e
+  src/models/reindexrecordgroupop.ts:
+    last_write_checksum: sha1:cd986d6e405f9787585800ef9e75b79da21b7b82
+  src/models/reindexrecordop.ts:
+    last_write_checksum: sha1:284b5807af160ffbe4784777fd9083de4c1a443b
+  src/models/removecrawlingjobop.ts:
+    last_write_checksum: sha1:147505bc272ef5577a91c2a7295d8fb45bd7f399
+  src/models/removeuserdisplaypictureop.ts:
+    last_write_checksum: sha1:be3f629b0ded81d2817d337f2697983d6c6b2461
+  src/models/removeusersfromgroupop.ts:
+    last_write_checksum: sha1:475d809b366373cd437012712be768f0e0681d2d
+  src/models/resenduserinviteop.ts:
+    last_write_checksum: sha1:6565d14b923e9e0686e863d8969981a5e7660606
+  src/models/resetpasswordwithtokenop.ts:
+    last_write_checksum: sha1:452b7227b497f25722bf1c9f6abbe7e5955d27a1
+  src/models/resyncconnectorop.ts:
+    last_write_checksum: sha1:b3547dc047a1a4c0d999d6b4c00d00f1e36d41dd
+  src/models/revokealloauthapptokensop.ts:
+    last_write_checksum: sha1:59bea854639210829e1c8c578cd1c21e6b29eff7
+  src/models/saveconnectorfiltersop.ts:
+    last_write_checksum: sha1:52cb7b96b9bc80ca35715a7ecbfb4c8e654fc3d6
+  src/models/saveconnectorfiltersrequest.ts:
+    last_write_checksum: sha1:2473e3f376ed2f01ade791e7f467394bb379fedd
+  src/models/savetoolsetconfigop.ts:
+    last_write_checksum: sha1:21101877d65df711da595f806e72b0c10e2f011d
+  src/models/scheduleconfig.ts:
+    last_write_checksum: sha1:f2ba5bab02c64b8888739805b09dd0bc6da5aa4e
+  src/models/schedulecrawlingjobop.ts:
+    last_write_checksum: sha1:67df7c31d3b27a91338f452baaa62550ca344024
+  src/models/schemeoauth2.ts:
+    last_write_checksum: sha1:7216337ca4dd9036e3b07cbb54c8164aaba3a59e
+  src/models/searchhistoryop.ts:
+    last_write_checksum: sha1:80d377a1aa4571648fd071203a348d3b9c5e045e
+  src/models/searchop.ts:
+    last_write_checksum: sha1:fd38624d8e746f214461bc5011b0f137e289aad0
+  src/models/searchresult.ts:
+    last_write_checksum: sha1:7b9752b943d11d595d1eb03d79f5b612a967ba7f
+  src/models/searchresultitem.ts:
+    last_write_checksum: sha1:c5169ff61aac879bdaceda52ef647ea567f89fc2
+  src/models/security.ts:
+    last_write_checksum: sha1:606ff4701d7b6e60cebd6f87e363029067cc578b
+  src/models/semanticsearchrequest.ts:
+    last_write_checksum: sha1:cdde781928de2e2eccd6b705328248f09db5f23a
+  src/models/setazureadauthconfigop.ts:
+    last_write_checksum: sha1:0a523b680fa765c42ea7bd4cf0a2b4d232c887ad
+  src/models/setconnectorpublicurlop.ts:
+    last_write_checksum: sha1:46c44066d473a19ec47f82bb7a9cf4a23ff51bc7
+  src/models/setcustomsystempromptop.ts:
+    last_write_checksum: sha1:5b639e33aae655a2112d9fcab357895162f24373
+  src/models/setdefaultaimodelop.ts:
+    last_write_checksum: sha1:7c544b548c81d78368fc2327256750378cad6cba
+  src/models/setfrontendpublicurlop.ts:
+    last_write_checksum: sha1:57290507069f5b3741d330ab02e149d0917ad2d1
+  src/models/setgoogleauthconfigop.ts:
+    last_write_checksum: sha1:02d73eabb83868bc847326b23d786a23bf548d13
+  src/models/setmicrosoftauthconfigop.ts:
+    last_write_checksum: sha1:91bcf01a58ef0e4024fc16d934002c02395f8c57
+  src/models/setoauthconfigop.ts:
+    last_write_checksum: sha1:34d76080baa1577e62ffe4becfeb7f62a3342011
+  src/models/setplatformsettingsop.ts:
+    last_write_checksum: sha1:ce0fe13660da0b072c0f4583a0b41f351f64986e
+  src/models/setssoauthconfigop.ts:
+    last_write_checksum: sha1:1f5aea35a17b3ab8bf37c159cc34bc4d3193a438
+  src/models/shareagentop.ts:
+    last_write_checksum: sha1:c07dc3fe130403ebb368c7b556ec14335aaac87c
+  src/models/shareconversationop.ts:
+    last_write_checksum: sha1:4e97b08fe2de697215513c76124f148a30a9d737
+  src/models/sharerequest.ts:
+    last_write_checksum: sha1:50b91948f70a6367c2ed8e9ba90e6a2c796f5ca5
+  src/models/signinviasamlop.ts:
+    last_write_checksum: sha1:c691ddda5a5be08887e1386011b394c500de0800
+  src/models/smtpconfig.ts:
+    last_write_checksum: sha1:ff2eddee1d5bacea7ca7ce01b2a3a115cc3d42d9
+  src/models/ssoauthconfig.ts:
+    last_write_checksum: sha1:3dc7eb231bb2a0a6ce5a890c426faba0141d48ef
+  src/models/streamrecordbufferop.ts:
+    last_write_checksum: sha1:8db11cc110cb34fc9491499099e26459f664c1a7
+  src/models/suspendoauthappop.ts:
+    last_write_checksum: sha1:fcbf696ceb8eb868f1dc1ffcac617fa4bf4528a4
+  src/models/team.ts:
+    last_write_checksum: sha1:985325ad869ba6a536af1c184b9c830be6783637
+  src/models/toggleconnectorop.ts:
+    last_write_checksum: sha1:c6211c69914cd36d177c52b0ab433612967f55a1
+  src/models/togglemetricscollectionop.ts:
+    last_write_checksum: sha1:2baecdf01f679433621a01ac4c2ee40910352f75
+  src/models/tokenpasswordresetrequest.ts:
+    last_write_checksum: sha1:2249580323d1ff9b3942ed833b8db44811d5dafc
+  src/models/unarchiveconversationop.ts:
+    last_write_checksum: sha1:93d77ebc9c742eb916438ecfe82390266db5c3c5
+  src/models/unblockuserop.ts:
+    last_write_checksum: sha1:21a3931ae7c8bcdbfeb9a7f791288f53771957c8
+  src/models/updateagentop.ts:
+    last_write_checksum: sha1:a642d68b91879c83a11dde20d66e224ebcd2db97
+  src/models/updateagentpermissionsop.ts:
+    last_write_checksum: sha1:8cda1b15a721c6472f7e4ebf04e26e4587008a70
+  src/models/updateagenttemplateop.ts:
+    last_write_checksum: sha1:acd00655e72c6b193c2792782aaa2e4283d502cf
+  src/models/updateaimodelproviderop.ts:
+    last_write_checksum: sha1:4e67a6dca92b12c793bfe81506136c9b6077d198
+  src/models/updateaimodelproviderrequest.ts:
+    last_write_checksum: sha1:2373dff998620e146986aa61d5988ead470bf67b
+  src/models/updateauthmethodop.ts:
+    last_write_checksum: sha1:3c45d520ecc707ab11bd5bea25814a313265b5ca
+  src/models/updateconnectorauthconfigop.ts:
+    last_write_checksum: sha1:18554722af67fa9fdfc59e34427bf8172cd99431
+  src/models/updateconnectorauthrequest.ts:
+    last_write_checksum: sha1:7b9949b2e608ce10d8b08d54e26b15d7b7982916
+  src/models/updateconnectorconfigop.ts:
+    last_write_checksum: sha1:1b3cf127074f4ae665c88d181d4dd2015870f370
+  src/models/updateconnectorconfigrequest.ts:
+    last_write_checksum: sha1:0a643c2eaeec8954f6fa9213f967c4bae1ee64a5
+  src/models/updateconnectorfilterssyncconfigop.ts:
+    last_write_checksum: sha1:7f4f4344e037520d7a0112ff2df2e75568131979
+  src/models/updateconnectorfilterssyncrequest.ts:
+    last_write_checksum: sha1:747a0acc7e73d5f005a45a1fdc81d851930d29de
+  src/models/updateconnectornameop.ts:
+    last_write_checksum: sha1:f9c9e671944d081c0444115afafe6f67cac55036
+  src/models/updateconnectornamerequest.ts:
+    last_write_checksum: sha1:91f7b8d2006b61bbf2136987092f69834d1cad5d
+  src/models/updateconversationtitleop.ts:
+    last_write_checksum: sha1:2b177af11f4047fb64ea049df2b1d2280b21b569
+  src/models/updatefolderop.ts:
+    last_write_checksum: sha1:4fc1944f1a1cf86f87528ecbda805f2028858131
+  src/models/updatekbpermissionsop.ts:
+    last_write_checksum: sha1:e5a5325133efb017d4fcafffcf32d4ae66be2f12
+  src/models/updateknowledgebaseop.ts:
+    last_write_checksum: sha1:e53f0defef883493f42ed0d5f42993aa5472439c
+  src/models/updatemessagefeedbackop.ts:
+    last_write_checksum: sha1:c5dbbc49e5e5a5a3b808c0d402065a03ed55dfc6
+  src/models/updateoauthappop.ts:
+    last_write_checksum: sha1:447a72efc90987a808b1af76aec793a997ad3258
+  src/models/updateoauthapprequest.ts:
+    last_write_checksum: sha1:c1738450aa2326ae97e6e5f57e9e13abf7d7c925
+  src/models/updateoauthconfigop.ts:
+    last_write_checksum: sha1:0c649c8d61bd9948574efabf89172b51269ce731
+  src/models/updateonboardingstatusop.ts:
+    last_write_checksum: sha1:4820af17e9d88c464e60c6095c7f1130347ce3c1
+  src/models/updateorganizationop.ts:
+    last_write_checksum: sha1:ae4457da48d3c90ca5ed8b53bbf06ef84388e82a
+  src/models/updaterecordop.ts:
+    last_write_checksum: sha1:b3a3aa19b8baf47635c89f3aeb06de6cf651587f
+  src/models/updateteamop.ts:
+    last_write_checksum: sha1:9aab6aa5cac1f403c3d39161f8d69873b5ec4386
+  src/models/updatetoolsetconfigop.ts:
+    last_write_checksum: sha1:bebb15905272c427adff714975239733ebdd9cdc
+  src/models/updateusergroupop.ts:
+    last_write_checksum: sha1:74a0ebd74eb090d9a8f183a87a706e5a9630d7ef
+  src/models/updateuserop.ts:
+    last_write_checksum: sha1:84d7ff52069013739f8417d9b5ced64462eec49c
+  src/models/uploadorganizationlogoop.ts:
+    last_write_checksum: sha1:af7af4007507bed1230ca55ed41668c62e4b6978
+  src/models/uploadrecordstofolderop.ts:
+    last_write_checksum: sha1:01fed9d97281b5113fec652688158ef8f5599b3c
+  src/models/uploadrecordstokbop.ts:
+    last_write_checksum: sha1:ebf5b8785f629f51a91c5e231d96f3512329035d
+  src/models/uploadresult.ts:
+    last_write_checksum: sha1:299fc59750f16b3b4a4311e61cad79f9e1219541
+  src/models/uploaduserdisplaypictureop.ts:
+    last_write_checksum: sha1:41fefa443fe97811f8c4ce03b9b02f407685bd45
+  src/models/urlconfig.ts:
+    last_write_checksum: sha1:3cccde4db010580d756477af71114acd7158c24b
+  src/models/user.ts:
+    last_write_checksum: sha1:0752ee9cb843dc87f0a2d705e588cb135088f294
+  src/models/userbasic.ts:
+    last_write_checksum: sha1:8cdb0e7fe3f68e3cb428bf4e8e26a32b603b634b
+  src/models/usergroup.ts:
+    last_write_checksum: sha1:789b51d39c3015a3b611d2062be1e9be3f0808fe
+  src/models/userrole.ts:
+    last_write_checksum: sha1:9eadf89daa20460de3e397830cda8522585977c6
+  src/models/weeklyscheduleconfig.ts:
+    last_write_checksum: sha1:694138d81e6fc0570d8aaf8a4b03303ff909a51e
+  src/tool-names.ts:
+    last_write_checksum: sha1:b00e10deb1becbd69df6f40f268fe68a26ba2d95
+  src/types/async.ts:
+    last_write_checksum: sha1:3ff07b3feaf390ec1aeb18ff938e139c6c4a9585
+  src/types/bigint.ts:
+    last_write_checksum: sha1:58178437a7d38f022b5d9bef691ba5539fad4655
+  src/types/blobs.ts:
+    last_write_checksum: sha1:9cc86e0e9420999afb48d53c57d71584be745fd7
+  src/types/enums.ts:
+    last_write_checksum: sha1:384e3fc4bee3f006cd8f39556a44b3508597b8e5
+  src/types/fp.ts:
+    last_write_checksum: sha1:d24994d58f37a1ca106847fcc6d2e976c6f1c093
+  src/types/rfcdate.ts:
+    last_write_checksum: sha1:8e5f382e02fe21c2f2e24deb1b7bbf8cddd3dd16
+  src/types/streams.ts:
+    last_write_checksum: sha1:cc9ced2dd34a76c3a1bd7784ccda1cc3b37ab9a9
+  tsconfig.json:
+    last_write_checksum: sha1:2a1769fabf9e934fa0b118db46d3b66cb500a6b7
+examples:
+  initAuth:
+    speakeasy-default-init-auth:
+      requestBody:
+        application/json: {"email": "user@example.com"}
+      responses:
+        "200":
+          application/json: {"currentStep": 0, "allowedMethods": ["password", "google", "otp"], "message": "Authentication initialized"}
+        "400":
+          application/json: {"error": "INVALID_CREDENTIALS", "message": "The password you entered is incorrect", "code": "AUTH_001", "statusCode": 401}
+  authenticate:
+    speakeasy-default-authenticate:
+      parameters:
+        header:
+          x-session-token: "<value>"
+      requestBody:
+        application/json: {"method": "oauth", "credentials": {"password": "o_5N_tt72qMx3WV"}}
+      responses:
+        "200":
+          application/json: {"message": "Fully authenticated"}
+        "400":
+          application/json: {"error": "INVALID_CREDENTIALS", "message": "The password you entered is incorrect", "code": "AUTH_001", "statusCode": 401}
+  generateLoginOtp:
+    speakeasy-default-generate-login-otp:
+      requestBody:
+        application/json: {"email": "Garland.Sipes42@hotmail.com"}
+      responses:
+        "200":
+          application/json: {"message": "OTP sent to your email"}
+        "400":
+          application/json: {"error": "INVALID_CREDENTIALS", "message": "The password you entered is incorrect", "code": "AUTH_001", "statusCode": 401}
+  forgotPassword:
+    speakeasy-default-forgot-password:
+      requestBody:
+        application/json: {"email": "Barton.Gutkowski68@yahoo.com"}
+      responses:
+        "200":
+          application/json: {"message": "Password reset email sent"}
+  resetPasswordWithToken:
+    speakeasy-default-reset-password-with-token:
+      requestBody:
+        application/json: {"password": "H9GEHoL829GXj06"}
+      responses:
+        "200":
+          application/json: {"data": "password reset"}
+        "400":
+          application/json: {"error": "INVALID_CREDENTIALS", "message": "The password you entered is incorrect", "code": "AUTH_001", "statusCode": 401}
+  refreshToken:
+    speakeasy-default-refresh-token:
+      responses:
+        "200":
+          application/json: {}
+        "401":
+          application/json: {"error": "INVALID_CREDENTIALS", "message": "The password you entered is incorrect", "code": "AUTH_001", "statusCode": 401}
+  logout:
+    speakeasy-default-logout:
+      responses:
+        "200":
+          application/json: {"message": "Logged out successfully"}
+  exchangeOAuthCode:
+    speakeasy-default-exchange-O-auth-code:
+      requestBody:
+        application/json: {"code": "<value>", "email": "Jason2@gmail.com", "provider": "<value>", "redirectUri": "https://enlightened-developing.info"}
+      responses:
+        "200":
+          application/json: {"token_type": "Bearer"}
+        "400":
+          application/json: {"error": "INVALID_CREDENTIALS", "message": "The password you entered is incorrect", "code": "AUTH_001", "statusCode": 401}
+  oauthAuthorize:
+    speakeasy-default-oauth-authorize:
+      parameters:
+        query:
+          response_type: "code"
+          client_id: "<id>"
+          redirect_uri: "https://coordinated-dime.biz/"
+          scope: "openid profile email read:records"
+          state: "Delaware"
+      responses:
+        "400":
+          application/json: {"error": "invalid_client"}
+  oauthAuthorizeConsent:
+    speakeasy-default-oauth-authorize-consent:
+      requestBody:
+        application/json: {"client_id": "<id>", "redirect_uri": "https://excellent-license.com", "scope": "<value>", "state": "South Dakota", "consent": "denied"}
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: {"error": "unauthorized_client"}
+  oauthToken:
+    speakeasy-default-oauth-token:
+      requestBody:
+        application/x-www-form-urlencoded: {"grant_type": "client_credentials"}
+        application/json: {"grant_type": "client_credentials"}
+      responses:
+        "200":
+          application/json: {"token_type": "Bearer", "expires_in": 3600}
+        "400":
+          application/json: {"error": "unsupported_grant_type"}
+  oauthRevoke:
+    speakeasy-default-oauth-revoke:
+      requestBody:
+        application/x-www-form-urlencoded: {"token": "<value>", "client_id": "<id>"}
+        application/json: {"token": "<value>", "client_id": "<id>"}
+      responses:
+        "401":
+          application/json: {"error": "access_denied"}
+  oauthIntrospect:
+    active:
+      requestBody:
+        application/x-www-form-urlencoded: {"token": "<value>", "client_id": "<id>"}
+        application/json: {"token": "<value>", "client_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"active": true, "scope": "openid profile email", "client_id": "abc123", "username": "user@example.com", "token_type": "Bearer", "exp": 1735686000, "iat": 1735682400, "user_id": "user-id-123", "iss": "https://api.pipeshub.com"}
+    inactive:
+      requestBody:
+        application/x-www-form-urlencoded: {"token": "<value>", "client_id": "<id>"}
+        application/json: {"token": "<value>", "client_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"active": false}
+  oauthUserInfo:
+    speakeasy-default-oauth-user-info:
+      responses:
+        "200":
+          application/json: {"user_id": "<id>"}
+  openidConfiguration:
+    speakeasy-default-openid-configuration:
+      responses:
+        "200":
+          application/json: {"scopes_supported": ["openid", "profile", "email", "read:records", "write:records"], "response_types_supported": ["code"], "grant_types_supported": ["authorization_code", "client_credentials", "refresh_token"], "token_endpoint_auth_methods_supported": ["client_secret_basic", "client_secret_post"], "subject_types_supported": ["public"], "id_token_signing_alg_values_supported": ["HS256", "RS256"], "claims_supported": ["user_id", "iss", "aud", "exp", "iat", "email", "name"], "code_challenge_methods_supported": ["S256", "plain"]}
+  jwks:
+    speakeasy-default-jwks:
+      responses:
+        "200":
+          application/json: {"keys": [{"kty": "RSA", "use": "sig", "alg": "RS256", "e": "AQAB"}]}
+  listOAuthApps:
+    speakeasy-default-list-O-auth-apps:
+      parameters:
+        query:
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {}
+  createOAuthApp:
+    speakeasy-default-create-O-auth-app:
+      requestBody:
+        application/json: {"name": "My Integration App", "description": "Integrates PipesHub with our internal tools", "redirectUris": ["https://myapp.com/callback", "http://localhost:3000/callback"], "allowedGrantTypes": ["authorization_code", "refresh_token"], "allowedScopes": ["openid", "profile", "read:records"], "isConfidential": true, "accessTokenLifetime": 3600, "refreshTokenLifetime": 604800}
+      responses:
+        "201":
+          application/json: {"clientSecret": "<value>"}
+  listOAuthScopes:
+    speakeasy-default-list-O-auth-scopes:
+      responses:
+        "200":
+          application/json: [{"name": "read:records", "description": "Read access to records", "category": "Records"}]
+  getOAuthApp:
+    speakeasy-default-get-O-auth-app:
+      parameters:
+        path:
+          appId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  updateOAuthApp:
+    speakeasy-default-update-O-auth-app:
+      parameters:
+        path:
+          appId: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  deleteOAuthApp:
+    speakeasy-default-delete-O-auth-app:
+      parameters:
+        path:
+          appId: "<id>"
+      responses:
+        "200":
+          application/json: {"message": "OAuth app deleted successfully"}
+  regenerateOAuthAppSecret:
+    speakeasy-default-regenerate-O-auth-app-secret:
+      parameters:
+        path:
+          appId: "<id>"
+      responses:
+        "200":
+          application/json: {"clientSecret": "<value>"}
+  suspendOAuthApp:
+    speakeasy-default-suspend-O-auth-app:
+      parameters:
+        path:
+          appId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  activateOAuthApp:
+    speakeasy-default-activate-O-auth-app:
+      parameters:
+        path:
+          appId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listOAuthAppTokens:
+    speakeasy-default-list-O-auth-app-tokens:
+      parameters:
+        path:
+          appId: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  revokeAllOAuthAppTokens:
+    speakeasy-default-revoke-all-O-auth-app-tokens:
+      parameters:
+        path:
+          appId: "<id>"
+      responses:
+        "200":
+          application/json: {"message": "All tokens revoked successfully"}
+  getAuthMethods:
+    speakeasy-default-get-auth-methods:
+      responses:
+        "200":
+          application/json: {"authMethods": [{"order": 216367, "allowedMethods": [{"type": "azureAd"}]}]}
+  updateAuthMethod:
+    speakeasy-default-update-auth-method:
+      requestBody:
+        application/json: {"authMethods": [{"order": 195644, "allowedMethods": [{"type": "samlSso"}]}]}
+      responses:
+        "200":
+          application/json: {"message": "Authentication methods updated"}
+        "400":
+          application/json: {"error": "INVALID_CREDENTIALS", "message": "The password you entered is incorrect", "code": "AUTH_001", "statusCode": 401}
+  signInViaSAML:
+    speakeasy-default-sign-in-via-SAML:
+      parameters:
+        query:
+          email: "Daphney.Koss@hotmail.com"
+  getAllUsers:
+    speakeasy-default-get-all-users:
+      parameters:
+        query:
+          page: 1
+          limit: 50
+      responses:
+        "200":
+          application/json: {"success": true}
+  createUser:
+    speakeasy-default-create-user:
+      requestBody:
+        application/json: {"fullName": "John Smith", "email": "john.smith@company.com", "mobile": "+15551234567", "designation": "Software Engineer", "sendInvite": true}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "User created successfully"}
+  getUserById:
+    speakeasy-default-get-user-by-id:
+      parameters:
+        path:
+          id: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"success": true}
+  updateUser:
+    speakeasy-default-update-user:
+      parameters:
+        path:
+          id: "507f1f77bcf86cd799439011"
+      requestBody:
+        application/json: {"fullName": "John Smith", "firstName": "John", "lastName": "Smith", "email": "john.smith@company.com", "mobile": "+15551234567", "designation": "Senior Software Engineer"}
+      responses:
+        "200":
+          application/json: {"success": true, "message": "User updated successfully"}
+  deleteUser:
+    speakeasy-default-delete-user:
+      parameters:
+        path:
+          id: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"success": true, "message": "User deleted successfully"}
+  getUserEmailById:
+    speakeasy-default-get-user-email-by-id:
+      parameters:
+        path:
+          id: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"success": true, "email": "john.smith@company.com"}
+  uploadUserDisplayPicture:
+    speakeasy-default-upload-user-display-picture:
+      requestBody:
+        multipart/form-data: {"file": "x-file: example.file"}
+      responses:
+        "201":
+          image/jpeg: "0x6FCb75fd2D"
+  getUserDisplayPicture:
+    speakeasy-default-get-user-display-picture:
+      responses:
+        "200":
+          image/jpeg: "0x33aE70cFaF"
+          image/png: "0xCB91A9EbFa"
+  removeUserDisplayPicture:
+    speakeasy-default-remove-user-display-picture:
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Display picture removed successfully"}
+  bulkInviteUsers:
+    speakeasy-default-bulk-invite-users:
+      requestBody:
+        application/json: {"emails": ["user1@company.com", "user2@company.com"], "groupIds": ["507f1f77bcf86cd799439011"], "sendEmail": true}
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Bulk invitation completed", "invited": 8, "skipped": 1, "failed": 1}
+  resendUserInvite:
+    speakeasy-default-resend-user-invite:
+      parameters:
+        path:
+          id: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Invitation resent successfully"}
+  listUsersGraph:
+    speakeasy-default-list-users-graph:
+      parameters:
+        query:
+          page: 1
+          limit: 10
+          search: "john"
+          sortBy: "fullName"
+          sortOrder: "asc"
+      responses:
+        "200":
+          application/json: {"success": true, "pagination": {"page": 1, "limit": 10, "total": 156, "totalPages": 16}}
+  unblockUser:
+    speakeasy-default-unblock-user:
+      parameters:
+        path:
+          id: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"message": "User unblocked successfully"}
+  createTeam:
+    speakeasy-default-create-team:
+      requestBody:
+        application/json: {"name": "Engineering Team", "description": "Core engineering team for product development"}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "Team created successfully"}
+  listTeams:
+    speakeasy-default-list-teams:
+      parameters:
+        query:
+          search: "engineering"
+          limit: 10
+          page: 1
+      responses:
+        "200":
+          application/json: {"success": true}
+  getTeamById:
+    speakeasy-default-get-team-by-id:
+      parameters:
+        path:
+          teamId: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"success": true}
+  updateTeam:
+    speakeasy-default-update-team:
+      parameters:
+        path:
+          teamId: "507f1f77bcf86cd799439011"
+      requestBody:
+        application/json: {"name": "Core Engineering Team", "description": "Primary engineering team for product development"}
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Team updated successfully"}
+  deleteTeam:
+    speakeasy-default-delete-team:
+      parameters:
+        path:
+          teamId: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Team deleted successfully"}
+  getUserTeams:
+    speakeasy-default-get-user-teams:
+      parameters:
+        query:
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {"success": true, "pagination": {"page": 1, "limit": 20, "total": 5}}
+  checkOrgExists:
+    speakeasy-default-check-org-exists:
+      responses:
+        "200":
+          application/json: {"success": true, "exists": true}
+  createOrganization:
+    speakeasy-default-create-organization:
+      requestBody:
+        application/json: {"accountType": "business", "shortName": "Acme", "registeredName": "Acme Corporation Inc.", "contactEmail": "admin@acme.com", "adminFullName": "John Smith", "password": "SecurePassword123!"}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "Organization created successfully"}
+  getCurrentOrganization:
+    speakeasy-default-get-current-organization:
+      responses:
+        "200":
+          application/json: {"success": true}
+  updateOrganization:
+    speakeasy-default-update-organization:
+      requestBody:
+        application/json: {"registeredName": "Acme Corporation Inc.", "shortName": "Acme Corp", "phoneNumber": "+15551234567"}
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Organization updated successfully"}
+  deleteOrganization:
+    speakeasy-default-delete-organization:
+      parameters:
+        query:
+          confirm: "DELETE"
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Organization and all associated data have been permanently deleted"}
+  uploadOrganizationLogo:
+    speakeasy-default-upload-organization-logo:
+      requestBody:
+        multipart/form-data: {"logo": "x-file: example.file"}
+      responses:
+        "200":
+          application/json: {"success": true, "logoUrl": "https://storage.pipeshub.com/org/507f1f77bcf86cd799439011/logo.png"}
+  getOrganizationLogo:
+    speakeasy-default-get-organization-logo:
+      responses:
+        "200":
+          application/json: {"success": true, "hasLogo": true, "logoUrl": "https://storage.pipeshub.com/org/507f1f77bcf86cd799439011/logo.png?token=..."}
+  deleteOrganizationLogo:
+    speakeasy-default-delete-organization-logo:
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Organization logo deleted successfully"}
+  getOnboardingStatus:
+    speakeasy-default-get-onboarding-status:
+      responses:
+        "200":
+          application/json: {"success": true, "data": {"isCompleted": false, "currentStep": "invite_team", "completedSteps": ["org_profile", "admin_setup"], "completionPercentage": 40}}
+  updateOnboardingStatus:
+    speakeasy-default-update-onboarding-status:
+      requestBody:
+        application/json: {"stepId": "invite_team", "action": "complete"}
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Step 'invite_team' marked as complete", "isOnboardingComplete": false, "nextStep": "connect_integrations"}
+  createUserGroup:
+    speakeasy-default-create-user-group:
+      requestBody:
+        application/json: {"name": "Engineering Team", "type": "standard", "description": "All engineering department members"}
+      responses:
+        "201":
+          application/json: {"type": "standard", "name": "<value>", "orgId": "<value>", "isDeleted": false}
+  getAllUserGroups:
+    speakeasy-default-get-all-user-groups:
+      responses:
+        "200":
+          application/json: {"success": true}
+  getUserGroupById:
+    speakeasy-default-get-user-group-by-id:
+      parameters:
+        path:
+          groupId: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"type": "custom", "name": "<value>", "orgId": "<value>", "isDeleted": false}
+  updateUserGroup:
+    speakeasy-default-update-user-group:
+      parameters:
+        path:
+          groupId: "507f1f77bcf86cd799439011"
+      requestBody:
+        application/json: {"name": "Engineering Team - Updated", "description": "All engineering and DevOps members"}
+      responses:
+        "200":
+          application/json: {"type": "admin", "name": "<value>", "orgId": "<value>", "isDeleted": false}
+  deleteUserGroup:
+    speakeasy-default-delete-user-group:
+      parameters:
+        path:
+          groupId: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"success": true, "message": "User group deleted successfully"}
+  addUsersToGroup:
+    speakeasy-default-add-users-to-group:
+      requestBody:
+        application/json: {"groupId": "507f1f77bcf86cd799439011", "userIds": ["507f1f77bcf86cd799439012", "507f1f77bcf86cd799439013"]}
+      responses:
+        "200":
+          application/json: {"success": true, "message": "2 users added to group successfully", "addedCount": 2, "skippedCount": 0}
+  removeUsersFromGroup:
+    speakeasy-default-remove-users-from-group:
+      requestBody:
+        application/json: {"groupId": "507f1f77bcf86cd799439011", "userIds": ["507f1f77bcf86cd799439012"]}
+      responses:
+        "200":
+          application/json: {"success": true, "message": "1 user removed from group successfully", "removedCount": 1}
+  getGroupsForUser:
+    speakeasy-default-get-groups-for-user:
+      parameters:
+        path:
+          userId: "507f1f77bcf86cd799439012"
+      responses:
+        "200":
+          application/json: {"success": true}
+  downloadDocument:
+    speakeasy-default-download-document:
+      parameters:
+        path:
+          documentId: "507f1f77bcf86cd799439011"
+        query:
+          version: 2
+          expirationTimeInSeconds: 7200
+      responses:
+        "200":
+          application/json: {"success": true, "signedUrl": "https://bucket.s3.amazonaws.com/docs/file.pdf?X-Amz-Signature=..."}
+          application/octet-stream: "0xaC52D3DF51"
+  createKnowledgeBase:
+    speakeasy-default-create-knowledge-base:
+      requestBody:
+        application/json: {"kbName": "Product Documentation"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "orgId": "<id>", "isDeleted": false}
+  listKnowledgeBases:
+    speakeasy-default-list-knowledge-bases:
+      parameters:
+        query:
+          page: 1
+          limit: 20
+          permissions: "OWNER,ORGANIZER,WRITER"
+          sortBy: "name"
+          sortOrder: "asc"
+      responses:
+        "200":
+          application/json: {}
+  getKnowledgeBase:
+    speakeasy-default-get-knowledge-base:
+      parameters:
+        path:
+          kbId: "kb_550e8400-e29b-41d4-a716"
+      responses:
+        "200":
+          application/json: {"name": "<value>", "orgId": "<id>", "isDeleted": false}
+  updateKnowledgeBase:
+    speakeasy-default-update-knowledge-base:
+      parameters:
+        path:
+          kbId: "<id>"
+      requestBody:
+        application/json: {"kbName": "Updated Documentation Hub"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "orgId": "<id>", "isDeleted": false}
+  deleteKnowledgeBase:
+    speakeasy-default-delete-knowledge-base:
+      parameters:
+        path:
+          kbId: "<id>"
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Knowledge base deleted successfully"}
+  getKnowledgeHubRootNodes:
+    speakeasy-default-get-knowledge-hub-root-nodes:
+      responses:
+        "200":
+          application/json: {}
+  getKnowledgeHubChildNodes:
+    speakeasy-default-get-knowledge-hub-child-nodes:
+      parameters:
+        path:
+          parentType: "<value>"
+          parentId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAllRecords:
+    speakeasy-default-get-all-records:
+      parameters:
+        query:
+          page: 1
+          limit: 20
+          recordTypes: "FILE,WEBPAGE,EMAIL"
+          connectors: "GOOGLE_DRIVE,ONEDRIVE"
+          indexingStatus: "COMPLETED,FAILED"
+          sortBy: "createdAtTimestamp"
+          sortOrder: "desc"
+      responses:
+        "200":
+          application/json: {"records": [{"_key": "550e8400-e29b-41d4-a716-446655440000", "recordName": "Q4 Financial Report.pdf", "externalRecordId": "507f1f77bcf86cd799439011", "recordType": "FILE", "origin": "UPLOAD", "connectorId": "conn_123456", "connectorName": "GOOGLE_DRIVE", "orgId": "org_abc123", "kbId": "kb_xyz789", "folderId": "folder_456", "version": 3, "createdAtTimestamp": 1704153600000, "updatedAtTimestamp": 1704240000000, "indexingStatus": "COMPLETED", "isDeleted": false, "isArchived": false, "webUrl": "https://drive.google.com/file/d/abc123", "mimeType": "application/pdf", "sizeInBytes": 1048576, "extension": "pdf", "sha256Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}]}
+  getKBRecords:
+    speakeasy-default-get-KB-records:
+      parameters:
+        path:
+          kbId: "<id>"
+        query:
+          page: 1
+          limit: 20
+          sortBy: "createdAtTimestamp"
+          sortOrder: "desc"
+      responses:
+        "200":
+          application/json: {"records": [{"_key": "550e8400-e29b-41d4-a716-446655440000", "recordName": "Q4 Financial Report.pdf", "externalRecordId": "507f1f77bcf86cd799439011", "recordType": "FILE", "origin": "UPLOAD", "connectorId": "conn_123456", "connectorName": "GOOGLE_DRIVE", "orgId": "org_abc123", "kbId": "kb_xyz789", "folderId": "folder_456", "version": 3, "createdAtTimestamp": 1704153600000, "updatedAtTimestamp": 1704240000000, "indexingStatus": "COMPLETED", "isDeleted": false, "isArchived": false, "webUrl": "https://drive.google.com/file/d/abc123", "mimeType": "application/pdf", "sizeInBytes": 1048576, "extension": "pdf", "sha256Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}]}
+  getKBChildren:
+    speakeasy-default-get-KB-children:
+      parameters:
+        path:
+          kbId: "<id>"
+        query:
+          page: 1
+          limit: 20
+          sortBy: "createdAtTimestamp"
+          sortOrder: "desc"
+      responses:
+        "200":
+          application/json: {"records": [{"_key": "550e8400-e29b-41d4-a716-446655440000", "recordName": "Q4 Financial Report.pdf", "externalRecordId": "507f1f77bcf86cd799439011", "recordType": "FILE", "origin": "UPLOAD", "connectorId": "conn_123456", "connectorName": "GOOGLE_DRIVE", "orgId": "org_abc123", "kbId": "kb_xyz789", "folderId": "folder_456", "version": 3, "createdAtTimestamp": 1704153600000, "updatedAtTimestamp": 1704240000000, "indexingStatus": "COMPLETED", "isDeleted": false, "isArchived": false, "webUrl": "https://drive.google.com/file/d/abc123", "mimeType": "application/pdf", "sizeInBytes": 1048576, "extension": "pdf", "sha256Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}]}
+  getRecordById:
+    speakeasy-default-get-record-by-id:
+      parameters:
+        path:
+          recordId: "<id>"
+        query:
+          convertTo: "txt"
+      responses:
+        "200":
+          application/json: {"_key": "550e8400-e29b-41d4-a716-446655440000", "recordName": "Q4 Financial Report.pdf", "externalRecordId": "507f1f77bcf86cd799439011", "recordType": "FILE", "origin": "UPLOAD", "connectorId": "conn_123456", "connectorName": "GOOGLE_DRIVE", "orgId": "org_abc123", "kbId": "kb_xyz789", "folderId": "folder_456", "version": 3, "createdAtTimestamp": 1704153600000, "updatedAtTimestamp": 1704240000000, "indexingStatus": "COMPLETED", "isDeleted": false, "isArchived": false, "webUrl": "https://drive.google.com/file/d/abc123", "mimeType": "application/pdf", "sizeInBytes": 1048576, "extension": "pdf", "sha256Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+  updateRecord:
+    speakeasy-default-update-record:
+      parameters:
+        path:
+          recordId: "<id>"
+      responses:
+        "200":
+          application/json: {"record": {"_key": "550e8400-e29b-41d4-a716-446655440000", "recordName": "Q4 Financial Report.pdf", "externalRecordId": "507f1f77bcf86cd799439011", "recordType": "FILE", "origin": "UPLOAD", "connectorId": "conn_123456", "connectorName": "GOOGLE_DRIVE", "orgId": "org_abc123", "kbId": "kb_xyz789", "folderId": "folder_456", "version": 3, "createdAtTimestamp": 1704153600000, "updatedAtTimestamp": 1704240000000, "indexingStatus": "COMPLETED", "isDeleted": false, "isArchived": false, "webUrl": "https://drive.google.com/file/d/abc123", "mimeType": "application/pdf", "sizeInBytes": 1048576, "extension": "pdf", "sha256Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}}
+  deleteRecord:
+    speakeasy-default-delete-record:
+      parameters:
+        path:
+          recordId: "<id>"
+  streamRecordBuffer:
+    speakeasy-default-stream-record-buffer:
+      parameters:
+        path:
+          recordId: "<id>"
+      responses:
+        "200":
+          application/octet-stream: "0xE1B86d2c23"
+  createRootFolder:
+    speakeasy-default-create-root-folder:
+      parameters:
+        path:
+          kbId: "<id>"
+      requestBody:
+        application/json: {"folderName": "Project Documents"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "kbId": "<id>", "orgId": "<id>", "isDeleted": false}
+  getFolderContents:
+    speakeasy-default-get-folder-contents:
+      parameters:
+        path:
+          kbId: "<id>"
+          folderId: "<id>"
+        query:
+          page: 1
+          limit: 20
+          sortBy: "createdAtTimestamp"
+          sortOrder: "desc"
+      responses:
+        "200":
+          application/json: {"records": [{"_key": "550e8400-e29b-41d4-a716-446655440000", "recordName": "Q4 Financial Report.pdf", "externalRecordId": "507f1f77bcf86cd799439011", "recordType": "FILE", "origin": "UPLOAD", "connectorId": "conn_123456", "connectorName": "GOOGLE_DRIVE", "orgId": "org_abc123", "kbId": "kb_xyz789", "folderId": "folder_456", "version": 3, "createdAtTimestamp": 1704153600000, "updatedAtTimestamp": 1704240000000, "indexingStatus": "COMPLETED", "isDeleted": false, "isArchived": false, "webUrl": "https://drive.google.com/file/d/abc123", "mimeType": "application/pdf", "sizeInBytes": 1048576, "extension": "pdf", "sha256Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}]}
+  updateFolder:
+    speakeasy-default-update-folder:
+      parameters:
+        path:
+          kbId: "<id>"
+          folderId: "<id>"
+      requestBody:
+        application/json: {"folderName": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "kbId": "<id>", "orgId": "<id>", "isDeleted": false}
+  deleteFolder:
+    speakeasy-default-delete-folder:
+      parameters:
+        path:
+          kbId: "<id>"
+          folderId: "<id>"
+  getFolderChildren:
+    speakeasy-default-get-folder-children:
+      parameters:
+        path:
+          kbId: "<id>"
+          folderId: "<id>"
+        query:
+          page: 1
+          limit: 20
+          sortBy: "createdAtTimestamp"
+          sortOrder: "desc"
+      responses:
+        "200":
+          application/json: {"records": [{"_key": "550e8400-e29b-41d4-a716-446655440000", "recordName": "Q4 Financial Report.pdf", "externalRecordId": "507f1f77bcf86cd799439011", "recordType": "FILE", "origin": "UPLOAD", "connectorId": "conn_123456", "connectorName": "GOOGLE_DRIVE", "orgId": "org_abc123", "kbId": "kb_xyz789", "folderId": "folder_456", "version": 3, "createdAtTimestamp": 1704153600000, "updatedAtTimestamp": 1704240000000, "indexingStatus": "COMPLETED", "isDeleted": false, "isArchived": false, "webUrl": "https://drive.google.com/file/d/abc123", "mimeType": "application/pdf", "sizeInBytes": 1048576, "extension": "pdf", "sha256Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}]}
+  createSubfolder:
+    speakeasy-default-create-subfolder:
+      parameters:
+        path:
+          kbId: "<id>"
+          folderId: "<id>"
+      requestBody:
+        application/json: {"folderName": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "kbId": "<id>", "orgId": "<id>", "isDeleted": false}
+  uploadRecordsToKB:
+    speakeasy-default-upload-records-to-KB:
+      parameters:
+        path:
+          kbId: "<id>"
+      requestBody:
+        multipart/form-data: {"files": ["x-file: example.file"], "files_metadata": "[{\"file_path\":\"/docs/report.pdf\",\"last_modified\":\"2024-01-15T10:30:00Z\"}]", "isVersioned": true, "recordType": "FILE"}
+      responses:
+        "200":
+          application/json: {"message": "Files uploaded successfully"}
+  uploadRecordsToFolder:
+    speakeasy-default-upload-records-to-folder:
+      parameters:
+        path:
+          kbId: "<id>"
+          folderId: "<id>"
+      requestBody:
+        multipart/form-data: {"files": ["x-file: example.file"], "isVersioned": true}
+      responses:
+        "200":
+          application/json: {"message": "Files uploaded successfully"}
+  getUploadLimits:
+    speakeasy-default-get-upload-limits:
+      responses:
+        "200":
+          application/json: {"maxFilesPerRequest": 1000, "maxFileSizeBytes": 31457280}
+  reindexRecord:
+    speakeasy-default-reindex-record:
+      parameters:
+        path:
+          recordId: "<id>"
+  reindexRecordGroup:
+    speakeasy-default-reindex-record-group:
+      parameters:
+        path:
+          recordGroupId: "<id>"
+  resyncConnector:
+    speakeasy-default-resync-connector:
+      requestBody:
+        application/json: {"connectorName": "GOOGLE_DRIVE", "connectorId": "<id>"}
+  getConnectorStats:
+    speakeasy-default-get-connector-stats:
+      parameters:
+        path:
+          connectorId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  createKBPermission:
+    speakeasy-default-create-KB-permission:
+      parameters:
+        path:
+          kbId: "<id>"
+      requestBody:
+        application/json: {"role": "OWNER"}
+      responses:
+        "200":
+          application/json: {}
+  listKBPermissions:
+    speakeasy-default-list-KB-permissions:
+      parameters:
+        path:
+          kbId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  updateKBPermissions:
+    speakeasy-default-update-KB-permissions:
+      parameters:
+        path:
+          kbId: "<id>"
+      requestBody:
+        application/json: {"role": "WRITER"}
+  deleteKBPermissions:
+    speakeasy-default-delete-KB-permissions:
+      parameters:
+        path:
+          kbId: "<id>"
+      requestBody:
+        application/json: {}
+  createConversation:
+    simple:
+      requestBody:
+        application/json: {"query": "What is our company's vacation policy?"}
+      responses:
+        "201":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+    filtered:
+      requestBody:
+        application/json: {"query": "Summarize the Q4 sales report", "filters": {"kb": ["550e8400-e29b-41d4-a716-446655440000"]}, "modelKey": "gpt-4-turbo"}
+      responses:
+        "201":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+    speakeasy-default-create-conversation:
+      requestBody:
+        application/json: {"query": "What are the key findings from our Q4 financial report?", "recordIds": ["507f1f77bcf86cd799439011", "507f1f77bcf86cd799439012"], "modelKey": "gpt-4-turbo", "modelName": "GPT-4 Turbo", "chatMode": "balanced"}
+      responses:
+        "201":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+  getAllConversations:
+    speakeasy-default-get-all-conversations:
+      responses:
+        "200":
+          application/json: [{"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}]
+  getArchivedConversations:
+    speakeasy-default-get-archived-conversations:
+      responses:
+        "200":
+          application/json: [{"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}]
+  getConversationById:
+    speakeasy-default-get-conversation-by-id:
+      parameters:
+        path:
+          conversationId: "507f1f77bcf86cd799439011"
+        query:
+          page: 1
+          limit: 10
+          sortBy: "createdAt"
+          sortOrder: "desc"
+      responses:
+        "200":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+  deleteConversationById:
+    speakeasy-default-delete-conversation-by-id:
+      parameters:
+        path:
+          conversationId: "<value>"
+      responses:
+        "200":
+          application/json: {"message": "Conversation deleted successfully"}
+  addMessage:
+    speakeasy-default-add-message:
+      parameters:
+        path:
+          conversationId: "<value>"
+      requestBody:
+        application/json: {"query": "Can you elaborate on the revenue trends?"}
+      responses:
+        "200":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+  shareConversation:
+    speakeasy-default-share-conversation:
+      parameters:
+        path:
+          conversationId: "<value>"
+      requestBody:
+        application/json: {"userIds": ["507f1f77bcf86cd799439011"], "accessLevel": "read"}
+      responses:
+        "200":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+  updateConversationTitle:
+    speakeasy-default-update-conversation-title:
+      parameters:
+        path:
+          conversationId: "<value>"
+      requestBody:
+        application/json: {"title": "Q4 Sales Analysis Discussion"}
+      responses:
+        "200":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+  archiveConversation:
+    speakeasy-default-archive-conversation:
+      parameters:
+        path:
+          conversationId: "<value>"
+      responses:
+        "200":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+  unarchiveConversation:
+    speakeasy-default-unarchive-conversation:
+      parameters:
+        path:
+          conversationId: "<value>"
+      responses:
+        "200":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+  regenerateAnswer:
+    speakeasy-default-regenerate-answer:
+      parameters:
+        path:
+          conversationId: "<value>"
+          messageId: "<value>"
+      responses:
+        "200":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+  updateMessageFeedback:
+    speakeasy-default-update-message-feedback:
+      parameters:
+        path:
+          conversationId: "<value>"
+          messageId: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"title": "Q4 Financial Report Discussion", "isShared": false, "isArchived": false}
+  search:
+    simple:
+      requestBody:
+        application/json: {"query": "company vacation policy", "limit": 10}
+      responses:
+        "200":
+          application/json: {"isShared": false, "isArchived": false}
+    filtered:
+      requestBody:
+        application/json: {"query": "API documentation examples", "filters": {"apps": ["drive"]}, "limit": 20}
+      responses:
+        "200":
+          application/json: {"isShared": false, "isArchived": false}
+    speakeasy-default-search:
+      requestBody:
+        application/json: {"query": "employee onboarding procedures", "limit": 10}
+      responses:
+        "200":
+          application/json: {"isShared": false, "isArchived": false}
+  searchHistory:
+    speakeasy-default-search-history:
+      parameters:
+        query:
+          limit: 10
+          page: 1
+      responses:
+        "200":
+          application/json: {}
+  deleteAllSearchHistory:
+    speakeasy-default-delete-all-search-history:
+      responses:
+        "200":
+          application/json: {"message": "Search history cleared successfully"}
+  listAgentTemplates:
+    speakeasy-default-list-agent-templates:
+      responses:
+        "200":
+          application/json: [{"name": "Technical Support Template", "category": "Customer Service"}]
+  createAgentTemplate:
+    speakeasy-default-create-agent-template:
+      requestBody:
+        application/json: {"name": "Customer Support Agent", "category": "Support", "isPublic": false}
+      responses:
+        "201":
+          application/json: {"name": "Technical Support Template", "category": "Customer Service"}
+  getAgentTemplate:
+    speakeasy-default-get-agent-template:
+      parameters:
+        path:
+          templateId: "<id>"
+      responses:
+        "200":
+          application/json: {"name": "Technical Support Template", "category": "Customer Service"}
+  updateAgentTemplate:
+    speakeasy-default-update-agent-template:
+      parameters:
+        path:
+          templateId: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"name": "Technical Support Template", "category": "Customer Service"}
+  deleteAgentTemplate:
+    speakeasy-default-delete-agent-template:
+      parameters:
+        path:
+          templateId: "<id>"
+  listAgents:
+    speakeasy-default-list-agents:
+      responses:
+        "200":
+          application/json: [{"agentKey": "customer-support-agent", "name": "Customer Support Assistant"}]
+  createAgent:
+    speakeasy-default-create-agent:
+      requestBody:
+        application/json: {"name": "Product Support Agent", "isPublic": false}
+      responses:
+        "201":
+          application/json: {"agentKey": "customer-support-agent", "name": "Customer Support Assistant"}
+  listAgentTools:
+    speakeasy-default-list-agent-tools:
+      responses:
+        "200":
+          application/json: [{"key": "web-search", "name": "Web Search"}]
+  getAgent:
+    speakeasy-default-get-agent:
+      parameters:
+        path:
+          agentKey: "customer-support-agent"
+      responses:
+        "200":
+          application/json: {"agentKey": "customer-support-agent", "name": "Customer Support Assistant"}
+  updateAgent:
+    speakeasy-default-update-agent:
+      parameters:
+        path:
+          agentKey: "<value>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"agentKey": "customer-support-agent", "name": "Customer Support Assistant"}
+  deleteAgent:
+    speakeasy-default-delete-agent:
+      parameters:
+        path:
+          agentKey: "<value>"
+  getAgentPermissions:
+    speakeasy-default-get-agent-permissions:
+      parameters:
+        path:
+          agentKey: "<value>"
+      responses:
+        "200":
+          application/json: {}
+  updateAgentPermissions:
+    speakeasy-default-update-agent-permissions:
+      parameters:
+        path:
+          agentKey: "<value>"
+      requestBody:
+        application/json: {}
+  shareAgent:
+    speakeasy-default-share-agent:
+      parameters:
+        path:
+          agentKey: "<value>"
+      requestBody:
+        application/json: {"userIds": ["507f1f77bcf86cd799439011"], "accessLevel": "read"}
+      responses:
+        "200":
+          application/json: {"agentKey": "customer-support-agent", "name": "Customer Support Assistant"}
+  listAgentConversations:
+    speakeasy-default-list-agent-conversations:
+      parameters:
+        path:
+          agentKey: "<value>"
+      responses:
+        "200":
+          application/json: [{}]
+  createAgentConversation:
+    speakeasy-default-create-agent-conversation:
+      parameters:
+        path:
+          agentKey: "<value>"
+      requestBody:
+        application/json: {"query": "What are the key findings from our Q4 financial report?", "recordIds": ["507f1f77bcf86cd799439011", "507f1f77bcf86cd799439012"], "modelKey": "gpt-4-turbo", "modelName": "GPT-4 Turbo", "chatMode": "balanced"}
+      responses:
+        "201":
+          application/json: {}
+  getAgentConversation:
+    speakeasy-default-get-agent-conversation:
+      parameters:
+        path:
+          agentKey: "<value>"
+          conversationId: "<value>"
+      responses:
+        "200":
+          application/json: {}
+  deleteAgentConversation:
+    speakeasy-default-delete-agent-conversation:
+      parameters:
+        path:
+          agentKey: "<value>"
+          conversationId: "<value>"
+  addAgentMessage:
+    speakeasy-default-add-agent-message:
+      parameters:
+        path:
+          agentKey: "<value>"
+          conversationId: "<value>"
+      requestBody:
+        application/json: {"query": "Can you elaborate on the revenue trends?"}
+      responses:
+        "200":
+          application/json: {}
+  regenerateAgentAnswer:
+    speakeasy-default-regenerate-agent-answer:
+      parameters:
+        path:
+          agentKey: "<value>"
+          conversationId: "<value>"
+          messageId: "<value>"
+      responses:
+        "200":
+          application/json: {}
+  getConnectorRegistry:
+    speakeasy-default-get-connector-registry:
+      parameters:
+        query:
+          scope: "team"
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {"connectors": [{"connectorType": "google-drive", "displayName": "Google Drive", "supportedScopes": ["team"]}]}
+  getConnectorSchema:
+    speakeasy-default-get-connector-schema:
+      parameters:
+        path:
+          connectorType: "google-drive"
+      responses:
+        "200":
+          application/json: {}
+  listConnectorInstances:
+    speakeasy-default-list-connector-instances:
+      parameters:
+        query:
+          scope: "team"
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {"connectors": [{"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}]}
+  createConnectorInstance:
+    googleDrive:
+      requestBody:
+        application/json: {"connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team", "authType": "OAUTH_ADMIN_CONSENT"}
+      responses:
+        "201":
+          application/json: {"connector": {"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}}
+    confluence:
+      requestBody:
+        application/json: {"connectorType": "confluence", "instanceName": "My Confluence", "scope": "personal", "authType": "API_TOKEN"}
+      responses:
+        "201":
+          application/json: {"connector": {"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}}
+    speakeasy-default-create-connector-instance:
+      requestBody:
+        application/json: {"connectorType": "google-drive", "instanceName": "Marketing Team Drive", "scope": "team", "authType": "OAUTH", "config": {"auth": {"values": {"apiKey": "sk-xxxxx", "baseUrl": "https://api.example.com"}, "oauthConfigId": "oauth_config_123"}, "sync": {"selectedStrategy": "MANUAL", "scheduledConfig": {"intervalMinutes": 60, "cronExpression": "0 */6 * * *", "timezone": "America/New_York"}, "webhookConfig": {"events": ["file.created", "file.modified", "file.deleted"]}}, "filters": {"sync": {"values": {"folders": ["folder_id_1", "folder_id_2"], "fileTypes": ["pdf", "docx", "xlsx"], "includeShared": true}}}}, "baseUrl": "https://confluence.mycompany.com"}
+      responses:
+        "201":
+          application/json: {"connector": {"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}}
+  listActiveConnectors:
+    speakeasy-default-list-active-connectors:
+      responses:
+        "200":
+          application/json: {"connectors": [{"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}]}
+  listInactiveConnectors:
+    speakeasy-default-list-inactive-connectors:
+      responses:
+        "200":
+          application/json: {"connectors": [{"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}]}
+  listConfiguredConnectors:
+    speakeasy-default-list-configured-connectors:
+      parameters:
+        query:
+          scope: "team"
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {"connectors": [{"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}]}
+  listActiveAgentConnectors:
+    speakeasy-default-list-active-agent-connectors:
+      parameters:
+        query:
+          scope: "team"
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {"connectors": [{"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}]}
+  getConnectorInstance:
+    speakeasy-default-get-connector-instance:
+      parameters:
+        path:
+          connectorId: "conn_abc123"
+      responses:
+        "200":
+          application/json: {"connector": {"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}}
+  deleteConnectorInstance:
+    speakeasy-default-delete-connector-instance:
+      parameters:
+        path:
+          connectorId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  updateConnectorName:
+    speakeasy-default-update-connector-name:
+      parameters:
+        path:
+          connectorId: "<id>"
+      requestBody:
+        application/json: {"instanceName": "Sales Team Drive (Updated)"}
+      responses:
+        "200":
+          application/json: {"connector": {"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}}
+  getConnectorConfig:
+    speakeasy-default-get-connector-config:
+      parameters:
+        path:
+          connectorId: "<id>"
+      responses:
+        "200":
+          application/json: {"config": {"scope": "team"}}
+  updateConnectorConfig:
+    speakeasy-default-update-connector-config:
+      parameters:
+        path:
+          connectorId: "<id>"
+      requestBody:
+        application/json: {"auth": {"values": {"apiKey": "sk-xxxxx", "baseUrl": "https://api.example.com"}, "oauthConfigId": "oauth_config_123"}, "sync": {"selectedStrategy": "MANUAL", "scheduledConfig": {"intervalMinutes": 60, "cronExpression": "0 */6 * * *", "timezone": "America/New_York"}, "webhookConfig": {"events": ["file.created", "file.modified", "file.deleted"]}}, "filters": {"sync": {"values": {"folders": ["folder_id_1", "folder_id_2"], "fileTypes": ["pdf", "docx", "xlsx"], "includeShared": true}}}, "baseUrl": "https://confluence.mycompany.com"}
+      responses:
+        "200":
+          application/json: {"config": {"scope": "team"}}
+  updateConnectorAuthConfig:
+    speakeasy-default-update-connector-auth-config:
+      parameters:
+        path:
+          connectorId: "<id>"
+      requestBody:
+        application/json: {"auth": {"values": {"apiKey": "sk-xxxxx", "baseUrl": "https://api.example.com"}, "oauthConfigId": "oauth_config_123"}}
+      responses:
+        "200":
+          application/json: {"config": {"scope": "team"}}
+  updateConnectorFiltersSyncConfig:
+    speakeasy-default-update-connector-filters-sync-config:
+      parameters:
+        path:
+          connectorId: "<id>"
+      requestBody:
+        application/json: {"sync": {"selectedStrategy": "MANUAL", "scheduledConfig": {"intervalMinutes": 60, "cronExpression": "0 */6 * * *", "timezone": "America/New_York"}, "webhookConfig": {"events": ["file.created", "file.modified", "file.deleted"]}}, "filters": {"sync": {"values": {"folders": ["folder_id_1", "folder_id_2"], "fileTypes": ["pdf", "docx", "xlsx"], "includeShared": true}}}}
+      responses:
+        "200":
+          application/json: {"config": {"scope": "team"}}
+  toggleConnector:
+    speakeasy-default-toggle-connector:
+      parameters:
+        path:
+          connectorId: "<id>"
+      requestBody:
+        application/json: {"type": "sync"}
+      responses:
+        "200":
+          application/json: {"message": "Sync enabled successfully", "connector": {"connectorId": "conn_abc123", "connectorType": "google-drive", "instanceName": "Company Google Drive", "scope": "team"}}
+  getOAuthAuthorizationUrl:
+    speakeasy-default-get-O-auth-authorization-url:
+      parameters:
+        path:
+          connectorId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  handleOAuthCallback: {}
+  getConnectorFilters:
+    speakeasy-default-get-connector-filters:
+      parameters:
+        path:
+          connectorId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  saveConnectorFilters:
+    speakeasy-default-save-connector-filters:
+      parameters:
+        path:
+          connectorId: "<id>"
+      requestBody:
+        application/json: {"filters": {"folders": [{"id": "folder_123", "name": "Documents"}, {"id": "folder_456", "name": "Reports"}], "fileTypes": ["pdf", "docx"], "modifiedAfter": "2024-01-01"}}
+      responses:
+        "200":
+          application/json: {}
+  getFilterFieldOptions:
+    speakeasy-default-get-filter-field-options:
+      parameters:
+        path:
+          connectorId: "<id>"
+          filterKey: "folders"
+        query:
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {}
+  listToolsetRegistry:
+    speakeasy-default-list-toolset-registry:
+      parameters:
+        query:
+          page: 1
+          limit: 50
+      responses:
+        "200":
+          application/json: {}
+  getToolsetSchema:
+    speakeasy-default-get-toolset-schema:
+      parameters:
+        path:
+          toolsetType: "<value>"
+  createToolset:
+    speakeasy-default-create-toolset:
+      requestBody:
+        application/json: {"name": "<value>", "auth": {"type": "<value>"}}
+  listConfiguredToolsets:
+    speakeasy-default-list-configured-toolsets:
+      responses:
+        "200":
+          application/json: {}
+  checkToolsetStatus:
+    speakeasy-default-check-toolset-status:
+      parameters:
+        path:
+          toolsetId: "<id>"
+  getToolsetConfig:
+    speakeasy-default-get-toolset-config:
+      parameters:
+        path:
+          toolsetId: "<id>"
+  saveToolsetConfig:
+    speakeasy-default-save-toolset-config:
+      parameters:
+        path:
+          toolsetId: "<id>"
+      requestBody:
+        application/json: {"auth": {}}
+  updateToolsetConfig:
+    speakeasy-default-update-toolset-config:
+      parameters:
+        path:
+          toolsetId: "<id>"
+      requestBody:
+        application/json: {"auth": {}}
+  deleteToolsetConfig:
+    speakeasy-default-delete-toolset-config:
+      parameters:
+        path:
+          toolsetId: "<id>"
+  getToolsetOAuthUrl:
+    speakeasy-default-get-toolset-O-auth-url:
+      parameters:
+        path:
+          toolsetId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  handleToolsetOAuthCallback:
+    speakeasy-default-handle-toolset-O-auth-callback:
+      responses:
+        "200":
+          application/json: {}
+  getOAuthRegistry:
+    speakeasy-default-get-O-auth-registry:
+      parameters:
+        query:
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {"connectors": [{"connectorType": "google-drive", "displayName": "Google Drive", "supportedScopes": ["team"]}]}
+  getOAuthConnectorType:
+    speakeasy-default-get-O-auth-connector-type:
+      parameters:
+        path:
+          connectorType: "<value>"
+      responses:
+        "200":
+          application/json: {"connector": {"connectorType": "google-drive", "displayName": "Google Drive", "supportedScopes": ["team"]}}
+  listOAuthConfigs:
+    speakeasy-default-list-O-auth-configs:
+      parameters:
+        query:
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {"oauthConfigs": [{"oauthInstanceName": "Production Google OAuth"}]}
+  listOAuthConfigsByType:
+    speakeasy-default-list-O-auth-configs-by-type:
+      parameters:
+        path:
+          connectorType: "<value>"
+        query:
+          page: 1
+          limit: 20
+      responses:
+        "200":
+          application/json: {"oauthConfigs": [{"oauthInstanceName": "Production Google OAuth"}]}
+  createOAuthConfig:
+    speakeasy-default-create-O-auth-config:
+      parameters:
+        path:
+          connectorType: "<value>"
+      requestBody:
+        application/json: {"oauthInstanceName": "Production Google OAuth Credentials", "config": {"clientId": "123456789-abc.apps.googleusercontent.com", "clientSecret": "GOCSPX-xxxxxxxxxxxxx", "tenantId": "12345678-1234-1234-1234-123456789abc"}, "baseUrl": "https://gitlab.mycompany.com"}
+      responses:
+        "201":
+          application/json: {"oauthConfig": {"oauthInstanceName": "Production Google OAuth"}}
+  getOAuthConfig:
+    speakeasy-default-get-O-auth-config:
+      parameters:
+        path:
+          connectorType: "<value>"
+          configId: "<id>"
+      responses:
+        "200":
+          application/json: {"oauthConfig": {"oauthInstanceName": "Production Google OAuth"}}
+  updateOAuthConfig:
+    speakeasy-default-update-O-auth-config:
+      parameters:
+        path:
+          connectorType: "<value>"
+          configId: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"oauthConfig": {"oauthInstanceName": "Production Google OAuth"}}
+  deleteOAuthConfig:
+    speakeasy-default-delete-O-auth-config:
+      parameters:
+        path:
+          connectorType: "<value>"
+          configId: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getStorageConfig:
+    speakeasy-default-get-storage-config:
+      responses:
+        "200":
+          application/json: {}
+  createSMTPConfig:
+    gmail:
+      requestBody:
+        application/json: {"host": "smtp.gmail.com", "port": 587, "username": "notifications@yourcompany.com", "password": "your-app-password", "fromEmail": "noreply@yourcompany.com"}
+    sendgrid:
+      requestBody:
+        application/json: {"host": "smtp.sendgrid.net", "port": 587, "username": "apikey", "password": "SG.your-sendgrid-api-key", "fromEmail": "noreply@yourcompany.com"}
+    amazonSes:
+      requestBody:
+        application/json: {"host": "email-smtp.us-east-1.amazonaws.com", "port": 587, "username": "AKIAIOSFODNN7EXAMPLE", "password": "your-ses-smtp-password", "fromEmail": "noreply@yourcompany.com"}
+    office365:
+      requestBody:
+        application/json: {"host": "smtp.office365.com", "port": 587, "username": "notifications@yourcompany.onmicrosoft.com", "password": "your-password", "fromEmail": "notifications@yourcompany.onmicrosoft.com"}
+    speakeasy-default-create-SMTP-config:
+      requestBody:
+        application/json: {"host": "smtp.gmail.com", "port": 587, "username": "notifications@yourcompany.com", "password": "your-app-password", "fromEmail": "noreply@yourcompany.com"}
+  getSMTPConfig:
+    speakeasy-default-get-SMTP-config:
+      responses:
+        "200":
+          application/json: {"host": "smtp.gmail.com", "port": 587, "username": "notifications@yourcompany.com", "password": "your-app-password", "fromEmail": "noreply@yourcompany.com"}
+  setAzureAdAuthConfig:
+    speakeasy-default-set-azure-ad-auth-config:
+      requestBody:
+        application/json: {"clientId": "12345678-1234-1234-1234-123456789abc", "tenantId": "common"}
+  getAzureAdAuthConfig:
+    speakeasy-default-get-azure-ad-auth-config:
+      responses:
+        "200":
+          application/json: {"clientId": "12345678-1234-1234-1234-123456789abc", "tenantId": "common"}
+  setMicrosoftAuthConfig:
+    speakeasy-default-set-microsoft-auth-config:
+      requestBody:
+        application/json: {"clientId": "12345678-1234-1234-1234-123456789abc", "tenantId": "common"}
+  getMicrosoftAuthConfig:
+    speakeasy-default-get-microsoft-auth-config:
+      responses:
+        "200":
+          application/json: {"clientId": "12345678-1234-1234-1234-123456789abc", "tenantId": "common"}
+  setGoogleAuthConfig:
+    speakeasy-default-set-google-auth-config:
+      requestBody:
+        application/json: {"clientId": "123456789-abc.apps.googleusercontent.com"}
+  getGoogleAuthConfig:
+    speakeasy-default-get-google-auth-config:
+      responses:
+        "200":
+          application/json: {"clientId": "123456789-abc.apps.googleusercontent.com"}
+  setSsoAuthConfig:
+    speakeasy-default-set-sso-auth-config:
+      requestBody:
+        application/json: {"entryPoint": "https://idp.example.com/sso/saml", "certificate": "<value>", "emailKey": "email"}
+  getSsoAuthConfig:
+    speakeasy-default-get-sso-auth-config:
+      responses:
+        "200":
+          application/json: {"entryPoint": "https://idp.example.com/sso/saml", "certificate": "<value>", "emailKey": "email"}
+  setOAuthConfig:
+    speakeasy-default-set-O-auth-config:
+      requestBody:
+        application/json: {"providerName": "Custom OAuth Provider", "clientId": "<id>", "scope": "openid profile email"}
+  getGenericOAuthConfig:
+    speakeasy-default-get-generic-O-auth-config:
+      responses:
+        "200":
+          application/json: {"providerName": "Custom OAuth Provider", "clientId": "<id>", "scope": "openid profile email"}
+  getModelsByType:
+    speakeasy-default-get-models-by-type:
+      parameters:
+        path:
+          modelType: "embedding"
+      responses:
+        "200":
+          application/json: {}
+  getAvailableModelsByType:
+    speakeasy-default-get-available-models-by-type:
+      parameters:
+        path:
+          modelType: "llm"
+      responses:
+        "200":
+          application/json: {}
+  addAIModelProvider:
+    speakeasy-default-add-AI-model-provider:
+      requestBody:
+        application/json: {"modelType": "embedding", "provider": "openai", "configuration": {"model": "gpt-4"}, "isMultimodal": false, "isReasoning": false, "isDefault": false}
+      responses:
+        "201":
+          application/json: {}
+  updateAIModelProvider:
+    speakeasy-default-update-AI-model-provider:
+      parameters:
+        path:
+          modelType: "reasoning"
+          modelKey: "<value>"
+      requestBody:
+        application/json: {"provider": "<value>", "configuration": {}}
+  deleteAIModelProvider:
+    speakeasy-default-delete-AI-model-provider:
+      parameters:
+        path:
+          modelType: "reasoning"
+          modelKey: "<value>"
+  setDefaultAIModel:
+    speakeasy-default-set-default-AI-model:
+      parameters:
+        path:
+          modelType: "ocr"
+          modelKey: "<value>"
+  setFrontendPublicUrl:
+    speakeasy-default-set-frontend-public-url:
+      requestBody:
+        application/json: {"url": "https://app.example.com"}
+  getFrontendPublicUrl:
+    speakeasy-default-get-frontend-public-url:
+      responses:
+        "200":
+          application/json: {"url": "https://app.example.com"}
+  setConnectorPublicUrl:
+    speakeasy-default-set-connector-public-url:
+      requestBody:
+        application/json: {"url": "https://app.example.com"}
+  getConnectorPublicUrl:
+    speakeasy-default-get-connector-public-url:
+      responses:
+        "200":
+          application/json: {"url": "https://app.example.com"}
+  setPlatformSettings:
+    default30MB:
+      requestBody:
+        application/json: {"fileUploadMaxSizeBytes": 31457280, "featureFlags": {"ENABLE_BETA_CONNECTORS": false}}
+    increased100MB:
+      requestBody:
+        application/json: {"fileUploadMaxSizeBytes": 104857600, "featureFlags": {"ENABLE_BETA_CONNECTORS": false}}
+    enableBetaFeatures:
+      requestBody:
+        application/json: {"fileUploadMaxSizeBytes": 31457280, "featureFlags": {"ENABLE_BETA_CONNECTORS": true}}
+    speakeasy-default-set-platform-settings:
+      requestBody:
+        application/json: {"fileUploadMaxSizeBytes": 31457280, "featureFlags": {"ENABLE_BETA_CONNECTORS": false}}
+  getPlatformSettings:
+    speakeasy-default-get-platform-settings:
+      responses:
+        "200":
+          application/json: {"fileUploadMaxSizeBytes": 31457280, "featureFlags": {"ENABLE_BETA_CONNECTORS": false}, "updatedAt": "2024-01-15T10:30:00Z"}
+  getAvailableFeatureFlags:
+    speakeasy-default-get-available-feature-flags:
+      responses:
+        "200":
+          application/json: {"featureFlags": [{"key": "ENABLE_BETA_CONNECTORS", "label": "Enable Beta Connectors"}]}
+  setCustomSystemPrompt:
+    speakeasy-default-set-custom-system-prompt:
+      requestBody:
+        application/json: {}
+  getCustomSystemPrompt:
+    speakeasy-default-get-custom-system-prompt:
+      responses:
+        "200":
+          application/json: {}
+  getMetricsCollection:
+    speakeasy-default-get-metrics-collection:
+      responses:
+        "200":
+          application/json: {"enableMetricCollection": true, "pushIntervalMs": 60000, "serverUrl": "https://metrics-collector.example.com/collect-metrics", "apiKey": "54523f794e23d96e", "instanceId": "638bc1b45c03e03d", "appVersion": "1.0.0"}
+  toggleMetricsCollection:
+    enable:
+      requestBody:
+        application/json: {"enableMetricCollection": true}
+      responses:
+        "200":
+          application/json: {"message": "Metrics collection toggled successfully"}
+    disable:
+      requestBody:
+        application/json: {"enableMetricCollection": false}
+      responses:
+        "200":
+          application/json: {"message": "Metrics collection toggled successfully"}
+    speakeasy-default-toggle-metrics-collection:
+      requestBody:
+        application/json: {"enableMetricCollection": true}
+      responses:
+        "200":
+          application/json: {"message": "Metrics collection toggled successfully"}
+  scheduleCrawlingJob:
+    dailySync:
+      parameters:
+        path:
+          connector: "drive"
+          connectorId: "507f1f77bcf86cd799439011"
+      requestBody:
+        application/json: {"scheduleConfig": {"scheduleType": "daily", "isEnabled": true, "timezone": "UTC", "hour": 2, "minute": 0}, "priority": 5, "maxRetries": 3, "timeout": 300000}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "Crawling job scheduled successfully", "data": {"jobId": "crawl-drive-507f1f77bcf86cd799439011-507f1f77bcf86cd799439012", "connector": "drive", "connectorId": "507f1f77bcf86cd799439011", "scheduleConfig": {"scheduleType": "daily", "isEnabled": true, "timezone": "UTC", "hour": 2, "minute": 0}, "scheduledAt": "2024-01-15T10:30:00Z"}}
+    hourlySync:
+      parameters:
+        path:
+          connector: "drive"
+          connectorId: "507f1f77bcf86cd799439011"
+      requestBody:
+        application/json: {"scheduleConfig": {"scheduleType": "hourly", "isEnabled": true, "timezone": "America/New_York", "minute": 30, "interval": 4}, "priority": 3, "maxRetries": 5, "timeout": 300000}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "Crawling job scheduled successfully", "data": {"jobId": "crawl-drive-507f1f77bcf86cd799439011-507f1f77bcf86cd799439012", "connector": "drive", "connectorId": "507f1f77bcf86cd799439011", "scheduleConfig": {"scheduleType": "daily", "isEnabled": true, "timezone": "UTC", "hour": 2, "minute": 0}, "scheduledAt": "2024-01-15T10:30:00Z"}}
+    weeklySync:
+      parameters:
+        path:
+          connector: "drive"
+          connectorId: "507f1f77bcf86cd799439011"
+      requestBody:
+        application/json: {"scheduleConfig": {"scheduleType": "weekly", "isEnabled": true, "timezone": "Europe/London", "daysOfWeek": [1, 3, 5], "hour": 3, "minute": 0}, "priority": 5, "maxRetries": 3, "timeout": 300000}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "Crawling job scheduled successfully", "data": {"jobId": "crawl-drive-507f1f77bcf86cd799439011-507f1f77bcf86cd799439012", "connector": "drive", "connectorId": "507f1f77bcf86cd799439011", "scheduleConfig": {"scheduleType": "daily", "isEnabled": true, "timezone": "UTC", "hour": 2, "minute": 0}, "scheduledAt": "2024-01-15T10:30:00Z"}}
+    customCron:
+      parameters:
+        path:
+          connector: "drive"
+          connectorId: "507f1f77bcf86cd799439011"
+      requestBody:
+        application/json: {"scheduleConfig": {"scheduleType": "custom", "isEnabled": true, "timezone": "UTC", "cronExpression": "0 */6 * * *", "description": "Every 6 hours"}, "priority": 5, "maxRetries": 3, "timeout": 300000}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "Crawling job scheduled successfully", "data": {"jobId": "crawl-drive-507f1f77bcf86cd799439011-507f1f77bcf86cd799439012", "connector": "drive", "connectorId": "507f1f77bcf86cd799439011", "scheduleConfig": {"scheduleType": "daily", "isEnabled": true, "timezone": "UTC", "hour": 2, "minute": 0}, "scheduledAt": "2024-01-15T10:30:00Z"}}
+    oneTimeSync:
+      parameters:
+        path:
+          connector: "drive"
+          connectorId: "507f1f77bcf86cd799439011"
+      requestBody:
+        application/json: {"scheduleConfig": {"scheduleType": "once", "isEnabled": true, "timezone": "UTC", "scheduledTime": "2024-12-25T10:00:00Z"}, "priority": 1, "maxRetries": 3, "timeout": 300000}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "Crawling job scheduled successfully", "data": {"jobId": "crawl-drive-507f1f77bcf86cd799439011-507f1f77bcf86cd799439012", "connector": "drive", "connectorId": "507f1f77bcf86cd799439011", "scheduleConfig": {"scheduleType": "daily", "isEnabled": true, "timezone": "UTC", "hour": 2, "minute": 0}, "scheduledAt": "2024-01-15T10:30:00Z"}}
+    speakeasy-default-schedule-crawling-job:
+      parameters:
+        path:
+          connector: "drive"
+          connectorId: "507f1f77bcf86cd799439011"
+      requestBody:
+        application/json: {"scheduleConfig": {"scheduleType": "once", "isEnabled": true, "timezone": "UTC", "scheduledTime": "2024-12-25T10:00:00Z"}, "priority": 5, "maxRetries": 3, "timeout": 300000}
+      responses:
+        "201":
+          application/json: {"success": true, "message": "Crawling job scheduled successfully", "data": {"jobId": "crawl-drive-507f1f77bcf86cd799439011-507f1f77bcf86cd799439012", "connector": "drive", "connectorId": "507f1f77bcf86cd799439011", "scheduleConfig": {"scheduleType": "daily", "isEnabled": true, "timezone": "UTC", "hour": 2, "minute": 0}, "scheduledAt": "2024-01-15T10:30:00Z"}}
+  getCrawlingJobStatus:
+    speakeasy-default-get-crawling-job-status:
+      parameters:
+        path:
+          connector: "drive"
+          connectorId: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Job status retrieved successfully", "data": {"id": "crawl-drive-507f1f77bcf86cd799439011-507f1f77bcf86cd799439012", "name": "crawl-drive-507f1f77bcf86cd799439011", "data": {"connector": "drive", "connectorId": "507f1f77bcf86cd799439011", "scheduleConfig": {"scheduleType": "hourly", "isEnabled": true, "timezone": "UTC", "minute": 30, "interval": 1}, "orgId": "507f1f77bcf86cd799439012", "userId": "507f1f77bcf86cd799439013", "timestamp": "2024-11-06T06:42:05.632Z"}, "delay": 3600000, "timestamp": 1703520000000, "attemptsMade": 0, "failedReason": null, "state": "waiting"}}
+  removeCrawlingJob:
+    speakeasy-default-remove-crawling-job:
+      parameters:
+        path:
+          connector: "drive"
+          connectorId: "507f1f77bcf86cd799439011"
+      responses:
+        "200":
+          application/json: {"success": true, "message": "Crawling job removed successfully"}
+examplesVersion: 1.0.2

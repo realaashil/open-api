@@ -25,8 +25,12 @@ info:
     email: support@pipeshub.com
 
 servers:
-  - url: /api/v1
+  - url: "{server_url}/api/v1"
     description: Base API URL
+    variables:
+      server_url:
+        default: http://localhost:3000
+        description: Base server URL (without /api/v1)
 
 tags:
   # Authentication
@@ -1512,14 +1516,17 @@ components:
         deletedBy:
           type: string
           description: ID of user who deleted this user
+        __v:
+          type: integer
+          description: Document version (MongoDB)
         createdAt:
-          type: integer
-          format: int64
-          description: Creation timestamp (milliseconds since epoch)
+          type: string
+          format: date-time
+          description: Creation timestamp (ISO 8601)
         updatedAt:
-          type: integer
-          format: int64
-          description: Last update timestamp (milliseconds since epoch)
+          type: string
+          format: date-time
+          description: Last update timestamp (ISO 8601)
       required:
         - email
         - orgId
@@ -1570,6 +1577,8 @@ components:
           type: string
           enum: [individual, business]
           description: Type of account
+        permanentAddress:
+          $ref: '#/components/schemas/Address'
         onBoardingStatus:
           type: string
           enum: [configured, notConfigured, skipped]
@@ -1578,14 +1587,17 @@ components:
           type: boolean
           description: Soft delete flag
           default: false
+        __v:
+          type: integer
+          description: Document version (MongoDB)
         createdAt:
-          type: integer
-          format: int64
-          description: Creation timestamp
+          type: string
+          format: date-time
+          description: Creation timestamp (ISO 8601)
         updatedAt:
-          type: integer
-          format: int64
-          description: Last update timestamp
+          type: string
+          format: date-time
+          description: Last update timestamp (ISO 8601)
       required:
         - domain
         - contactEmail
@@ -1614,13 +1626,13 @@ components:
             $ref: '#/components/schemas/UserRole'
           description: Users and their roles in the team
         createdAt:
-          type: integer
-          format: int64
-          description: Creation timestamp
+          type: string
+          format: date-time
+          description: Creation timestamp (ISO 8601)
         updatedAt:
-          type: integer
-          format: int64
-          description: Last update timestamp
+          type: string
+          format: date-time
+          description: Last update timestamp (ISO 8601)
       required:
         - name
 
@@ -1893,39 +1905,43 @@ components:
     KnowledgeBase:
       type: object
       properties:
-        _key:
+        id:
           type: string
           description: Unique knowledge base identifier
         name:
           type: string
           description: Name of the knowledge base
-        orgId:
+        connectorId:
           type: string
-          description: Organization ID
+          nullable: true
+          description: Associated connector ID (null for manual KBs)
         createdAtTimestamp:
           type: integer
           format: int64
-          description: Creation timestamp
+          description: Creation timestamp in milliseconds
         updatedAtTimestamp:
           type: integer
           format: int64
-          description: Last update timestamp
+          description: Last update timestamp in milliseconds
+        createdBy:
+          type: string
+          description: User ID of the creator
         userRole:
           type: string
           enum: [OWNER, ORGANIZER, FILEORGANIZER, WRITER, COMMENTER, READER]
           description: User's role in this knowledge base
-        isDeleted:
-          type: boolean
-          description: Whether the knowledge base is deleted
-          default: false
+        folders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Folder'
+          description: Folders in this knowledge base
       required:
         - name
-        - orgId
 
     Folder:
       type: object
       properties:
-        _key:
+        id:
           type: string
           description: Unique folder identifier
         name:
@@ -1963,7 +1979,7 @@ components:
         A record represents a single document, file, or content item within a knowledge base.
         Records can originate from file uploads or external connectors (Google Drive, OneDrive, etc.).
       properties:
-        _key:
+        id:
           type: string
           description: Unique record identifier (UUID format)
           example: "550e8400-e29b-41d4-a716-446655440000"
@@ -1971,6 +1987,9 @@ components:
           type: string
           description: Display name of the record
           example: "Q4 Financial Report.pdf"
+        name:
+          type: string
+          description: Display name (alias for recordName)
         externalRecordId:
           type: string
           description: External storage document ID (links to Storage module)
@@ -2002,7 +2021,7 @@ components:
           example: "conn_123456"
         connectorName:
           type: string
-          enum: [ONEDRIVE, GOOGLE_DRIVE, CONFLUENCE, JIRA, SLACK, SHAREPOINT_ONLINE, GMAIL, DROPBOX, OUTLOOK, SERVICENOW, BOOKSTACK, WEB]
+          enum: [KB, ONEDRIVE, GOOGLE_DRIVE, CONFLUENCE, JIRA, SLACK, SHAREPOINT_ONLINE, GMAIL, DROPBOX, OUTLOOK, SERVICENOW, BOOKSTACK, WEB]
           description: Name of the source connector
           example: "GOOGLE_DRIVE"
         orgId:
@@ -2015,6 +2034,7 @@ components:
           example: "kb_xyz789"
         folderId:
           type: string
+          nullable: true
           description: Parent folder ID (null if at KB root)
           example: "folder_456"
         version:
@@ -2022,6 +2042,9 @@ components:
           description: Current version number (increments on updates)
           default: 0
           example: 3
+        isLatestVersion:
+          type: boolean
+          description: Whether this is the latest version
         createdAtTimestamp:
           type: integer
           format: int64
@@ -2032,6 +2055,14 @@ components:
           format: int64
           description: Last update timestamp in milliseconds
           example: 1704240000000
+        sourceCreatedAtTimestamp:
+          type: integer
+          format: int64
+          description: Source creation timestamp (from connector)
+        sourceLastModifiedTimestamp:
+          type: integer
+          format: int64
+          description: Source last modified timestamp (from connector)
         indexingStatus:
           type: string
           enum: [NOT_STARTED, PAUSED, IN_PROGRESS, COMPLETED, FAILED, FILE_TYPE_NOT_SUPPORTED, AUTO_INDEX_OFF, EMPTY, ENABLE_MULTIMODAL_MODELS, QUEUED]
@@ -2077,6 +2108,41 @@ components:
         sha256Hash:
           type: string
           description: SHA-256 hash for content deduplication
+        type:
+          type: string
+          description: Node type identifier
+          example: "record"
+        fileRecord:
+          type: object
+          nullable: true
+          description: File-specific metadata (present when recordType is FILE)
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            extension:
+              type: string
+            mimeType:
+              type: string
+            sizeInBytes:
+              type: integer
+              format: int64
+            webUrl:
+              type: string
+            path:
+              type: string
+              nullable: true
+            isFile:
+              type: boolean
+        mailRecord:
+          type: object
+          nullable: true
+          description: Email-specific metadata (present when recordType is EMAIL)
+        ticketRecord:
+          type: object
+          nullable: true
+          description: Ticket-specific metadata (present when recordType is TICKET)
           example: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       required:
         - recordName
@@ -2130,23 +2196,30 @@ components:
       type: object
       description: Statistics for a connector's records
       properties:
-        connectorId:
-          type: string
-        totalRecords:
-          type: integer
-        indexedRecords:
-          type: integer
-        failedRecords:
-          type: integer
-        pendingRecords:
-          type: integer
-        lastSyncTime:
-          type: integer
-          format: int64
-        statusBreakdown:
+        success:
+          type: boolean
+        data:
           type: object
-          additionalProperties:
-            type: integer
+          properties:
+            orgId:
+              type: string
+            connectorId:
+              type: string
+            origin:
+              type: string
+            stats:
+              type: object
+              properties:
+                total:
+                  type: integer
+                indexingStatus:
+                  type: object
+                  additionalProperties:
+                    type: integer
+            byRecordType:
+              type: array
+              items:
+                type: object
 
     KnowledgeHubNode:
       type: object
@@ -2171,26 +2244,31 @@ components:
     KBPermission:
       type: object
       properties:
+        id:
+          type: string
+          description: Permission entry ID
         userId:
           type: string
           description: User ID
-        teamId:
+        email:
           type: string
-          description: Team ID
+          description: User email
+        name:
+          type: string
+          description: User display name
         role:
           type: string
           enum: [OWNER, ORGANIZER, FILEORGANIZER, WRITER, COMMENTER, READER]
-          description: Permission role
-        kbId:
+        type:
           type: string
-          description: Knowledge base ID
-        grantedBy:
-          type: string
-          description: User ID who granted the permission
-        grantedAt:
+          enum: [USER, TEAM]
+          description: Whether permission is for a user or team
+        createdAtTimestamp:
           type: integer
           format: int64
-          description: Timestamp when permission was granted
+        updatedAtTimestamp:
+          type: integer
+          format: int64
 
     # ==================== ENTERPRISE SEARCH SCHEMAS ====================
     AppType:
@@ -3499,9 +3577,6 @@ components:
     PlatformSettings:
       type: object
       description: Platform-wide configuration settings for file uploads and feature toggles
-      required:
-        - fileUploadMaxSizeBytes
-        - featureFlags
       properties:
         fileUploadMaxSizeBytes:
           type: integer
@@ -3522,7 +3597,8 @@ components:
         updatedAt:
           type: string
           format: date-time
-          description: Timestamp of last settings update (read-only, set automatically)
+          nullable: true
+          description: Timestamp of last settings update (read-only, set automatically). May not be present in the response.
           readOnly: true
           example: "2024-01-15T10:30:00Z"
 
@@ -3607,8 +3683,6 @@ components:
     AzureAdAuthConfig:
       type: object
       description: Azure Active Directory authentication configuration
-      required:
-        - clientId
       properties:
         clientId:
           type: string
@@ -3623,8 +3697,6 @@ components:
     MicrosoftAuthConfig:
       type: object
       description: Microsoft authentication configuration
-      required:
-        - clientId
       properties:
         clientId:
           type: string
@@ -3638,8 +3710,6 @@ components:
     GoogleAuthConfig:
       type: object
       description: Google authentication configuration
-      required:
-        - clientId
       properties:
         clientId:
           type: string
@@ -3649,10 +3719,6 @@ components:
     SSOAuthConfig:
       type: object
       description: SAML SSO authentication configuration
-      required:
-        - entryPoint
-        - certificate
-        - emailKey
       properties:
         entryPoint:
           type: string
@@ -3670,9 +3736,6 @@ components:
     GenericOAuthConfig:
       type: object
       description: Generic OAuth 2.0 provider configuration
-      required:
-        - providerName
-        - clientId
       properties:
         providerName:
           type: string
@@ -3822,19 +3885,17 @@ components:
         Metrics are collected anonymously and pushed to a remote server for analytics.
       properties:
         enableMetricCollection:
-          type: boolean
+          type: string
           description: |
             Master switch for metrics collection. When disabled, no metrics are collected or pushed.
-            Default: true
-          example: true
+            Default: "true"
+          example: "true"
         pushIntervalMs:
-          type: integer
+          type: string
           description: |
             Interval in milliseconds between metrics pushes to the remote server.
             Minimum: 1000ms (1 second), Default: 60000ms (1 minute)
-          minimum: 1000
-          default: 60000
-          example: 60000
+          example: "60000"
         serverUrl:
           type: string
           format: uri
@@ -3847,21 +3908,15 @@ components:
           description: |
             API key for authenticating with the metrics server. Auto-generated if not provided.
           example: "54523f794e23d96e"
-        instanceId:
-          type: string
-          description: |
-            Unique identifier for this PipesHub instance. Auto-generated based on hostname.
-          example: "638bc1b45c03e03d"
         appVersion:
           type: string
           description: Current application version for metrics tagging.
           example: "1.0.0"
       example:
-        enableMetricCollection: true
-        pushIntervalMs: 60000
+        enableMetricCollection: "true"
+        pushIntervalMs: "60000"
         serverUrl: "https://metrics-collector.example.com/collect-metrics"
         apiKey: "54523f794e23d96e"
-        instanceId: "638bc1b45c03e03d"
         appVersion: "1.0.0"
 
     # Feature Flags Schema
@@ -4609,6 +4664,7 @@ components:
 
 security:
   - bearerAuth: []
+  - oauth2: []
 
 paths:
   # ==================== AUTHENTICATION ENDPOINTS ====================
@@ -5496,25 +5552,24 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/OAuthScopeInfo'
-              example:
-                - name: "openid"
-                  description: "OpenID Connect authentication"
-                  category: "Identity"
-                - name: "profile"
-                  description: "Access to user profile information"
-                  category: "Identity"
-                - name: "email"
-                  description: "Access to user email address"
-                  category: "Identity"
-                - name: "read:records"
-                  description: "Read access to records"
-                  category: "Records"
-                - name: "write:records"
-                  description: "Write access to records"
-                  category: "Records"
+                type: object
+                properties:
+                  scopes:
+                    type: object
+                    description: Scopes grouped by category
+                    additionalProperties:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          description:
+                            type: string
+                          category:
+                            type: string
+                          requiresUserConsent:
+                            type: boolean
         '401':
           description: Unauthorized
         '403':
@@ -6170,26 +6225,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  success:
-                    type: boolean
-                    example: true
-                  data:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/User'
-                  pagination:
-                    type: object
-                    properties:
-                      page:
-                        type: integer
-                      limit:
-                        type: integer
-                      total:
-                        type: integer
-                      totalPages:
-                        type: integer
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
         '401':
           description: Unauthorized - Valid bearer token required
 
@@ -6343,13 +6381,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  success:
-                    type: boolean
-                    example: true
-                  data:
-                    $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/User'
         '400':
           description: Invalid user ID format
         '401':
@@ -7609,9 +7641,6 @@ paths:
               schema:
                 type: object
                 properties:
-                  success:
-                    type: boolean
-                    example: true
                   exists:
                     type: boolean
                     description: Whether an organization has been created
@@ -7767,13 +7796,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  success:
-                    type: boolean
-                    example: true
-                  data:
-                    $ref: '#/components/schemas/Organization'
+                $ref: '#/components/schemas/Organization'
         '401':
           description: Unauthorized - Valid bearer token required
         '404':
@@ -7849,9 +7872,6 @@ paths:
               schema:
                 type: object
                 properties:
-                  success:
-                    type: boolean
-                    example: true
                   message:
                     type: string
                     example: "Organization updated successfully"
@@ -8041,6 +8061,8 @@ paths:
                     format: uri
                     description: Signed URL to access the logo (null if no logo)
                     example: "https://storage.pipeshub.com/org/507f1f77bcf86cd799439011/logo.png?token=..."
+        '204':
+          description: No logo configured
         '401':
           description: Unauthorized - Valid authentication required
         '404':
@@ -8114,43 +8136,10 @@ paths:
               schema:
                 type: object
                 properties:
-                  success:
-                    type: boolean
-                    example: true
-                  data:
-                    type: object
-                    properties:
-                      isCompleted:
-                        type: boolean
-                        description: Whether onboarding is fully complete
-                        example: false
-                      currentStep:
-                        type: string
-                        description: Current active onboarding step
-                        example: "invite_team"
-                      completedSteps:
-                        type: array
-                        items:
-                          type: string
-                        example: ["org_profile", "admin_setup"]
-                      completionPercentage:
-                        type: integer
-                        minimum: 0
-                        maximum: 100
-                        example: 40
-                      steps:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                            name:
-                              type: string
-                            isCompleted:
-                              type: boolean
-                            isRequired:
-                              type: boolean
+                  status:
+                    type: string
+                    enum: [configured, notConfigured, skipped]
+                    description: Current onboarding status
         '401':
           description: Unauthorized - Valid authentication required
 
@@ -8934,7 +8923,34 @@ paths:
                     items:
                       $ref: '#/components/schemas/KnowledgeBase'
                   pagination:
-                    $ref: '#/components/schemas/PaginationInfo'
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                        description: Current page number
+                      limit:
+                        type: integer
+                        description: Items per page
+                      totalCount:
+                        type: integer
+                        description: Total number of items
+                      totalPages:
+                        type: integer
+                        description: Total number of pages
+                      hasNext:
+                        type: boolean
+                        description: Whether there is a next page
+                      hasPrev:
+                        type: boolean
+                        description: Whether there is a previous page
+                  filters:
+                    type: object
+                    description: Applied and available filters
+                    properties:
+                      applied:
+                        type: object
+                      available:
+                        type: object
         '400':
           description: Invalid query parameters
         '401':
@@ -9276,7 +9292,87 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RecordsResponse'
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  container:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      path:
+                        type: string
+                      type:
+                        type: string
+                      webUrl:
+                        type: string
+                      recordGroupId:
+                        type: string
+                  folders:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Folder'
+                  records:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Record'
+                  level:
+                    type: integer
+                  totalCount:
+                    type: integer
+                  counts:
+                    type: object
+                    properties:
+                      folders:
+                        type: integer
+                      records:
+                        type: integer
+                      totalItems:
+                        type: integer
+                      totalFolders:
+                        type: integer
+                      totalRecords:
+                        type: integer
+                  availableFilters:
+                    type: object
+                  paginationMode:
+                    type: string
+                  userPermission:
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                      canUpload:
+                        type: boolean
+                      canCreateFolders:
+                        type: boolean
+                      canEdit:
+                        type: boolean
+                      canDelete:
+                        type: boolean
+                      canManagePermissions:
+                        type: boolean
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                      limit:
+                        type: integer
+                      totalItems:
+                        type: integer
+                      totalPages:
+                        type: integer
+                      hasNext:
+                        type: boolean
+                      hasPrev:
+                        type: boolean
+                  filters:
+                    type: object
+                    description: Applied and available filters
         '401':
           description: Unauthorized
         '403':
@@ -9377,7 +9473,87 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RecordsResponse'
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  container:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      path:
+                        type: string
+                      type:
+                        type: string
+                      webUrl:
+                        type: string
+                      recordGroupId:
+                        type: string
+                  folders:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Folder'
+                  records:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Record'
+                  level:
+                    type: integer
+                  totalCount:
+                    type: integer
+                  counts:
+                    type: object
+                    properties:
+                      folders:
+                        type: integer
+                      records:
+                        type: integer
+                      totalItems:
+                        type: integer
+                      totalFolders:
+                        type: integer
+                      totalRecords:
+                        type: integer
+                  availableFilters:
+                    type: object
+                  paginationMode:
+                    type: string
+                  userPermission:
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                      canUpload:
+                        type: boolean
+                      canCreateFolders:
+                        type: boolean
+                      canEdit:
+                        type: boolean
+                      canDelete:
+                        type: boolean
+                      canManagePermissions:
+                        type: boolean
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                      limit:
+                        type: integer
+                      totalItems:
+                        type: integer
+                      totalPages:
+                        type: integer
+                      hasNext:
+                        type: boolean
+                      hasPrev:
+                        type: boolean
+                  filters:
+                    type: object
+                    description: Applied and available filters
         '401':
           description: Unauthorized
         '403':
@@ -9419,7 +9595,56 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Record'
+                type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/Record'
+                  knowledgeBase:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      orgId:
+                        type: string
+                  folder:
+                    type: object
+                    nullable: true
+                  metadata:
+                    type: object
+                    properties:
+                      departments:
+                        type: array
+                        items:
+                          type: object
+                      categories:
+                        type: array
+                        items:
+                          type: object
+                      topics:
+                        type: array
+                        items:
+                          type: object
+                      languages:
+                        type: array
+                        items:
+                          type: object
+                  permissions:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        type:
+                          type: string
+                        relationship:
+                          type: string
+                        accessType:
+                          type: string
         '401':
           description: Unauthorized
         '404':
@@ -10495,10 +10720,93 @@ paths:
               schema:
                 type: object
                 properties:
-                  nodes:
+                  success:
+                    type: boolean
+                  error:
+                    type: string
+                    nullable: true
+                  id:
+                    type: string
+                    nullable: true
+                  currentNode:
+                    type: object
+                    nullable: true
+                  parentNode:
+                    type: object
+                    nullable: true
+                  items:
                     type: array
                     items:
-                      $ref: '#/components/schemas/KnowledgeHubNode'
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        nodeType:
+                          type: string
+                          enum: [kb, folder, record, connector, app]
+                        parentId:
+                          type: string
+                          nullable: true
+                        origin:
+                          type: string
+                        connector:
+                          type: string
+                        recordType:
+                          type: string
+                          nullable: true
+                        indexingStatus:
+                          type: string
+                          nullable: true
+                        createdAt:
+                          type: integer
+                        updatedAt:
+                          type: integer
+                        sizeInBytes:
+                          type: integer
+                          nullable: true
+                        mimeType:
+                          type: string
+                          nullable: true
+                        extension:
+                          type: string
+                          nullable: true
+                        webUrl:
+                          type: string
+                        hasChildren:
+                          type: boolean
+                        sharingStatus:
+                          type: string
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                      limit:
+                        type: integer
+                      totalItems:
+                        type: integer
+                      totalPages:
+                        type: integer
+                      hasNext:
+                        type: boolean
+                      hasPrev:
+                        type: boolean
+                  filters:
+                    type: object
+                    nullable: true
+                  breadcrumbs:
+                    type: array
+                    nullable: true
+                    items:
+                      type: object
+                  counts:
+                    type: object
+                    nullable: true
+                  permissions:
+                    type: object
+                    nullable: true
         '401':
           description: Unauthorized
 
@@ -10717,9 +11025,44 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Conversation'
+                type: object
+                properties:
+                  conversations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Conversation'
+                  sharedWithMeConversations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Conversation'
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                      limit:
+                        type: integer
+                      totalCount:
+                        type: integer
+                      totalPages:
+                        type: integer
+                      hasNextPage:
+                        type: boolean
+                      hasPrevPage:
+                        type: boolean
+                  filters:
+                    type: object
+                    description: Applied and available filters
+                  meta:
+                    type: object
+                    properties:
+                      requestId:
+                        type: string
+                      timestamp:
+                        type: string
+                        format: date-time
+                      duration:
+                        type: integer
         '401':
           description: Unauthorized - Valid bearer token required
 
@@ -10746,9 +11089,45 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Conversation'
+                type: object
+                properties:
+                  conversations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Conversation'
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                      limit:
+                        type: integer
+                      totalCount:
+                        type: integer
+                      totalPages:
+                        type: integer
+                      hasNextPage:
+                        type: boolean
+                      hasPrevPage:
+                        type: boolean
+                  filters:
+                    type: object
+                    description: Applied and available filters
+                  summary:
+                    type: object
+                    properties:
+                      totalArchived:
+                        type: integer
+                  meta:
+                    type: object
+                    properties:
+                      requestId:
+                        type: string
+                      timestamp:
+                        type: string
+                        format: date-time
+                      duration:
+                        type: integer
         '401':
           description: Unauthorized
 
@@ -12060,9 +12439,44 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/AgentConversation'
+                type: object
+                properties:
+                  conversations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Conversation'
+                  sharedWithMeConversations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Conversation'
+                  pagination:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                      limit:
+                        type: integer
+                      totalCount:
+                        type: integer
+                      totalPages:
+                        type: integer
+                      hasNextPage:
+                        type: boolean
+                      hasPrevPage:
+                        type: boolean
+                  filters:
+                    type: object
+                    description: Applied and available filters
+                  meta:
+                    type: object
+                    properties:
+                      requestId:
+                        type: string
+                      timestamp:
+                        type: string
+                        format: date-time
+                      duration:
+                        type: integer
         '401':
           description: Unauthorized
         '404':
@@ -12490,6 +12904,7 @@ paths:
       parameters:
         - name: scope
           in: query
+          required: true
           description: Filter by scope (team or personal)
           schema:
             $ref: '#/components/schemas/ConnectorScope'
@@ -14602,6 +15017,10 @@ paths:
               schema:
                 type: object
                 properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
                   models:
                     type: array
                     items:
@@ -14633,6 +15052,10 @@ paths:
               schema:
                 type: object
                 properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
                   models:
                     type: array
                     items:
@@ -14990,7 +15413,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  featureFlags:
+                  flags:
                     type: array
                     items:
                       $ref: '#/components/schemas/FeatureFlag'
@@ -15069,11 +15492,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/MetricsCollectionConfig'
               example:
-                enableMetricCollection: true
-                pushIntervalMs: 60000
+                enableMetricCollection: "true"
+                pushIntervalMs: "60000"
                 serverUrl: "https://metrics-collector.example.com/collect-metrics"
                 apiKey: "54523f794e23d96e"
-                instanceId: "638bc1b45c03e03d"
                 appVersion: "1.0.0"
         '401':
           description: Unauthorized - Valid authentication required

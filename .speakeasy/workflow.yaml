@@ -1,0 +1,10 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    PipesHub API:
+        inputs:
+            - location: source_specs/pipeshub-openapi.yaml
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/pipeshub/test/pipes-hub-api
+targets: {}

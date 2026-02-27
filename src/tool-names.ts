@@ -1,0 +1,299 @@
+// Auto-generated at build time
+export const toolNames: Array<{ name: string; description: string }>= [
+  {
+    "name": "user-account-init-auth",
+    "description": "Initialize authentication session\n\nInitialize an authentication session for a user by email address.\nThis is the first step in the multi-step authentication flow.\n<br><br>\n<b>Flow:</b><br>\n1. Call this endpoint with the user's email<br>\n2. Receive a session token in the <code>x-session-token</code> response header<br>\n3. Use the session token in subsequent <code>/authenticate</code> calls<br>\n4. The response includes <code>allowedMethods</code> for the first authentication step\n<br><br>\n<b>Session Token:</b><br>\n- Stored in response header <code>x-session-token</code><br>\n- Required for all subsequent authentication requests<br>\n- Expires after a configured timeout period\n<br><br>\n<b>Multi-Factor Authentication:</b><br>\nIf the organization has MFA configured, you'll need to complete multiple\nauthentication steps. Each step completion returns the next step's allowed methods.\n"
+  },
+  {
+    "name": "user-account-authenticate",
+    "description": "Authenticate user with credentials\n\nAuthenticate a user using the specified method and credentials.\nRequires a valid session token from <code>/initAuth</code>.\n<br><br>\n<b>Credential Formats by Method:</b><br>\n- <code>password</code>: <code>{ \"credentials\": { \"password\": \"your-password\" } }</code><br>\n- <code>otp</code>: <code>{ \"credentials\": { \"otp\": \"123456\" } }</code> (6-digit code, valid for 10 minutes)<br>\n- <code>google</code>: <code>{ \"credentials\": \"google-id-token-string\" }</code><br>\n- <code>microsoft</code>: <code>{ \"credentials\": { \"accessToken\": \"...\", \"idToken\": \"...\" } }</code><br>\n- <code>azureAd</code>: <code>{ \"credentials\": { \"accessToken\": \"...\", \"idToken\": \"...\" } }</code><br>\n- <code>oauth</code>: <code>{ \"credentials\": { \"accessToken\": \"...\", \"idToken\": \"...\" } }</code><br>\n- <code>samlSso</code>: Handled via redirect flow (use <code>/saml/signIn</code> instead)\n<br><br>\n<b>Multi-Step Response:</b><br>\nIf organization uses MFA, successful authentication returns:<br>\n- <code>status: \"success\"</code> with <code>nextStep</code> and <code>allowedMethods</code> for next step\n<br><br>\n<b>Fully Authenticated Response:</b><br>\nAfter completing all steps:<br>\n- <code>message: \"Fully authenticated\"</code> with <code>accessToken</code> (1hr) and <code>refreshToken</code> (7d)\n<br><br>\n<b>Security:</b><br>\n- Account locks after 5 consecutive failed attempts<br>\n- CAPTCHA may be required if enabled (pass <code>cf-turnstile-response</code>)\n"
+  },
+  {
+    "name": "user-account-generate-login-otp",
+    "description": "Generate and send OTP for login\n\nGenerate and send a 6-digit one-time password (OTP) to the user's email.\nUse this endpoint before authenticating with the <code>otp</code> method.\n<br><br>\n<b>OTP Details:</b><br>\n- 6 digits numeric code<br>\n- Valid for <b>10 minutes</b> after generation<br>\n- Sent to user's registered email address\n<br><br>\n<b>Rate Limiting:</b><br>\n- Multiple OTP requests may be rate-limited<br>\n- Wait for the current OTP to expire before requesting a new one\n<br><br>\n<b>CAPTCHA:</b><br>\nIf Cloudflare Turnstile is enabled, include <code>cf-turnstile-response</code> in the request body.\n"
+  },
+  {
+    "name": "user-account-forgot-password",
+    "description": "Request password reset email\n\nSend a password reset link to the user's email.\nThe link contains a time-limited token that can be used to reset the password.\n<br><br>\n<b>Note:</b> This endpoint always returns 200 even if the email doesn't exist (to prevent email enumeration).\n"
+  },
+  {
+    "name": "user-account-logout",
+    "description": "Logout current session\n\nLog out the current user session and invalidate tokens.\n<br><br>\n<b>Effects:</b><br>\n- Invalidates the current access token<br>\n- Clears server-side session data<br>\n- Client should also clear stored tokens locally\n<br><br>\n<b>Note:</b> This endpoint requires the access token, not the refresh token.\n"
+  },
+  {
+    "name": "O-auth-exchange-O-auth-code",
+    "description": "Exchange OAuth authorization code for tokens\n\nExchange an OAuth authorization code for access and ID tokens.\nUsed after the OAuth authorization flow redirects back to the application.\n<br><br>\n<b>Supported Providers:</b><br>\n- Generic OAuth 2.0 providers configured in org settings\n<br><br>\n<b>Flow:</b><br>\n1. User is redirected to OAuth provider's authorization URL<br>\n2. User authorizes and is redirected back with a code<br>\n3. This endpoint exchanges the code for tokens<br>\n4. Tokens can then be used with the <code>/userAccount/authenticate</code> endpoint\n"
+  },
+  {
+    "name": "O-auth-provider-oauth-authorize",
+    "description": "Initiate OAuth authorization flow\n\nOAuth 2.0 Authorization Endpoint (RFC 6749 Section 4.1.1).\n<br><br>\nInitiates the authorization code flow. Users are redirected here by OAuth clients\nto authorize access to their account.\n<br><br>\n<b>Flow:</b><br>\n1. Client redirects user to this endpoint with required parameters<br>\n2. If not logged in, user is redirected to PipesHub login<br>\n3. User sees consent page with requested scopes<br>\n4. User grants or denies consent<br>\n5. User is redirected back to client with authorization code\n<br><br>\n<b>PKCE Support (RFC 7636):</b><br>\n- Required for public clients (SPA, mobile apps)<br>\n- Recommended for confidential clients<br>\n- Use S256 method (SHA256 hash of code_verifier)\n<br><br>\n<b>Security:</b><br>\n- Always use HTTPS in production<br>\n- State parameter provides CSRF protection<br>\n- Redirect URI must match registered URIs exactly\n"
+  },
+  {
+    "name": "O-auth-provider-oauth-authorize-consent",
+    "description": "Submit authorization consent\n\nSubmit user's consent decision for OAuth authorization.\n<br><br>\nCalled after user reviews the consent page and makes a decision.\nThis endpoint generates an authorization code if consent is granted.\n<br><br>\n<b>Responses:</b><br>\n- Consent granted: Redirects to client with authorization code<br>\n- Consent denied: Redirects to client with `access_denied` error\n"
+  },
+  {
+    "name": "O-auth-provider-oauth-token",
+    "description": "Exchange authorization code for tokens\n\nOAuth 2.0 Token Endpoint (RFC 6749 Section 4.1.3).\n<br><br>\nExchanges an authorization code, client credentials, or refresh token for access tokens.\n<br><br>\n<b>Grant Types:</b><br>\n- `authorization_code`: Exchange auth code for tokens (user-based)<br>\n- `client_credentials`: Get tokens for machine-to-machine auth<br>\n- `refresh_token`: Get new access token using refresh token\n<br><br>\n<b>Client Authentication:</b><br>\nCan be provided via:<br>\n- HTTP Basic auth: `Authorization: Basic base64(client_id:client_secret)`<br>\n- Request body: `client_id` and `client_secret` parameters\n<br><br>\n<b>PKCE Verification:</b><br>\nIf authorization used PKCE, the `code_verifier` must be provided and will be\nverified against the stored code challenge.\n"
+  },
+  {
+    "name": "O-auth-provider-oauth-revoke",
+    "description": "Revoke an access or refresh token\n\nOAuth 2.0 Token Revocation Endpoint (RFC 7009).\n<br><br>\nRevokes an access token or refresh token, preventing further use.\nRevoking a refresh token also invalidates associated access tokens.\n<br><br>\n<b>Use Cases:</b><br>\n- User logs out of third-party app<br>\n- User revokes app access from account settings<br>\n- Security incident response\n<br><br>\n<b>Note:</b> Returns 200 OK even if token was already revoked or invalid\n(per RFC 7009, to prevent token enumeration).\n"
+  },
+  {
+    "name": "O-auth-provider-oauth-introspect",
+    "description": "Introspect a token\n\nOAuth 2.0 Token Introspection Endpoint (RFC 7662).\n<br><br>\nCheck if a token is active and retrieve its metadata.\n<br><br>\n<b>Use Cases:</b><br>\n- Resource servers validating tokens<br>\n- Debugging token issues<br>\n- Checking token scopes before processing requests\n<br><br>\n<b>Response:</b><br>\n- Active token: Returns `active: true` with token metadata<br>\n- Invalid/expired/revoked token: Returns only `active: false`\n"
+  },
+  {
+    "name": "open-ID-connect-oauth-user-info",
+    "description": "Get authenticated user information\n\nOpenID Connect UserInfo Endpoint.\n<br><br>\nReturns claims about the authenticated user. Requires a valid access token\nwith the `openid` scope.\n<br><br>\n<b>Available Claims:</b><br>\n- `user_id` - User identifier<br>\n- `name`, `given_name`, `family_name` - Name claims (with `profile` scope)<br>\n- `email`, `email_verified` - Email claims (with `email` scope)\n<br><br>\n<b>Authentication:</b><br>\nPass the access token as a Bearer token: `Authorization: Bearer {access_token}`\n"
+  },
+  {
+    "name": "open-ID-connect-openid-configuration",
+    "description": "OpenID Connect Discovery\n\nOpenID Connect Discovery Endpoint (RFC 8414).\n<br><br>\nReturns metadata about the OAuth/OIDC authorization server including\nendpoint URLs, supported features, and capabilities.\n<br><br>\n<b>Use Cases:</b><br>\n- Automatic client configuration<br>\n- Discovering supported features<br>\n- Getting endpoint URLs without hardcoding\n<br><br>\n<b>Note:</b> This endpoint does not require authentication.\n"
+  },
+  {
+    "name": "open-ID-connect-jwks",
+    "description": "JSON Web Key Set\n\nJSON Web Key Set Endpoint (RFC 7517).\n<br><br>\nReturns the public keys used to verify JWT signatures for ID tokens\nand access tokens.\n<br><br>\n<b>Use Cases:</b><br>\n- Verifying ID token signatures<br>\n- Verifying access token signatures (if JWT-based)\n<br><br>\n<b>Note:</b><br>\n- For HS256 (symmetric) signing, this returns empty keys<br>\n- For RS256 (asymmetric) signing, returns public RSA keys<br>\n- Keys should be cached with appropriate TTL\n"
+  },
+  {
+    "name": "O-auth-apps-list-O-auth-apps",
+    "description": "List OAuth apps\n\nList all OAuth apps registered for the organization.\n<br><br>\nReturns a paginated list of apps with their configuration (excluding secrets).\n<br><br>\n<b>Filters:</b><br>\n- `status` - Filter by app status (active, suspended, revoked)<br>\n- `search` - Search by app name\n"
+  },
+  {
+    "name": "O-auth-apps-create-O-auth-app",
+    "description": "Create OAuth app\n\nCreate a new OAuth app for the organization.\n<br><br>\n<b>Important:</b> The client secret is only returned once during creation.\nStore it securely - it cannot be retrieved later. If lost, you'll need to\nregenerate it.\n<br><br>\n<b>Admin Only:</b> Requires admin privileges.\n<br><br>\n<b>Rate Limited:</b> 10 requests per minute.\n"
+  },
+  {
+    "name": "O-auth-apps-list-O-auth-scopes",
+    "description": "List available scopes\n\nList all available OAuth scopes that can be requested by apps.\n<br><br>\nReturns scope names, descriptions, and categories for display\nin app configuration UI.\n"
+  },
+  {
+    "name": "O-auth-apps-get-O-auth-app",
+    "description": "Get OAuth app details\n\nGet details of a specific OAuth app.\n<br><br>\nReturns app configuration without the client secret.\n"
+  },
+  {
+    "name": "O-auth-apps-update-O-auth-app",
+    "description": "Update OAuth app\n\nUpdate an OAuth app's configuration.\n<br><br>\n<b>Admin Only:</b> Requires admin privileges.\n<br><br>\n<b>Rate Limited:</b> 10 requests per minute.\n<br><br>\n<b>Note:</b> To regenerate the client secret, use the\n`/oauth-clients/{appId}/regenerate-secret` endpoint.\n"
+  },
+  {
+    "name": "O-auth-apps-delete-O-auth-app",
+    "description": "Delete OAuth app\n\nDelete (soft delete) an OAuth app.\n<br><br>\nThis marks the app as deleted and revokes all its tokens.\nThe app cannot be restored after deletion.\n<br><br>\n<b>Admin Only:</b> Requires admin privileges.\n<br><br>\n<b>Rate Limited:</b> 10 requests per minute.\n"
+  },
+  {
+    "name": "O-auth-apps-regenerate-O-auth-app-secret",
+    "description": "Regenerate client secret\n\nRegenerate the client secret for an OAuth app.\n<br><br>\nThe old secret is immediately invalidated. Any clients using the old\nsecret will fail to authenticate until updated with the new secret.\n<br><br>\n<b>Important:</b> The new secret is only returned once. Store it securely.\n<br><br>\n<b>Admin Only:</b> Requires admin privileges.\n<br><br>\n<b>Rate Limited:</b> 10 requests per minute.\n"
+  },
+  {
+    "name": "O-auth-apps-suspend-O-auth-app",
+    "description": "Suspend OAuth app\n\nSuspend an OAuth app, preventing it from authenticating or issuing tokens.\n<br><br>\nExisting tokens remain valid until they expire, but no new tokens can\nbe obtained. Use this for temporary access suspension.\n<br><br>\n<b>Admin Only:</b> Requires admin privileges.\n<br><br>\n<b>Rate Limited:</b> 10 requests per minute.\n"
+  },
+  {
+    "name": "O-auth-apps-activate-O-auth-app",
+    "description": "Activate suspended OAuth app\n\nReactivate a suspended OAuth app, allowing it to authenticate and issue tokens again.\n<br><br>\n<b>Admin Only:</b> Requires admin privileges.\n<br><br>\n<b>Rate Limited:</b> 10 requests per minute.\n"
+  },
+  {
+    "name": "O-auth-apps-list-O-auth-app-tokens",
+    "description": "List app tokens\n\nList all active tokens issued to an OAuth app.\n<br><br>\nUseful for monitoring app usage and identifying tokens to revoke.\n<br><br>\n<b>Admin Only:</b> Requires admin privileges.\n"
+  },
+  {
+    "name": "O-auth-apps-revoke-all-O-auth-app-tokens",
+    "description": "Revoke all app tokens\n\nRevoke all tokens (access and refresh) issued to an OAuth app.\n<br><br>\nUse this for emergency access removal or when rotating credentials.\n<br><br>\n<b>Admin Only:</b> Requires admin privileges.\n<br><br>\n<b>Rate Limited:</b> 10 requests per minute.\n"
+  },
+  {
+    "name": "organization-auth-config-get-auth-methods",
+    "description": "Get organization authentication methods\n\nRetrieve the configured authentication methods for the organization.\n<br><br>\n<b>Response Structure:</b><br>\nReturns an array of authentication steps, each containing:<br>\n- <code>order</code>: Step number (1-3)<br>\n- <code>allowedMethods</code>: Array of methods allowed for that step\n<br><br>\n<b>Example Response:</b><br>\n<pre>\n{\n  \"authMethods\": [\n    { \"order\": 1, \"allowedMethods\": [{ \"type\": \"password\" }, { \"type\": \"google\" }] },\n    { \"order\": 2, \"allowedMethods\": [{ \"type\": \"otp\" }] }\n  ]\n}\n</pre>\n<br>\n<b>Admin Access Required:</b> Only organization admins can view auth configuration.\n"
+  },
+  {
+    "name": "organization-auth-config-update-auth-method",
+    "description": "Update organization authentication methods\n\nUpdate the authentication methods configuration for an organization.\nThis allows admins to configure single or multi-factor authentication.\n<br><br>\n<b>Validation Rules:</b><br>\n- Minimum 1 step, maximum 3 steps<br>\n- Each step must have a unique order (1, 2, or 3)<br>\n- No duplicate methods within the same step<br>\n- No method can appear in multiple steps<br>\n- Each step must have at least one allowed method\n<br><br>\n<b>Available Methods:</b><br>\n- <code>password</code>: Email/password authentication<br>\n- <code>otp</code>: One-time password via email<br>\n- <code>google</code>: Google OAuth 2.0<br>\n- <code>microsoft</code>: Microsoft OAuth 2.0<br>\n- <code>azureAd</code>: Azure Active Directory<br>\n- <code>samlSso</code>: SAML 2.0 Single Sign-On<br>\n- <code>oauth</code>: Generic OAuth 2.0 provider\n<br><br>\n<b>Example - Single Factor (Password or Google):</b><br>\n<pre>\n{\n  \"authMethods\": [\n    { \"order\": 1, \"allowedMethods\": [{ \"type\": \"password\" }, { \"type\": \"google\" }] }\n  ]\n}\n</pre>\n<br>\n<b>Example - Two Factor (Password + OTP):</b><br>\n<pre>\n{\n  \"authMethods\": [\n    { \"order\": 1, \"allowedMethods\": [{ \"type\": \"password\" }] },\n    { \"order\": 2, \"allowedMethods\": [{ \"type\": \"otp\" }] }\n  ]\n}\n</pre>\n<br>\n<b>Admin Access Required:</b> Only organization admins can update auth configuration.\n"
+  },
+  {
+    "name": "saml-sign-in-via-SAML",
+    "description": "Initiate SAML sign-in flow\n\nInitiate SAML Single Sign-On authentication by redirecting to the Identity Provider (IDP).\n<br><br>\n<b>Usage:</b><br>\n1. Call <code>/userAccount/initAuth</code> to get a session token<br>\n2. If <code>samlSso</code> is in the allowed methods, redirect the user to this endpoint<br>\n3. User authenticates with their IDP<br>\n4. IDP redirects back to <code>/saml/signIn/callback</code> with SAML response<br>\n5. Callback completes authentication and returns tokens\n<br><br>\n<b>Note:</b> This is a browser redirect endpoint, not a typical API call.\nThe user's browser should be redirected to this URL.\n<br><br>\n<b>Prerequisites:</b><br>\n- Organization must have SAML SSO configured via <code>/saml/updateAppConfig</code><br>\n- User must belong to an organization with SAML enabled\n"
+  },
+  {
+    "name": "users-create-user",
+    "description": "Create a new user\n\nCreate a new user account in the organization and optionally send an invitation email.<br><br>\n<b>Overview:</b><br>\nThis endpoint creates a new user account. The user will be added to the organization but won't have a password set until they complete the invitation flow or are assigned one by an admin.<br><br>\n<b>Invitation Flow:</b><br>\n<ol>\n<li>Admin creates user with this endpoint</li>\n<li>System generates invitation token</li>\n<li>User receives invitation email (if sendInvite is true)</li>\n<li>User clicks link and sets their password</li>\n<li>User can now log in normally</li>\n</ol>\n<b>Validation Rules:</b><br>\n<ul>\n<li><code>fullName</code>: Required, 1-100 characters</li>\n<li><code>email</code>: Required, valid email format, must be unique in org</li>\n<li><code>mobile</code>: Optional, format: +[country][number] (10-15 digits)</li>\n<li><code>designation</code>: Optional, job title or role</li>\n</ul>\n<b>Side Effects:</b><br>\n<ul>\n<li>User is automatically added to the \"everyone\" group</li>\n<li>Invitation email sent if <code>sendInvite: true</code></li>\n<li>User creation event published to event bus</li>\n<li>Audit log entry created</li>\n</ul>\n<b>Authorization:</b><br>\nOnly organization administrators can create new users.\n"
+  },
+  {
+    "name": "users-get-user-email-by-id",
+    "description": "Get user email by ID\n\nRetrieve the email address for a specific user. This is a dedicated endpoint for email lookup with proper access controls.<br><br>\n<b>Overview:</b><br>\nThis endpoint provides direct access to a user's email address. It exists separately from the main user endpoint to allow granular permission control over email visibility.<br><br>\n<b>Use Cases:</b><br>\n<ul>\n<li>Admin communication workflows</li>\n<li>Invitation and notification systems</li>\n<li>Email-based user lookup</li>\n<li>Contact information export</li>\n</ul>\n<b>Privacy Considerations:</b><br>\n<ul>\n<li>Only organization admins can access this endpoint</li>\n<li>Access is logged for audit purposes</li>\n<li>Consider GDPR/privacy regulations when exposing emails</li>\n</ul>\n<b>Authorization:</b><br>\nRequires admin privileges. Regular users should use the main user endpoint which may mask emails based on organization settings.\n"
+  },
+  {
+    "name": "users-upload-user-display-picture",
+    "description": "Upload display picture\n\nUpload or update the display picture (avatar) for the authenticated user.<br><br>\n<b>Overview:</b><br>\nThis endpoint allows users to upload their profile picture. The image is processed, resized, and stored for use throughout the application.<br><br>\n<b>File Requirements:</b><br>\n<ul>\n<li><b>Allowed types:</b> PNG, JPEG, JPG, WebP, GIF</li>\n<li><b>Maximum size:</b> 1MB (1,048,576 bytes)</li>\n<li><b>Recommended dimensions:</b> 256x256 pixels or larger</li>\n<li><b>Aspect ratio:</b> Square recommended (will be cropped to square)</li>\n</ul>\n<b>Image Processing:</b><br>\n<ul>\n<li>Images are automatically resized to standard dimensions</li>\n<li>Converted to JPEG for consistency and smaller file size</li>\n<li>Multiple sizes may be generated (thumbnail, standard, large)</li>\n<li>Original is not preserved</li>\n</ul>\n<b>Side Effects:</b><br>\n<ul>\n<li>Previous display picture is replaced</li>\n<li>Cached images are invalidated</li>\n<li>CDN cache may take time to update</li>\n</ul>\n<b>Authorization:</b><br>\nUsers can only upload their own display picture. Admins cannot upload on behalf of other users.\n"
+  },
+  {
+    "name": "users-get-user-display-picture",
+    "description": "Get display picture\n\nRetrieve the current user's display picture image.<br><br>\n<b>Overview:</b><br>\nThis endpoint returns the user's profile picture as binary image data. Use this for displaying the user's avatar in the application.<br><br>\n<b>Response Format:</b><br>\n<ul>\n<li>Returns raw image data (not JSON)</li>\n<li>Content-Type header indicates image format (typically image/jpeg)</li>\n<li>Suitable for use directly in &lt;img&gt; src or CSS background</li>\n</ul>\n<b>Caching:</b><br>\n<ul>\n<li>Response includes cache headers for browser caching</li>\n<li>Use ETag for conditional requests</li>\n<li>Cache invalidated when picture is updated</li>\n</ul>\n<b>Alternative:</b><br>\nFor signed URL access, use the user profile endpoint which returns a <code>displayPictureUrl</code> field.\n"
+  },
+  {
+    "name": "users-remove-user-display-picture",
+    "description": "Remove display picture\n\nRemove the current user's display picture and revert to default avatar.<br><br>\n<b>Overview:</b><br>\nThis endpoint permanently removes the user's uploaded profile picture. After removal, the user will display a default avatar (typically initials or generic icon).<br><br>\n<b>What Happens:</b><br>\n<ul>\n<li>Profile picture file is deleted from storage</li>\n<li>User profile updated to remove picture reference</li>\n<li>Cached images invalidated</li>\n<li>Default avatar will be shown in UI</li>\n</ul>\n<b>Note:</b><br>\nThis action is immediate and irreversible. To restore a picture, user must upload a new one.\n"
+  },
+  {
+    "name": "users-resend-user-invite",
+    "description": "Resend user invite\n\nResend the invitation email to a user who hasn't completed their account setup.<br><br>\n<b>Overview:</b><br>\nThis endpoint resends the invitation email to a user who was previously invited but hasn't logged in yet. Useful when the original invitation email was lost, expired, or ended up in spam.<br><br>\n<b>When to Use:</b><br>\n<ul>\n<li>User didn't receive original invitation</li>\n<li>Invitation link expired</li>\n<li>User forgot to complete setup</li>\n<li>Email went to spam folder</li>\n</ul>\n<b>Requirements:</b><br>\n<ul>\n<li>User must exist in the system</li>\n<li>User must NOT have logged in yet (hasLoggedIn: false)</li>\n<li>SMTP configuration must be active</li>\n<li>Admin privileges required</li>\n</ul>\n<b>What Happens:</b><br>\n<ul>\n<li>Generates a new invitation token</li>\n<li>Invalidates any previous invitation links</li>\n<li>Sends new invitation email</li>\n<li>Resets invitation expiry timer</li>\n</ul>\n"
+  },
+  {
+    "name": "users-unblock-user",
+    "description": "Unblock a user in organization\n\nUnblock a previously blocked user within the authenticated administrator's organization.<br><br>\n\n<b>Overview:</b><br>\nThis endpoint updates the user's credential record by setting <code>isBlocked</code> to <code>false</code> \nand resetting <code>wrongCredentialCount</code> to <code>0</code>.<br><br>\n\n<b>Authorization:</b><br>\n<ul>\n<li><b>Admin only:</b> Only organization administrators can unblock users</li>\n<li>Requires a valid Bearer token</li>\n</ul>\n\n<b>Validation & Conditions:</b><br>\n<ul>\n<li>User must belong to the same <code>orgId</code> as the authenticated admin</li>\n<li>User must currently be blocked (<code>isBlocked: true</code>)</li>\n<li>User must not be deleted (<code>isDeleted: false</code>)</li>\n</ul>\n\n<b>Note:</b> If the user is not blocked or does not exist in the organization, a 404 response is returned.\n"
+  },
+  {
+    "name": "organizations-check-org-exists",
+    "description": "Check if organization exists\n\nCheck if any organization has been created in the system. This is typically the first API call made during initial setup.<br><br>\n<b>Overview:</b><br>\nThis public endpoint determines whether the system has been initialized with an organization. Used by the frontend to decide whether to show the setup wizard or the login screen.<br><br>\n<b>Use Cases:</b><br>\n<ul>\n<li>First-time setup detection</li>\n<li>Onboarding flow decisions</li>\n<li>System initialization checks</li>\n</ul>\n<b>Response:</b><br>\n<ul>\n<li><code>exists: true</code> - Organization exists, show login</li>\n<li><code>exists: false</code> - No organization, show setup wizard</li>\n</ul>\n<b>Note:</b> This endpoint requires no authentication and is publicly accessible.\n"
+  },
+  {
+    "name": "organizations-create-organization",
+    "description": "Create organization\n\nCreate a new organization and its first admin user. This is the initial setup endpoint for new PipesHub installations.<br><br>\n<b>Overview:</b><br>\nThis endpoint performs the complete initial setup of a PipesHub instance, including creating the organization entity and its first administrator account. Should only be called once during initial setup.<br><br>\n<b>Setup Flow:</b><br>\n<ol>\n<li>Frontend calls <code>/org/exists</code> to check if setup is needed</li>\n<li>If no organization exists, show setup wizard</li>\n<li>Collect organization and admin details</li>\n<li>Call this endpoint to create organization</li>\n<li>User is automatically logged in as admin</li>\n</ol>\n<b>What Gets Created:</b><br>\n<ul>\n<li>Organization entity with provided details</li>\n<li>Admin user account with provided credentials</li>\n<li>Default user groups (admin, everyone)</li>\n<li>Default system settings</li>\n<li>Initial authentication configuration</li>\n</ul>\n<b>Account Types:</b><br>\n<ul>\n<li><code>individual</code>: Single-user account, limited team features</li>\n<li><code>business</code>: Multi-user organization with full features</li>\n</ul>\n<b>Security:</b><br>\n<ul>\n<li>This endpoint only works if no organization exists</li>\n<li>Password must meet security requirements</li>\n<li>Email verification may be required based on config</li>\n</ul>\n"
+  },
+  {
+    "name": "organizations-get-onboarding-status",
+    "description": "Get onboarding status\n\nRetrieve the organization's onboarding progress and status.<br><br>\n<b>Response Details:</b><br>\n<ul>\n<li>Current onboarding step</li>\n<li>Completion status of each step</li>\n<li>Overall completion percentage</li>\n</ul>\n<b>Onboarding Steps:</b><br>\n<ul>\n<li>Organization profile setup</li>\n<li>Admin account configuration</li>\n<li>Invite team members</li>\n<li>Connect integrations</li>\n<li>Configure settings</li>\n</ul>\n"
+  },
+  {
+    "name": "organizations-update-onboarding-status",
+    "description": "Update onboarding status\n\nUpdate the organization's onboarding progress.<br><br>\n<b>Use Cases:</b><br>\n<ul>\n<li>Mark a step as completed</li>\n<li>Skip optional steps</li>\n<li>Complete entire onboarding</li>\n</ul>\n<b>Behavior:</b><br>\n<ul>\n<li>Steps must be completed in order (unless skippable)</li>\n<li>Completing all required steps marks onboarding as complete</li>\n</ul>\n"
+  },
+  {
+    "name": "user-groups-create-user-group",
+    "description": "Create user group\n\nCreate a new user group within the organization.<br><br>\n<b>Group Types:</b><br>\n<ul>\n<li><code>admin</code> - Administrative group with elevated privileges</li>\n<li><code>standard</code> - Regular user group</li>\n<li><code>everyone</code> - Automatically includes all organization users</li>\n<li><code>custom</code> - Custom group with manual membership management</li>\n</ul>\n<b>Validation Rules:</b><br>\n<ul>\n<li>Group name must be unique within the organization</li>\n<li>Group name is required and cannot be empty</li>\n<li>Type must be one of the allowed values</li>\n</ul>\n<b>Side Effects:</b><br>\n<ul>\n<li>Creates a unique slug from the group name</li>\n<li>Sets createdBy to the authenticated user</li>\n</ul>\n"
+  },
+  {
+    "name": "user-groups-get-all-user-groups",
+    "description": "Get all user groups\n\nRetrieve all user groups in the organization.<br><br>\n<b>Response Details:</b><br>\n<ul>\n<li>Returns all groups including admin, standard, everyone, and custom types</li>\n<li>Groups are returned with their member counts</li>\n<li>Soft-deleted groups are excluded by default</li>\n</ul>\n<b>Use Cases:</b><br>\n<ul>\n<li>Populating group selection dropdowns</li>\n<li>Managing group memberships</li>\n<li>Access control configuration</li>\n</ul>\n"
+  },
+  {
+    "name": "user-groups-get-user-group-by-id",
+    "description": "Get user group by ID\n\nRetrieve detailed information about a specific user group.<br><br>\n<b>Response Includes:</b><br>\n<ul>\n<li>Group metadata (name, type, description)</li>\n<li>Member count</li>\n<li>Creation and modification timestamps</li>\n<li>Creator information</li>\n</ul>\n"
+  },
+  {
+    "name": "user-groups-update-user-group",
+    "description": "Update user group\n\nUpdate an existing user group's information.<br><br>\n<b>Updatable Fields:</b><br>\n<ul>\n<li><code>name</code> - Display name (must remain unique)</li>\n<li><code>description</code> - Group description</li>\n</ul>\n<b>Note:</b> Group type cannot be changed after creation.\n"
+  },
+  {
+    "name": "user-groups-delete-user-group",
+    "description": "Delete user group\n\nSoft delete a user group.<br><br>\n<b>Behavior:</b><br>\n<ul>\n<li>Group is marked as deleted (isDeleted: true)</li>\n<li>Group members are not affected</li>\n<li>Group can be restored by admin if needed</li>\n</ul>\n<b>Restrictions:</b><br>\n<ul>\n<li>Cannot delete system groups (admin, everyone)</li>\n<li>Requires admin privileges</li>\n</ul>\n"
+  },
+  {
+    "name": "user-groups-add-users-to-group",
+    "description": "Add users to group\n\nAdd one or more users to a user group.<br><br>\n<b>Behavior:</b><br>\n<ul>\n<li>Users already in the group are silently skipped</li>\n<li>Invalid user IDs are reported in the response</li>\n<li>Operation is atomic - all valid users are added together</li>\n</ul>\n<b>Validation:</b><br>\n<ul>\n<li>All user IDs must be valid MongoDB ObjectIds</li>\n<li>Users must belong to the same organization</li>\n<li>Group must exist and not be deleted</li>\n</ul>\n"
+  },
+  {
+    "name": "user-groups-remove-users-from-group",
+    "description": "Remove users from group\n\nRemove one or more users from a user group.<br><br>\n<b>Behavior:</b><br>\n<ul>\n<li>Users not in the group are silently skipped</li>\n<li>Operation is atomic - all specified users are removed together</li>\n</ul>\n<b>Restrictions:</b><br>\n<ul>\n<li>Cannot remove users from \"everyone\" group type</li>\n<li>Cannot remove the last admin from admin group</li>\n</ul>\n"
+  },
+  {
+    "name": "user-groups-get-groups-for-user",
+    "description": "Get groups for a user\n\nRetrieve all user groups that a specific user belongs to.<br><br>\n<b>Response Details:</b><br>\n<ul>\n<li>Includes all group types (admin, standard, everyone, custom)</li>\n<li>Returns group metadata for each membership</li>\n</ul>\n<b>Use Cases:</b><br>\n<ul>\n<li>Displaying user's group memberships in profile</li>\n<li>Access control checks</li>\n<li>Permission inheritance calculations</li>\n</ul>\n"
+  },
+  {
+    "name": "records-update-record",
+    "description": "Update record\n\nUpdate a record's name and/or file content.<br><br>\n<b>Overview:</b><br>\nAllows updating the display name and optionally replacing the file content. Triggers re-indexing when content changes.<br><br>\n<b>Required Permission:</b> WRITER or higher<br><br>\n<b>Updating File Content:</b><br>\nInclude a new file in the request to replace the existing content. The file extension must match the original.<br><br>\n<b>Side Effects:</b><br>\n<ul>\n<li>Updates <code>updatedAtTimestamp</code></li>\n<li>Increments version if file content changed</li>\n<li>Triggers re-indexing for content changes</li>\n</ul>\n"
+  },
+  {
+    "name": "permissions-create-KB-permission",
+    "description": "Grant permissions\n\nGrant access permissions to users or teams for a knowledge base.<br><br>\n<b>Required Permission:</b> OWNER or ORGANIZER<br><br>\n<b>Permission Roles (highest to lowest):</b><br>\n<ol>\n<li><b>OWNER:</b> Full control, can delete KB, manage all permissions</li>\n<li><b>ORGANIZER:</b> Can manage permissions (except OWNER), edit KB settings</li>\n<li><b>FILEORGANIZER:</b> Can create/delete folders, organize content</li>\n<li><b>WRITER:</b> Can upload, edit, delete records</li>\n<li><b>COMMENTER:</b> Can add comments (if supported)</li>\n<li><b>READER:</b> View-only access</li>\n</ol>\n<b>Grant to Multiple:</b><br>\nProvide arrays of userIds and/or teamIds to grant the same role to multiple entities.\n"
+  },
+  {
+    "name": "permissions-delete-KB-permissions",
+    "description": "Remove permissions\n\nRemove access permissions from users or teams.<br><br>\n<b>Required Permission:</b> OWNER or ORGANIZER<br><br>\n<b>Note:</b> Cannot remove the last OWNER from a KB.\n"
+  },
+  {
+    "name": "conversations-add-message",
+    "description": "Add message to conversation\n\nAdd a follow-up message to an existing conversation.<br><br>\n<b>Overview:</b><br>\nContinues an existing conversation by adding a new user query.\nThe AI maintains context from previous messages when generating the response.<br><br>\n<b>Context Handling:</b><br>\n<ul>\n<li>Previous messages provide context for the new query</li>\n<li>Citations from earlier messages may be referenced</li>\n<li>The AI can refer back to previous topics discussed</li>\n</ul>\n<b>Model Override:</b><br>\nYou can specify a different model for this message using <code>modelKey</code>.\nThis allows switching models mid-conversation if needed.\n"
+  },
+  {
+    "name": "agent-templates-create-agent-template",
+    "description": "Create agent template\n\nCreate a new reusable agent template.<br><br>\n<b>Overview:</b><br>\nTemplates define the base configuration for agents including\nsystem prompts, tool recommendations, and customization options.<br><br>\n<b>Template Components:</b><br>\n<ul>\n<li><b>System prompt:</b> Default instructions for agents</li>\n<li><b>Recommended tools:</b> Suggested tool integrations</li>\n<li><b>Config schema:</b> JSON Schema for customization options</li>\n</ul>\n"
+  },
+  {
+    "name": "connector-O-auth-handle-O-auth-callback",
+    "description": "OAuth callback handler\n\nHandle the OAuth callback from the identity provider.<br><br>\n<b>Note:</b><br>\nThis endpoint is called by the OAuth provider after user authentication.\nThe state parameter contains the encoded connector ID.<br><br>\n<b>Success:</b><br>\nOn success, tokens are stored and the connector becomes authenticated.\nUser is redirected to the frontend success page.<br><br>\n<b>Error:</b><br>\nIf the provider returns an error (e.g., user denied access),\nuser is redirected with error information.\n"
+  },
+  {
+    "name": "connector-filters-save-connector-filters",
+    "description": "Save filter selections\n\nSave the user's filter selections for a connector.<br><br>\n<b>Overview:</b><br>\nAfter viewing filter options, use this endpoint to save the\nselected values. These determine what data will be synced.\n"
+  },
+  {
+    "name": "toolset-registry-list-toolset-registry",
+    "description": "List available toolsets\n\nGet all available toolsets from the registry.<br><br>\n<b>Overview:</b><br>\nReturns toolsets that can be configured and used with agents.\nSupports pagination and search.\n"
+  },
+  {
+    "name": "toolset-registry-get-toolset-schema",
+    "description": "Get toolset schema\n\nGet configuration schema for a specific toolset type"
+  },
+  {
+    "name": "toolset-instances-create-toolset",
+    "description": "Create toolset instance\n\nCreate a new toolset instance with authentication configuration\n"
+  },
+  {
+    "name": "toolset-instances-list-configured-toolsets",
+    "description": "List configured toolsets\n\nGet all configured toolsets for the authenticated user\n"
+  },
+  {
+    "name": "toolset-instances-check-toolset-status",
+    "description": "Check toolset status\n\nCheck authentication status of a toolset instance"
+  },
+  {
+    "name": "toolset-configuration-get-toolset-config",
+    "description": "Get toolset configuration\n\nGet configuration for a specific toolset instance"
+  },
+  {
+    "name": "toolset-configuration-save-toolset-config",
+    "description": "Save toolset configuration\n\nSave or update toolset configuration (deprecated - use PUT)"
+  },
+  {
+    "name": "toolset-configuration-update-toolset-config",
+    "description": "Update toolset configuration\n\nUpdate toolset configuration"
+  },
+  {
+    "name": "toolset-configuration-delete-toolset-config",
+    "description": "Delete toolset configuration\n\nDelete a toolset instance and its configuration"
+  },
+  {
+    "name": "toolset-O-auth-get-toolset-O-auth-url",
+    "description": "Get OAuth authorization URL\n\nGet OAuth authorization URL for a toolset.<br><br>\nReturns a URL that the user should visit to authorize the toolset.\n"
+  },
+  {
+    "name": "toolset-O-auth-handle-toolset-O-auth-callback",
+    "description": "Handle OAuth callback\n\nHandle OAuth callback from the authorization server.<br><br>\nThis endpoint processes the authorization code and completes the OAuth flow.\n"
+  },
+  {
+    "name": "O-auth-configuration-get-O-auth-registry",
+    "description": "List OAuth-capable connector types\n\nGet all connector types that support OAuth authentication.<br><br>\n<b>Admin Use:</b><br>\nAdmins use this to see which connector types need OAuth credentials\nto be configured before users can authenticate.\n"
+  },
+  {
+    "name": "O-auth-configuration-get-O-auth-connector-type",
+    "description": "Get OAuth connector type details\n\nGet details for a specific OAuth-capable connector type."
+  },
+  {
+    "name": "O-auth-configuration-list-O-auth-configs",
+    "description": "List OAuth configurations\n\nList all OAuth configurations for the organization.<br><br>\n<b>Security:</b><br>\n<ul>\n<li>Admins see full configuration including credentials</li>\n<li>Non-admins see only essential fields (client ID, not secret)</li>\n</ul>\n"
+  },
+  {
+    "name": "O-auth-configuration-list-O-auth-configs-by-type",
+    "description": "List OAuth configs for connector type\n\nGet all OAuth configurations for a specific connector type."
+  },
+  {
+    "name": "O-auth-configuration-create-O-auth-config",
+    "description": "Create OAuth configuration\n\nCreate a new OAuth configuration for a connector type.<br><br>\n<b>Admin Only:</b><br>\nOnly admins can create OAuth configurations. These provide the\nOAuth credentials needed for users to authenticate connectors.<br><br>\n<b>Use Case:</b><br>\nBefore users can create Google Drive connectors with OAuth,\nan admin must create an OAuth configuration with the Google\nOAuth client ID and secret.\n"
+  },
+  {
+    "name": "O-auth-configuration-get-O-auth-config",
+    "description": "Get OAuth configuration\n\nGet a specific OAuth configuration by ID."
+  },
+  {
+    "name": "O-auth-configuration-update-O-auth-config",
+    "description": "Update OAuth configuration\n\nUpdate an OAuth configuration.<br><br>\n<b>Admin Only:</b><br>\nOnly the creator or another admin can update.\n"
+  },
+  {
+    "name": "O-auth-configuration-delete-O-auth-config",
+    "description": "Delete OAuth configuration\n\nDelete an OAuth configuration.<br><br>\n<b>Warning:</b><br>\nCannot delete if the configuration is used by active connectors.\nDisable or delete dependent connectors first.\n"
+  },
+  {
+    "name": "AI-models-providers-delete-AI-model-provider",
+    "description": "Delete AI model provider\n\nRemove an AI model provider configuration. Cannot delete the default model if it's the only one."
+  }
+];

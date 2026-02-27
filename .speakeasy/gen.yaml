@@ -38,7 +38,9 @@ mcp-typescript:
     peerDependencies: {}
   advancedFlags: []
   author: Speakeasy
+  baseErrorName: SDKError
   cloudflareEnabled: false
+  defaultErrorName: SDKDefaultError
   formStringArrayEncodeMode: array
   gramEnabled: false
   inferUnionDiscriminators: true

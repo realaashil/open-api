@@ -82,7 +82,7 @@ jobs:
         working-directory: spec-repo
         run: |
           speakeasy generate sdk \
-            -s source_specs/pipeshub-openapi.yaml \
+            -s source_specs/pipeshub-sdk-openapi.yaml \
             -l ${{ matrix.target.lang }} \
             -o "$GITHUB_WORKSPACE/target-repo" \
             -p

@@ -26,14 +26,30 @@ jobs:
             "https://raw.githubusercontent.com/pipeshub-ai/pipeshub-ai/main/backend/nodejs/apps/src/modules/api-docs/pipeshub-openapi.yaml" \
             -o /tmp/upstream-openapi.yaml
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install pyyaml
+
+      - name: Filter spec for SDK generation
+        run: |
+          python scripts/filter_sdk_spec.py \
+            /tmp/upstream-openapi.yaml /tmp/processed-openapi.yaml
+
       - name: Check for differences
         id: diff
         run: |
-          if diff -q source_specs/pipeshub-openapi.yaml /tmp/upstream-openapi.yaml > /dev/null 2>&1; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+          changed=false
+          if ! diff -q source_specs/pipeshub-openapi.yaml /tmp/upstream-openapi.yaml > /dev/null 2>&1; then
+            changed=true
           fi
+          if ! diff -q source_specs/pipeshub-sdk-openapi.yaml /tmp/processed-openapi.yaml > /dev/null 2>&1; then
+            changed=true
+          fi
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
@@ -44,11 +60,12 @@ jobs:
           # 1. Create/Switch to the sync branch
           git checkout -B auto/sync-openapi-spec
           
-          # 2. Sync the file
+          # 2. Sync both specs: full reference + filtered SDK spec
           cp /tmp/upstream-openapi.yaml source_specs/pipeshub-openapi.yaml
-          
+          cp /tmp/processed-openapi.yaml source_specs/pipeshub-sdk-openapi.yaml
+
           # 3. Commit
-          git add source_specs/pipeshub-openapi.yaml
+          git add source_specs/pipeshub-openapi.yaml source_specs/pipeshub-sdk-openapi.yaml
           git commit -m "chore: sync OpenAPI spec from upstream pipeshub-ai" || echo "No changes to commit"
           
           # 4. Use --force to overwrite the stale remote branch

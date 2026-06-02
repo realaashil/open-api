@@ -6591,65 +6591,6 @@ components:
       - tts
       - stt
       description: Type of AI model
-    AIModelProviderConfig:
-      type: object
-      additionalProperties: false
-      required:
-      - provider
-      - configuration
-      properties:
-        provider:
-          type: string
-          description: AI provider name
-        configuration:
-          $ref: '#/components/schemas/AIModelProviderConfiguration'
-        modelFriendlyName:
-          type: string
-          description: |
-            Display name for this model entry. May duplicate configuration.modelFriendlyName
-            when set on the stored provider record.
-        isMultimodal:
-          type: boolean
-          default: false
-          description: Whether the model supports multimodal input
-        isReasoning:
-          type: boolean
-          default: false
-          description: Whether the model supports reasoning
-        isDefault:
-          type: boolean
-          default: false
-          description: Whether this should be the default model
-        contextLength:
-          type: integer
-          nullable: true
-          description: Context length for the model
-        modelKey:
-          type: string
-          description: Unique identifier for this model configuration
-          readOnly: true
-    GetModelsByTypeResponse:
-      type: object
-      additionalProperties: false
-      description: |
-        Success response from getModelsByType. Returns stored provider entries
-        for a single model type bucket (not the flattened available-models shape).
-      required:
-      - status
-      - models
-      - message
-      properties:
-        status:
-          type: string
-          enum:
-          - success
-        message:
-          type: string
-          description: Human-readable summary (e.g. "Found 2 llm models", "No llm models found").
-        models:
-          type: array
-          items:
-            $ref: '#/components/schemas/AIModelProviderConfig'
     AIModelProviderConfiguration:
       type: object
       description: |
@@ -14392,33 +14333,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
-  /configurationManager/ai-models/{modelType}:
-    get:
-      tags:
-      - AI Models Providers
-      summary: Get models by type
-      description: Get all configured models of a specific type.
-      operationId: getModelsByType
-      security:
-      - bearerAuth: []
-      - oauth2:
-        - config:read
-      parameters:
-      - name: modelType
-        in: path
-        required: true
-        schema:
-          $ref: '#/components/schemas/ModelType'
-        description: Type of AI model
-      responses:
-        '200':
-          description: Models retrieved
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetModelsByTypeResponse'
-        '401':
-          description: Unauthorized
   /configurationManager/ai-models/available/{modelType}:
     get:
       tags:
